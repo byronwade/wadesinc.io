@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Commercial Page
- * 
+ *
  * Template part for displaying a message that posts cannot be found
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -17,4 +17,6 @@
 	<div class="page-content">
 		hi
 	</div><!-- .page-content -->
+
+	<?php get_footer() ?>
 </div>
