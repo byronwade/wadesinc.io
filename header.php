@@ -42,4 +42,7 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		<div>
+			Our sister company just starting doing Sepitc Pumping <a href="#">Clog Monsters Septic Pumping</a>
+		</div>
 	</header><!-- #masthead -->
