@@ -114,6 +114,11 @@
   resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
+"@types/node@^18.14.6":
+  version "18.14.6"
+  resolved "https://registry.npmjs.org/@types/node/-/node-18.14.6.tgz"
+  integrity sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==
+
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
@@ -2016,11 +2021,15 @@ v8-compile-cache@^2.0.3:
   version "0.1.0"
   resolved "file:apps/wadesinc.io"
   dependencies:
+    "@types/node" "^18.14.6"
     next "^13.2.3"
 
 "wadesplumbingandseptic.com@file:C:\\Users\\bcw19\\OneDrive\\Desktop\\wadesinc\\apps\\wadesplumbingandseptic.com":
   version "0.1.0"
   resolved "file:apps/wadesplumbingandseptic.com"
+  dependencies:
+    "@types/node" "^18.14.6"
+    next "^13.2.3"
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
