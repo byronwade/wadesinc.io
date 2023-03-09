@@ -15,11 +15,14 @@
   "devDependencies": {
     "eslint-config-custom": "*",
     "prettier": "latest",
+    "react-dom": "^18.2.0",
     "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vercel/analytics": "^0.1.11"
+  },
   "packageManager": "npm@9.5.0"
 }
