@@ -1,16 +1,16 @@
 "use client";
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
 	{ name: "Home", href: "/", current: true },
-	{ name: "Residential", href: "/residential", current: false },
-	{ name: "Commercial", href: "/commercial", current: false },
+	// { name: "Residential", href: "/residential", current: false },
+	// { name: "Commercial", href: "/commercial", current: false },
 	{ name: "Services", href: "/services", current: false },
-	{ name: "Our Work", href: "/portfolio", current: false },
+	{ name: "Rebates & Financing", href: "/financing", current: false },
+	// { name: "Our Work", href: "/portfolio", current: false },
 	{ name: "About Us", href: "/about-us", current: false },
 ];
 
