@@ -37,29 +37,29 @@ export default function Home() {
 				<Banner />
 				<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
 					<div className="place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0 p-4 m:p-6 lg:p-8">
-						<p className="text-lg font-semibold leading-8 tracking-tight text-brand-600">Local Built Company</p>
+						<p className="text-lg font-semibold leading-8 tracking-tight inline-flex items-center rounded-md bg-brand-100 px-2.5 py-0.5 text-brand-800">Local Built Company</p>
 						<h1 className="tracking-tight font-extrabold mt-2 text-4xl text-white sm:text-6xl dark:text-black">We are not your normal plumbing company.</h1>
 						<p className="mt-6 text-lg leading-8 text-white">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
 						<div className="grid gap-8 lg:grid-cols-2 pt-8">
-							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium bg-white hover:bg-white-100 rounded border border-gray-200 shadow">
+							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium bg-white hover:bg-white-100 rounded ">
 								<span className="w-full">Curious about our warranties?</span>
 								<svg className="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
 								</svg>
 							</a>
-							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium bg-white hover:bg-white-100 rounded border border-gray-200 shadow">
+							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium bg-white hover:bg-white-100 rounded ">
 								<span className="w-full">Learn more about our local customer support team</span>
 								<svg className="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
 								</svg>
 							</a>
-							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium bg-white hover:bg-white-100 rounded border border-gray-200 shadow">
+							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium bg-white hover:bg-white-100 rounded ">
 								<span className="w-full">Explore our list of services, plumbing & septic.</span>
 								<svg className="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
 								</svg>
 							</a>
-							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium bg-white hover:bg-white-100 rounded border border-gray-200 shadow">
+							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium bg-white hover:bg-white-100 rounded ">
 								<span className="w-full">Take a look as our map to see the areas we serve.</span>
 								<svg className="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -67,7 +67,7 @@ export default function Home() {
 							</a>
 						</div>
 					</div>
-					<div className="justify-center p-4 max-w-screen-sm bg-white rounded border border-gray-200 shadow lg:mt-0 lg:col-span-5 xl:col-span-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+					<div className="justify-center p-4 max-w-screen-sm bg-white rounded  lg:mt-0 lg:col-span-5 xl:col-span-4 sm:p-6 lg:p-8 dark:bg-gray-800">
 						<form action="#" method="POST" className="lg:flex-auto">
 							<div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
 								<div>
