@@ -127,6 +127,11 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+			<section className="text-black">
+				<div className="mx-auto max-w-screen-xl py-6">
+					<div>cuustomer support</div>
+				</div>
+			</section>
 			<LogoCloud />
 			<FAQ />
 			<Testimonials />
