@@ -3,7 +3,6 @@ import LogoCloud from "@/components/pageSections/LogoCloud";
 import FAQ from "@/components/pageSections/FAQ";
 import Testimonials from "@/components/pageSections/Testimonials";
 import Image from "next/image";
-import FloatingContact from "@/components/FloatingContact";
 
 export const metadata = {
 	title: {
@@ -34,7 +33,8 @@ export const metadata = {
 export default function Home() {
 	return (
 		<main className="relative isolate overflow-hidden">
-			<section className="bg-[url('/redwoods.jpg')] bg-no-repeat bg-cover bg-center bg-gray-700 bg-blend-multiply">
+			<section className="relative bg-[url('/redwoods.jpg')] bg-no-repeat bg-cover bg-center bg-gray-700 bg-blend-multiply">
+				<Banner />
 				<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
 					<div className="place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0 p-4 m:p-6 lg:p-8">
 						<p className="text-lg font-semibold leading-8 tracking-tight text-brand-600">Local Built Company</p>

@@ -83,10 +83,10 @@
   dependencies:
     glob "7.1.7"
 
-"@next/swc-win32-x64-msvc@13.2.3":
+"@next/swc-darwin-arm64@13.2.3":
   version "13.2.3"
-  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.2.3.tgz"
-  integrity sha512-aLG2MaFs4y7IwaMTosz2r4mVbqRyCnMoFqOcmfTi7/mAS+G4IMH0vJp4oLdbshqiVoiVuKrAfqtXj55/m7Qu1Q==
+  resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.2.3.tgz"
+  integrity sha512-TXOubiFdLpMfMtaRu1K5d1I9ipKbW5iS2BNbu8zJhoqrhk3Kp7aRKTxqFfWrbliAHhWVE/3fQZUYZOWSXVQi1w==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -478,7 +478,7 @@ client-only@^0.0.1, client-only@0.0.1:
   resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
-"clogmonsterssepticpumping.com@file:C:\\Users\\bcw19\\wadesinc.io\\apps\\clogmonsterssepticpumping.com":
+"clogmonsterssepticpumping.com@file:/Users/byronwade/Desktop/wadesinc.io/apps/clogmonsterssepticpumping.com":
   version "0.1.0"
   resolved "file:apps/clogmonsterssepticpumping.com"
   dependencies:
@@ -754,7 +754,7 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-custom@*, "eslint-config-custom@file:C:\\Users\\bcw19\\wadesinc.io\\packages\\eslint-config-custom":
+eslint-config-custom@*, "eslint-config-custom@file:/Users/byronwade/Desktop/wadesinc.io/packages/eslint-config-custom":
   version "0.0.0"
   resolved "file:packages/eslint-config-custom"
   dependencies:
@@ -1091,6 +1091,11 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
+
+fsevents@~2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.1:
   version "1.1.1"
@@ -2220,7 +2225,7 @@ tsconfig-paths@^3.14.1:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tsconfig@*, "tsconfig@file:C:\\Users\\bcw19\\wadesinc.io\\packages\\tsconfig":
+tsconfig@*, "tsconfig@file:/Users/byronwade/Desktop/wadesinc.io/packages/tsconfig":
   version "0.0.0"
   resolved "file:packages/tsconfig"
 
@@ -2241,10 +2246,10 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
-turbo-windows-64@1.8.3:
+turbo-darwin-arm64@1.8.3:
   version "1.8.3"
-  resolved "https://registry.npmjs.org/turbo-windows-64/-/turbo-windows-64-1.8.3.tgz"
-  integrity sha512-cnzAytHtoLXd0J7aNzRpZFpL/GTjcBmkvAPlbOdf/Pl1iwS4qzGrudZQ+OM1lmLgLIfBPIavsGHBknTwTNib4A==
+  resolved "https://registry.npmjs.org/turbo-darwin-arm64/-/turbo-darwin-arm64-1.8.3.tgz"
+  integrity sha512-4oZjXtzakopMK110kue3z/hqu3WLv+eDLZOX1NGdo49gqca9BeD8GbH+sXpAp6tqyeuzpss+PIliVYuyt7LgbA==
 
 turbo@latest:
   version "1.8.3"
@@ -2284,7 +2289,7 @@ typescript@^4.5.2, typescript@^4.5.3, typescript@^4.7.4, "typescript@>=2.8.0 || 
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
-ui@*, "ui@file:C:\\Users\\bcw19\\wadesinc.io\\packages\\ui":
+ui@*, "ui@file:/Users/byronwade/Desktop/wadesinc.io/packages/ui":
   version "0.0.0"
   resolved "file:packages/ui"
 
@@ -2323,14 +2328,14 @@ v8-compile-cache@^2.0.3:
   resolved "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
 
-"wadesinc.io@file:C:\\Users\\bcw19\\wadesinc.io\\apps\\wadesinc.io":
+"wadesinc.io@file:/Users/byronwade/Desktop/wadesinc.io/apps/wadesinc.io":
   version "0.1.0"
   resolved "file:apps/wadesinc.io"
   dependencies:
     "@types/node" "^18.14.6"
     next "^13.2.3"
 
-"wadesplumbingandseptic.com@file:C:\\Users\\bcw19\\wadesinc.io\\apps\\wadesplumbingandseptic.com":
+"wadesplumbingandseptic.com@file:/Users/byronwade/Desktop/wadesinc.io/apps/wadesplumbingandseptic.com":
   version "0.1.0"
   resolved "file:apps/wadesplumbingandseptic.com"
   dependencies:

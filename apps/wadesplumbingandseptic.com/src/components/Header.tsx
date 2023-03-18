@@ -1,7 +1,7 @@
 "use client";
 import { Disclosure, Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Bars3Icon, CheckBadgeIcon, XMarkIcon, CurrencyDollarIcon, BanknotesIcon, BriefcaseIcon } from "@heroicons/react/24/outline";
+import { UserCircleIcon, Bars3Icon, CheckBadgeIcon, XMarkIcon, CurrencyDollarIcon, BanknotesIcon, BriefcaseIcon } from "@heroicons/react/24/outline";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -64,21 +64,27 @@ const posts = [
 
 const solutions = [
 	{
+		name: "Our Team",
+		description: "Get to know our team",
+		href: "/about-us/our-team",
+		icon: UserCircleIcon,
+	},
+	{
 		name: "Warranties",
-		description: "Get a better understanding of our warranties",
+		description: "Learn about our warranties",
 		href: "/about-us/warranties",
 		icon: CheckBadgeIcon,
 	},
 	{
 		name: "Rebates",
-		description: "As a company somtimes we can offer rebates for customers",
+		description: "Find some rebates",
 		href: "/about-us/rebates",
 		icon: CurrencyDollarIcon,
 	},
-	{ name: "Financing", description: "We offer financing so that you can always have working plumbing", href: "/about-us/financing", icon: BanknotesIcon },
+	{ name: "Financing", description: "Our financing is top notch", href: "/about-us/financing", icon: BanknotesIcon },
 	{
 		name: "Job Opertunities",
-		description: "Connect with with us and learn about the jobs were offering",
+		description: "Find your dream job",
 		href: "/about-us/jobs",
 		icon: BriefcaseIcon,
 	},
@@ -119,7 +125,7 @@ export default function Header() {
 									<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
 								</Popover.Button>
 								<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
-									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[120px] shadow">
+									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[112px] shadow">
 										{({ close }) => (
 											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-10 gap-x-8 py-10 px-6 lg:grid-cols-3 lg:px-8">
 												<div className="grid grid-cols-4 col-span-2 gap-x-6 sm:gap-x-8">
@@ -242,7 +248,7 @@ export default function Header() {
 														</Link>
 													</div>
 													<div className="flex flex-col space-y-6">
-														<h3 className="text-sm font-bold leading-6 text-brand mb-4">Medical</h3>
+														<h3 className="text-sm font-bold leading-6 text-brand mb-4">Drain Clearing</h3>
 														<div className="flex flex-col space-y-1">
 															<Link
 																href="/residential"
@@ -301,7 +307,7 @@ export default function Header() {
 														</Link>
 													</div>
 													<div className="flex flex-col space-y-6">
-														<h3 className="text-sm font-bold leading-6 text-brand mb-4">Industrial</h3>
+														<h3 className="text-sm font-bold leading-6 text-brand mb-4">Septic</h3>
 														<div className="flex flex-col space-y-1">
 															<Link
 																href="/residential"
@@ -363,8 +369,8 @@ export default function Header() {
 												<div className="flex">
 													<div>
 														<a href="#" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-															<h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Noteworthy technology acquisitions 2021</h5>
-															<p className="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+															<h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">View Our Work</h5>
+															<p className="font-normal text-gray-700 dark:text-gray-400">Take a look at all of our work, everything from septic to commerical and underground.</p>
 														</a>
 													</div>
 												</div>
@@ -379,12 +385,12 @@ export default function Header() {
 									<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
 								</Popover.Button>
 								<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
-									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[120px] shadow">
+									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[112px] shadow">
 										{({ close }) => (
 											<div className="mx-auto py-10 max-w-7xl px-6 lg:px-8">
 												<div className="mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 													{posts.map((post) => (
-														<article key={post.id} className="relative isolate flex flex-col justify-end overflow-hidden rounded bg-gray-900 px-8 pb-8 pt-40 sm:pt-20 lg:pt-40 border border-black-600">
+														<article key={post.id} className="hover:scale-[1.05] transition-all relative isolate flex flex-col justify-end overflow-hidden rounded bg-gray-900 px-8 pb-8 pt-40 sm:pt-20 lg:pt-40 border border-black-600">
 															<img src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover rounded" />
 															<div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/40" />
 
@@ -427,9 +433,9 @@ export default function Header() {
 									<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
 								</Popover.Button>
 								<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
-									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[120px] shadow">
+									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[112px] shadow">
 										{({ close }) => (
-											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-4 lg:gap-4 lg:px-8 xl:gap-8">
+											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-5 lg:gap-4 lg:px-8 xl:gap-8">
 												{solutions.map((item) => (
 													<div key={item.name} className="group relative -mx-3 flex gap-6 rounded-lg p-3 text-sm leading-6 hover:bg-gray-50 sm:flex-col sm:p-6">
 														<div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-black-400 group-hover:bg-white">
@@ -455,7 +461,7 @@ export default function Header() {
 							</Link>
 						</div>
 					</div>
-					<div className="hidden md:block bg-brand  text-black font-bold p-2 px-4">
+					<div className="hidden md:block bg-brand  text-black font-bold py-1 px-4">
 						<div className="hidden lg:flex mx-auto max-w-7xl px-6 lg:px-8 p-1 items-center justify-center text-sm space-x-10 pr-4">
 							<div>Mon - Fri 9:00am - 5:00pm</div>
 							<a className="text-lg font-extrabold hover:underline" href="tel:+18312254344">
