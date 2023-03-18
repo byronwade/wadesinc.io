@@ -1,8 +1,11 @@
 "use client";
-import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure, Popover, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Bars3Icon, CheckBadgeIcon, XMarkIcon, CurrencyDollarIcon, BanknotesIcon, BriefcaseIcon } from "@heroicons/react/24/outline";
+
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 
 const navigation = [
 	{ name: "Home", href: "/", current: true },
@@ -14,27 +17,83 @@ const navigation = [
 	{ name: "About Us", href: "/about-us", current: false },
 ];
 
+const posts = [
+	{
+		id: 1,
+		title: "Boost your conversion rate",
+		href: "#",
+		description: "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+		imageUrl: "https://images.unsplash.com/photo-1679043899422-2e5bef15b270?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1686&q=80",
+		date: "Mar 16, 2020",
+		datetime: "2020-03-16",
+		author: {
+			name: "Michael Foster",
+			imageUrl: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+		},
+	},
+
+	{
+		id: 2,
+		title: "Boost your conversion rate",
+		href: "#",
+		description: "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+		imageUrl: "https://images.unsplash.com/photo-1678875922894-7d3210b0787d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+		date: "Mar 16, 2020",
+		datetime: "2020-03-16",
+		author: {
+			name: "Michael Foster",
+			imageUrl: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+		},
+	},
+
+	{
+		id: 3,
+		title: "Boost your conversion rate",
+		href: "#",
+		description: "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+		imageUrl: "https://images.unsplash.com/photo-1678968021439-dd4233b114db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+		date: "Mar 16, 2020",
+		datetime: "2020-03-16",
+		author: {
+			name: "Michael Foster",
+			imageUrl: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+		},
+	},
+	// More posts...
+];
+
+const solutions = [
+	{
+		name: "Warranties",
+		description: "Get a better understanding of our warranties",
+		href: "/about-us/warranties",
+		icon: CheckBadgeIcon,
+	},
+	{
+		name: "Rebates",
+		description: "As a company somtimes we can offer rebates for customers",
+		href: "/about-us/rebates",
+		icon: CurrencyDollarIcon,
+	},
+	{ name: "Financing", description: "We offer financing so that you can always have working plumbing", href: "/about-us/financing", icon: BanknotesIcon },
+	{
+		name: "Job Opertunities",
+		description: "Connect with with us and learn about the jobs were offering",
+		href: "/about-us/jobs",
+		icon: BriefcaseIcon,
+	},
+];
+
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
 
 export default function Header() {
 	return (
-		<Disclosure as="nav" className="bg-black text-white sticky top-0 z-50">
+		<Disclosure as="nav" className="isolate bg-black text-white sticky top-0 z-50">
 			{({ open }) => (
 				<>
-					<div className="bg-black-200">
-						<div className="hidden lg:flex mx-auto max-w-7xl px-6 lg:px-8 p-1 items-center justify-end text-sm space-x-10 pr-4">
-							<div>Mon - Fri 9:00am - 5:00pm</div>
-							<a className="hover:underline" href="tel:+18312254344">
-								831.225.4344
-							</a>
-							<a target="_blank" className="hover:underline" href="https://www.google.com/maps/place/Wade's+Plumbing+%26+Septic/@37.0691872,-122.0863327,17z/data=!4m15!1m8!3m7!1s0x808e45d553ee3671:0x11e65c09abb0758b!2s7737+CA-9,+Ben+Lomond,+CA+95005!3b1!8m2!3d37.0691829!4d-122.084144!16s%2Fg%2F11jzwrnb7h!3m5!1s0x6b4df86479b11ce3:0x6dc60026b2e543b9!8m2!3d37.0691829!4d-122.084144!16s%2Fg%2F11np4mj1hk" rel="noreferrer">
-								7737 HWY 9, Ben Lomond, CA, 95005
-							</a>
-						</div>
-					</div>
-					<div className="flex p-3 items-center justify-between mx-auto max-w-7xl px-6 lg:px-8">
+					<div className="relitive flex p-3 items-center justify-between mx-auto max-w-7xl px-6 lg:px-8">
 						<Link className="flex items-center space-x-4" href="/">
 							<Image src="/WadesLogo.png" width={40} height={40} alt="Wade's Plumbing & Septic Logo" />
 							<h1 className="font-bold text-2xl hidden xl:inline-flex">Wades Plumbing & Septic</h1>
@@ -46,37 +105,372 @@ export default function Header() {
 							</Disclosure.Button>
 						</div>
 						<div className="hidden md:flex space-x-8 items-center font-bold">
-							{navigation.map((item) => (
+							{/* {navigation.map((item) => (
 								<Link className={classNames(item.current ? "text-brand" : "hover:underline")} key={item.name} href={item.href}>
 									{item.name}
 								</Link>
-							))}
+							))} */}
+							<Link className="hover:underline" href="/">
+								Home
+							</Link>
+							<Popover>
+								<Popover.Button className="inline-flex items-center gap-x-1 hover:underline">
+									Services
+									<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
+								</Popover.Button>
+								<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
+									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[120px] shadow">
+										{({ close }) => (
+											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-10 gap-x-8 py-10 px-6 lg:grid-cols-3 lg:px-8">
+												<div className="grid grid-cols-4 col-span-2 gap-x-6 sm:gap-x-8">
+													<div className="flex flex-col space-y-6">
+														<h3 className="text-sm font-bold leading-6 text-brand">Residential</h3>
+														<div className="flex flex-col space-y-1">
+															<Link
+																href="/residential"
+																onClick={async () => {
+																	await fetch("/residential", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Residential
+															</Link>
+															<Link
+																href="/commercial"
+																onClick={async () => {
+																	await fetch("/commercial", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Commercial
+															</Link>
+															<Link
+																href="/medical"
+																onClick={async () => {
+																	await fetch("/medical", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Medical
+															</Link>
+															<Link
+																href="/industrial"
+																onClick={async () => {
+																	await fetch("/industrial", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Industrial
+															</Link>
+														</div>
+
+														<Link
+															href="/industrial"
+															onClick={async () => {
+																await fetch("/industrial", { method: "POST" });
+																close();
+															}}
+															className="inline-flex items-center font-normal hover:underline"
+														>
+															<span>See more</span>
+															<svg className="self-center ml-3 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+																<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+															</svg>
+														</Link>
+													</div>
+													<div className="flex flex-col space-y-6">
+														<h3 className="text-sm font-bold leading-6 text-brand mb-4">Commercial</h3>
+														<div className="flex flex-col space-y-1">
+															<Link
+																href="/residential"
+																onClick={async () => {
+																	await fetch("/residential", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Residential
+															</Link>
+															<Link
+																href="/commercial"
+																onClick={async () => {
+																	await fetch("/commercial", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Commercial
+															</Link>
+															<Link
+																href="/medical"
+																onClick={async () => {
+																	await fetch("/medical", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Medical
+															</Link>
+															<Link
+																href="/industrial"
+																onClick={async () => {
+																	await fetch("/industrial", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Industrial
+															</Link>
+														</div>
+
+														<Link
+															href="/industrial"
+															onClick={async () => {
+																await fetch("/industrial", { method: "POST" });
+																close();
+															}}
+															className="inline-flex items-center font-normal hover:underline"
+														>
+															<span>See more</span>
+															<svg className="self-center ml-3 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+																<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+															</svg>
+														</Link>
+													</div>
+													<div className="flex flex-col space-y-6">
+														<h3 className="text-sm font-bold leading-6 text-brand mb-4">Medical</h3>
+														<div className="flex flex-col space-y-1">
+															<Link
+																href="/residential"
+																onClick={async () => {
+																	await fetch("/residential", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Residential
+															</Link>
+															<Link
+																href="/commercial"
+																onClick={async () => {
+																	await fetch("/commercial", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Commercial
+															</Link>
+															<Link
+																href="/medical"
+																onClick={async () => {
+																	await fetch("/medical", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Medical
+															</Link>
+															<Link
+																href="/industrial"
+																onClick={async () => {
+																	await fetch("/industrial", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Industrial
+															</Link>
+														</div>
+
+														<Link
+															href="/industrial"
+															onClick={async () => {
+																await fetch("/industrial", { method: "POST" });
+																close();
+															}}
+															className="inline-flex items-center font-normal hover:underline"
+														>
+															<span>See more</span>
+															<svg className="self-center ml-3 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+																<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+															</svg>
+														</Link>
+													</div>
+													<div className="flex flex-col space-y-6">
+														<h3 className="text-sm font-bold leading-6 text-brand mb-4">Industrial</h3>
+														<div className="flex flex-col space-y-1">
+															<Link
+																href="/residential"
+																onClick={async () => {
+																	await fetch("/residential", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Residential
+															</Link>
+															<Link
+																href="/commercial"
+																onClick={async () => {
+																	await fetch("/commercial", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Commercial
+															</Link>
+															<Link
+																href="/medical"
+																onClick={async () => {
+																	await fetch("/medical", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Medical
+															</Link>
+															<Link
+																href="/industrial"
+																onClick={async () => {
+																	await fetch("/industrial", { method: "POST" });
+																	close();
+																}}
+																className="font-normal hover:underline"
+															>
+																Industrial
+															</Link>
+														</div>
+
+														<Link
+															href="/industrial"
+															onClick={async () => {
+																await fetch("/industrial", { method: "POST" });
+																close();
+															}}
+															className="inline-flex items-center font-normal hover:underline"
+														>
+															<span>See more</span>
+															<svg className="self-center ml-3 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+																<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+															</svg>
+														</Link>
+													</div>
+												</div>
+												<div className="flex">
+													<div>
+														<a href="#" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+															<h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">Noteworthy technology acquisitions 2021</h5>
+															<p className="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+														</a>
+													</div>
+												</div>
+											</div>
+										)}
+									</Popover.Panel>
+								</Transition>
+							</Popover>
+							<Popover>
+								<Popover.Button className="inline-flex items-center gap-x-1 hover:underline">
+									Expert Tips
+									<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
+								</Popover.Button>
+								<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
+									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[120px] shadow">
+										{({ close }) => (
+											<div className="mx-auto py-10 max-w-7xl px-6 lg:px-8">
+												<div className="mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+													{posts.map((post) => (
+														<article key={post.id} className="relative isolate flex flex-col justify-end overflow-hidden rounded bg-gray-900 px-8 pb-8 pt-40 sm:pt-20 lg:pt-40 border border-black-600">
+															<img src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover rounded" />
+															<div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/40" />
+
+															<div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+																<time dateTime={post.datetime} className="mr-8">
+																	{post.date}
+																</time>
+																<div className="-ml-4 flex items-center gap-x-4">
+																	<svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
+																		<circle cx={1} cy={1} r={1} />
+																	</svg>
+																	<div className="flex gap-x-2.5">
+																		<img src={post.author.imageUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-white/10" />
+																		{post.author.name}
+																	</div>
+																</div>
+															</div>
+															<h3 className="mt-3 text-lg font-semibold leading-6 text-white">
+																<a href={post.href}>
+																	<span className="absolute inset-0" />
+																	{post.title}
+																</a>
+															</h3>
+														</article>
+													))}
+												</div>
+												<div className="mt-6 flex justify-center">
+													<Link href="/contact-us" className="inline-flex justify-center rounded font-bold px-3.5 py-2.5 bg-brand text-black hover:bg-brand-600">
+														Read More
+													</Link>
+												</div>
+											</div>
+										)}
+									</Popover.Panel>
+								</Transition>
+							</Popover>
+							<Popover>
+								<Popover.Button className="inline-flex items-center gap-x-1 hover:underline">
+									About Us
+									<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
+								</Popover.Button>
+								<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
+									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[120px] shadow">
+										{({ close }) => (
+											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-4 lg:gap-4 lg:px-8 xl:gap-8">
+												{solutions.map((item) => (
+													<div key={item.name} className="group relative -mx-3 flex gap-6 rounded-lg p-3 text-sm leading-6 hover:bg-gray-50 sm:flex-col sm:p-6">
+														<div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-black-400 group-hover:bg-white">
+															<item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+														</div>
+														<div>
+															<a href={item.href} className="font-semibold text-gray-900">
+																{item.name}
+																<span className="absolute inset-0" />
+															</a>
+															<p className="mt-1 text-gray-600">{item.description}</p>
+														</div>
+													</div>
+												))}
+											</div>
+										)}
+									</Popover.Panel>
+								</Transition>
+							</Popover>
+
 							<Link href="/contact-us" className="inline-flex justify-center rounded font-bold px-3.5 py-2.5 bg-brand text-black hover:bg-brand-600">
 								Contact Us
 							</Link>
 						</div>
 					</div>
 					<div className="hidden md:block bg-brand  text-black font-bold p-2 px-4">
-						<div className="flex justify-start mx-auto max-w-7xl px-6 lg:px-8 space-x-6">
-							<Link className="hover:underline" href="/">
-								Septic
-							</Link>
-							<Link className="hover:underline" href="/">
-								Septic
-							</Link>
-							<Link className="hover:underline" href="/">
-								Septic
-							</Link>
-							<Link className="hover:underline" href="/">
-								Septic
-							</Link>
+						<div className="hidden lg:flex mx-auto max-w-7xl px-6 lg:px-8 p-1 items-center justify-center text-sm space-x-10 pr-4">
+							<div>Mon - Fri 9:00am - 5:00pm</div>
+							<a className="text-lg font-extrabold hover:underline" href="tel:+18312254344">
+								831.225.4344
+							</a>
+							<a target="_blank" className="hover:underline" href="https://www.google.com/maps/place/Wade's+Plumbing+%26+Septic/@37.0691872,-122.0863327,17z/data=!4m15!1m8!3m7!1s0x808e45d553ee3671:0x11e65c09abb0758b!2s7737+CA-9,+Ben+Lomond,+CA+95005!3b1!8m2!3d37.0691829!4d-122.084144!16s%2Fg%2F11jzwrnb7h!3m5!1s0x6b4df86479b11ce3:0x6dc60026b2e543b9!8m2!3d37.0691829!4d-122.084144!16s%2Fg%2F11np4mj1hk" rel="noreferrer">
+								7737 HWY 9, Ben Lomond, CA, 95005
+							</a>
 						</div>
 					</div>
 
 					<Disclosure.Panel className="md:hidden">
 						<div className="space-y-1 px-2 pt-2 pb-3">
 							{navigation.map((item) => (
-								<Disclosure.Button key={item.name} as="a" href={item.href} className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded-md px-3 py-2 text-base font-medium")} aria-current={item.current ? "page" : undefined}>
+								<Disclosure.Button key={item.name} as="a" href={item.href} className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded-md px-3 py-2 text-base font-bold")} aria-current={item.current ? "page" : undefined}>
 									{item.name}
 								</Disclosure.Button>
 							))}

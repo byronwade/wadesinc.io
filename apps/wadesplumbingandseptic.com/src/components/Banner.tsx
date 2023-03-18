@@ -3,8 +3,8 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 export default function Banner() {
 	return (
 		<>
-			<div className="pointer-events-none sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8 mt-10">
-				<div className="pointer-events-auto flex items-center justify-between gap-x-6 bg-white py-2.5 px-6 sm:rounded-xl sm:py-3 sm:pr-3.5 sm:pl-4 border">
+			<div className="absolute top-0 pointer-events-none sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8 mt-10">
+				<div className="pointer-events-auto flex items-center justify-between gap-x-6 bg-white py-2.5 px-6 sm:rounded sm:py-3 sm:pr-3.5 sm:pl-4 border">
 					<p className="text-sm leading-6 text-black">
 						<a href="#">
 							<strong className="font-semibold">Wades Inc</strong>
