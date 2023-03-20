@@ -1,63 +1,89 @@
 "use client";
+import { Fragment, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+
+const people = [
+	{ id: 1, name: "Septic" },
+	{ id: 2, name: "Drain Clearing" },
+	{ id: 3, name: "Plumbing" },
+	{ id: 4, name: "Engineered Septic" },
+	{ id: 5, name: "Residential" },
+	{ id: 6, name: "Commercial" },
+];
+
+function classNames(...classes: string[]) {
+	return classes.filter(Boolean).join(" ");
+}
 
 export default function Example() {
-	return (
-		<div className="mx-auto max-w-7xl py-16">
-			<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">Frequently asked questions</h2>
-			<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Learn more about our company</p>
-			<p className="mt-6 max-w-2xl text-lg leading-8 text-gray-600">
-				Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
-				<a href="#" className="font-semibold text-brand-600 hover:text-brand-500">
-					{` `}sending us an email{` `}
-				</a>
-				and we’ll get back to you as soon as we can.
-			</p>
+	const [selected, setSelected] = useState(people[3]);
 
-			<form className="mt-4">
-				<div className="flex">
-					<label htmlFor="search-dropdown" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
-						Your Email
-					</label>
-					<button id="dropdown-button" data-dropdown-toggle="dropdown" className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-t-1 border-b-1 border-l-1 border-gray-300 rounded-l hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
-						All categories{" "}
-						<svg aria-hidden="true" className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-							<path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+	return (
+		<div className="mx-auto max-w-7xl py-16 space-y-6">
+			<div>
+				<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">We have 102 Services</h2>
+				<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Search for any service</p>
+				<p className="max-w-2xl text-lg leading-6 text-gray-600">
+					Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
+					<a href="#" className="font-semibold text-brand-600 hover:text-brand-500">
+						{` `}sending us an email{` `}
+					</a>
+					and we’ll get back to you as soon as we can.
+				</p>
+			</div>
+
+			<form className="flex space-x-2 items-center mt-4">
+				<Listbox value={selected} onChange={setSelected}>
+					{({ open }) => (
+						<>
+							<div className="relative">
+								<Listbox.Button className="relative min-w-[170px] cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-600 sm:text-sm sm:leading-6">
+									<span className="block truncate">{selected.name}</span>
+									<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+										<ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+									</span>
+								</Listbox.Button>
+
+								<Transition show={open} as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+									<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+										{people.map((person) => (
+											<Listbox.Option key={person.id} className={({ active }) => classNames(active ? "bg-brand-600 text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9")} value={person}>
+												{({ selected, active }) => (
+													<>
+														<span className={classNames(selected ? "font-semibold" : "font-normal", "block truncate")}>{person.name}</span>
+
+														{selected ? (
+															<span className={classNames(active ? "text-white" : "text-brand-600", "absolute inset-y-0 right-0 flex items-center pr-4")}>
+																<CheckIcon className="h-5 w-5" aria-hidden="true" />
+															</span>
+														) : null}
+													</>
+												)}
+											</Listbox.Option>
+										))}
+									</Listbox.Options>
+								</Transition>
+							</div>
+						</>
+					)}
+				</Listbox>
+				<label htmlFor="simple-search" className="sr-only">
+					Search
+				</label>
+				<div className="relative w-full">
+					<div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+						<svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+							<path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
 						</svg>
-					</button>
-					<div id="dropdown" className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
-						<ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
-							<li>
-								<button type="button" className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-									Mockups
-								</button>
-							</li>
-							<li>
-								<button type="button" className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-									Templates
-								</button>
-							</li>
-							<li>
-								<button type="button" className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-									Design
-								</button>
-							</li>
-							<li>
-								<button type="button" className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-									Logos
-								</button>
-							</li>
-						</ul>
 					</div>
-					<div className="relative w-full">
-						<input type="search" id="search-dropdown" className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r border-l-gray-50 border-l-2 border border-gray-300 focus:ring-brand-500 focus:border-brand-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-brand-500" placeholder="Search Mockups, Logos, Design Templates..." required="" />
-						<button type="submit" className="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-brand-700 rounded-r border border-brand-700 hover:bg-brand-800 focus:ring-4 focus:outline-none focus:ring-brand-300 dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800">
-							<svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-							</svg>
-							<span className="sr-only">Search</span>
-						</button>
-					</div>
+					<input type="text" id="simple-search" className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand-500 focus:border-brand-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="We have 203 Services..." required />
 				</div>
+				<button type="submit" className="p-2.5 text-sm font-medium text-white bg-brand-700 rounded-lg border border-brand-700 hover:bg-brand-800 focus:ring-4 focus:outline-none focus:ring-brand-300 dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800">
+					<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+					</svg>
+				</button>
 			</form>
 
 			<div className="flex mt-10 items-center justify-center">
@@ -105,7 +131,7 @@ export default function Example() {
 				</div>
 			</div>
 
-			<nav className="flex items-center justify-between py-3" aria-label="Pagination">
+			<nav className="flex items-center justify-between" aria-label="Pagination">
 				<div className="hidden sm:block">
 					<p className="text-sm text-gray-700">
 						Showing <span className="font-medium">1</span> to <span className="font-medium">10</span> of <span className="font-medium">20</span> results

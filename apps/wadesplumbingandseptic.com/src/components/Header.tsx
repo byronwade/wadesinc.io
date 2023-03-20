@@ -372,7 +372,7 @@ export default function Header() {
 													</div>
 													<div>
 														<a href="#" className="block max-w-sm p-4 bg-white border border-gray-200 rounded shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-															<h5 className="mb-2 text-xl font-bold tracking-tight text-black dark:text-white">View Our Work</h5>
+															<h5 className="mb-2 text-xl font-bold tracking-tight text-black dark:text-white">We offer 203 Services</h5>
 															<p className="font-normal text-gray-700 dark:text-gray-400">Take a look at all of our work, everything from septic to commerical and underground.</p>
 														</a>
 													</div>
