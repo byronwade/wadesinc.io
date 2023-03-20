@@ -50,7 +50,7 @@ export default function Example() {
 						</div>
 						<div className="mt-10">
 							<button type="submit" className="block w-full rounded-md bg-brand-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">
-								Let’s talk
+								Get a Quote
 							</button>
 						</div>
 						<p className="mt-4 text-sm leading-6 text-gray-500">

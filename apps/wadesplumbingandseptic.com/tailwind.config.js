@@ -11,6 +11,15 @@ module.exports = {
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
+		extend: {
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: "100ch", // add required value here
+					},
+				},
+			},
+		},
 		borderRadius: {
 			none: "0px",
 			sm: "0.125rem",
@@ -224,5 +233,5 @@ module.exports = {
 			10: "2.5rem",
 		},
 	},
-	plugins: [require("@tailwindcss/forms")],
+	plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
