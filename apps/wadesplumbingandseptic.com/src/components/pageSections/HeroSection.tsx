@@ -1,6 +1,11 @@
+import Image from "next/image";
 export default function HeroSection() {
 	return (
-		<section className="relative bg-[url('/redwoods.jpg')] bg-no-repeat bg-cover bg-center bg-gray-700 bg-blend-multiply">
+		<section className="relative">
+			{/* <Image className="-z-10 bg-gray-700 mix-blend-multiply bg-blend-multiply" src="/redwoods.jpg" alt="hero background image" quality={100} fill /> */}
+			<video autoPlay muted loop className="-z-10 absolute w-auto brightness-50 min-w-full min-h-full max-w-none">
+				<source src="/tree.mp4" type="video/mp4" />
+			</video>
 			{/* <Banner /> */}
 			<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
 				<div className="place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0 p-4 m:p-6 lg:p-8">
