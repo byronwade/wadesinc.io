@@ -7,9 +7,9 @@ export default function Example() {
 				<div className="isolate">
 					<p>Utility Companies: Check with your local utility companies for rebates on energy-efficient plumbing products, such as water heaters or low-flow fixtures. Many utilities offer incentives to customers who upgrade to more efficient equipment.</p>
 
-					<p>State or Local Government: Visit your state or local government's energy or environmental department websites. They may have information on rebate programs for energy-efficient plumbing upgrades or water-saving devices.</p>
+					<p>State or Local Government: Visit your state or local government&apos;s energy or environmental department websites. They may have information on rebate programs for energy-efficient plumbing upgrades or water-saving devices.</p>
 
-					<p>Manufacturer Rebates: Some plumbing manufacturers may offer rebates or discounts for purchasing their energy-efficient products. Check the manufacturer's website or contact their customer service for information on any current promotions or rebates.</p>
+					<p>Manufacturer Rebates: Some plumbing manufacturers may offer rebates or discounts for purchasing their energy-efficient products. Check the manufacturer&apos;s website or contact their customer service for information on any current promotions or rebates.</p>
 
 					<p>Energy Star Rebates: Visit the ENERGY STAR Rebate Finder (https://www.energystar.gov/rebate-finder) to search for rebates and special offers on energy-efficient products in your area. Make sure to search for plumbing-related products such as water heaters or fixtures.</p>
 
