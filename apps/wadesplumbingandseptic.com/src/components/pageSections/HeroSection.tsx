@@ -3,9 +3,9 @@ export default function HeroSection() {
 	return (
 		<section className="relative">
 			{/* <Image className="-z-10 bg-gray-700 mix-blend-multiply bg-blend-multiply" src="/redwoods.jpg" alt="hero background image" quality={100} fill /> */}
-			<video autoPlay muted loop className="-z-10 absolute w-auto brightness-50 min-w-full min-h-full max-w-none">
-				<source src="/tree.mp4" type="video/mp4" />
-			</video>
+			<div className="youtube-container -z-10 absolute brightness-50 min-w-full min-h-full max-w-none">
+				<iframe className="w-screen h-screen" src="https://www.youtube.com/embed/w49pY3Iy3Z4?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&playlist=w49pY3Iy3Z4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>
 			{/* <Banner /> */}
 			<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
 				<div className="place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0 p-4 m:p-6 lg:p-8">
