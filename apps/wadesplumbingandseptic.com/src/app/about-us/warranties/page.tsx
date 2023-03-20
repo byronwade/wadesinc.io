@@ -1,10 +1,13 @@
 "use client";
+import Image from "next/image";
 
 export default function Example() {
 	return (
-		<div className="mb-12">
-			<div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40 lg:px-8">
-				<div className="prose lg:prose-xl">
+		<div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:py-40 lg:px-8">
+			<Image className="absolute bg-cover" src="/WadesLogo.png" width={100} height={100} alt="Wade's Plumbing & Septic Logo" />
+			<Image src="/WadesLogo.png" width={100} height={100} alt="Wade's Plumbing & Septic Logo" />
+			<div className="flex pt-8">
+				<div className="prose max-w-2xl">
 					<h1>Warranty and Registrations</h1>
 					<p>
 						<strong>We have some of the strongest guarantees in the Bay Area. Call Wade&apos;s Plumbing &amp; Septic today and experience our solid workmanship and customer service. Serving Santa Cruz, Marin, Sonoma, and Santa Clara Counties since 2021.</strong>

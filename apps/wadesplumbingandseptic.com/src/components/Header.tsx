@@ -1,7 +1,7 @@
 "use client";
 import { Disclosure, Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { UserCircleIcon, Bars3Icon, CheckBadgeIcon, XMarkIcon, CurrencyDollarIcon, BanknotesIcon, BriefcaseIcon } from "@heroicons/react/24/outline";
+import { BanknotesIcon, Bars3Icon, BriefcaseIcon, CheckBadgeIcon, CurrencyDollarIcon, UserCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -61,8 +61,8 @@ const posts = [
 
 const solutions = [
 	{
-		name: "Our Team",
-		description: "Get to know our team",
+		name: "Team & Company",
+		description: "Get to know our team and company",
 		href: "/about-us",
 		icon: UserCircleIcon,
 	},
@@ -392,12 +392,11 @@ export default function Header() {
 										{({ close }) => (
 											<div className="mx-auto py-10 max-w-7xl px-6 lg:px-8">
 												<div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 px-6 sm:gap-y-16 lg:grid-cols-3 lg:px-8">
-													<article className="space-y-6 mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg">
+													<article className="space-y-2 mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg">
 														<h3 className="text-sm font-bold leading-6 text-brand">Featured Post</h3>
 														<h2 id="featured-post" className="mt-4 text-1xl font-bold tracking-tight text-white sm:text-2xl">
 															{featuredPost.title}
 														</h2>
-														<p className="mt-4 text-md text-white-800">{featuredPost.description}</p>
 
 														<Link
 															href="/expert-tips"
@@ -416,15 +415,14 @@ export default function Header() {
 													<div className="flex flex-col space-y-6">
 														<h3 className="text-sm font-bold leading-6 text-brand">Septic</h3>
 														{posts.map((post) => (
-															<article key={post.id} className="pb-6">
-																<div className="space-y-6 group relative max-w-xl">
+															<article key={post.id}>
+																<div className="space-y-2 group relative max-w-xl">
 																	<h2 className="text-lg text-white group-hover:text-gray-600">
 																		<a href={post.href}>
 																			<span className="absolute inset-0" />
 																			{post.title}
 																		</a>
 																	</h2>
-																	<p className="mt-4 text-sm text-white-800">{post.description}</p>
 
 																	<Link
 																		href="/expert-tips"
@@ -446,15 +444,14 @@ export default function Header() {
 													<div className="flex flex-col space-y-6">
 														<h3 className="text-sm font-bold leading-6 text-brand">Plumbing</h3>
 														{posts.map((post) => (
-															<article key={post.id} className="pb-6">
-																<div className="space-y-6 group relative max-w-xl">
+															<article key={post.id}>
+																<div className="space-y-2 group relative max-w-xl">
 																	<h2 className="text-lg text-white group-hover:text-gray-600">
 																		<a href={post.href}>
 																			<span className="absolute inset-0" />
 																			{post.title}
 																		</a>
 																	</h2>
-																	<p className="mt-4 text-sm text-white-800">{post.description}</p>
 
 																	<Link
 																		href="/industrial"
