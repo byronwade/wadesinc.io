@@ -4,7 +4,7 @@ export default function HeroSection() {
 		<section className="relative">
 			{/* <Image className="-z-10 bg-gray-700 mix-blend-multiply bg-blend-multiply" src="/redwoods.jpg" alt="hero background image" quality={100} fill /> */}
 			<div className="youtube-container -z-10 absolute brightness-50 min-w-full min-h-full max-w-none">
-				<iframe className="w-screen h-screen" src="https://www.youtube.com/embed/w49pY3Iy3Z4?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&playlist=w49pY3Iy3Z4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe className="w-screen h-screen" src="https://www.youtube.com/embed/w49pY3Iy3Z4?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&playlist=w49pY3Iy3Z4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 			</div>
 			{/* <Banner /> */}
 			<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
