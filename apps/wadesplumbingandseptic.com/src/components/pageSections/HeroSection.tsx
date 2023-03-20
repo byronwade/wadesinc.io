@@ -71,7 +71,7 @@ export default function HeroSection() {
 								</div>
 							</div>
 							<div>
-								<label htmlFor="text" className="block text-sm font-semibold leading-6 text-gray-900">
+								<label htmlFor="address" className="block text-sm font-semibold leading-6 text-gray-900">
 									Address
 								</label>
 								<div className="mt-2.5">
