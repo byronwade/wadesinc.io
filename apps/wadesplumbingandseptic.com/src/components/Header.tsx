@@ -102,7 +102,7 @@ export default function Header() {
 							<h1 className="font-bold text-2xl hidden xl:inline-flex">Wades Plumbing & Septic</h1>
 						</Link>
 						<div className="flex font-bold items-center md:hidden">
-							<Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+							<Disclosure.Button className="inline-flex items-center justify-center rounded p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
 								<span className="sr-only">Open main menu</span>
 								{open ? <XMarkIcon className="block h-6 w-6" aria-hidden="true" /> : <Bars3Icon className="block h-6 w-6" aria-hidden="true" />}
 							</Disclosure.Button>
@@ -489,8 +489,8 @@ export default function Header() {
 										{({ close }) => (
 											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-5 lg:gap-4 lg:px-8 xl:gap-8">
 												{solutions.map((item) => (
-													<div key={item.name} className="group relative -mx-3 flex gap-6 rounded-lg p-3 text-sm leading-6 hover:bg-gray-50 sm:flex-col sm:p-6">
-														<div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-black-400 group-hover:bg-white">
+													<div key={item.name} className="group relative -mx-3 flex gap-6 rounded p-3 text-sm leading-6 hover:bg-gray-50 sm:flex-col sm:p-6">
+														<div className="flex h-11 w-11 flex-none items-center justify-center rounded bg-black-400 group-hover:bg-white">
 															<item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
 														</div>
 														<div>
@@ -535,7 +535,7 @@ export default function Header() {
 					<Disclosure.Panel className="md:hidden">
 						<div className="space-y-1 px-2 pt-2 pb-3">
 							{navigation.map((item) => (
-								<Disclosure.Button key={item.name} as="a" href={item.href} className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded-md px-3 py-2 text-base font-bold")} aria-current={item.current ? "page" : undefined}>
+								<Disclosure.Button key={item.name} as="a" href={item.href} className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded px-3 py-2 text-base font-bold")} aria-current={item.current ? "page" : undefined}>
 									{item.name}
 								</Disclosure.Button>
 							))}

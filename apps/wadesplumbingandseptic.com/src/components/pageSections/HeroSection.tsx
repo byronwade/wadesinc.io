@@ -1,4 +1,3 @@
-import Image from "next/image";
 export default function HeroSection() {
 	return (
 		<section className="relative bg-black-400">
@@ -7,7 +6,7 @@ export default function HeroSection() {
 			</video>
 			<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
 				<div className="z-10 place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0 p-4 m:p-6 lg:p-8">
-					<p className="text-sm md:text-lg font-semibold leading-8 tracking-tight inline-flex items-center rounded-md bg-brand-100 px-2.5 py-0.5 text-brand-800">Local Built Company</p>
+					<p className="text-sm md:text-lg font-semibold leading-8 tracking-tight inline-flex items-center rounded bg-brand-100 px-2.5 py-0.5 text-brand-800">Local Built Company</p>
 					<h1 className="tracking-tight font-extrabold mt-2 text-4xl text-white sm:text-6xl dark:text-black">Where Quality Meets Community.</h1>
 					<p className="mt-6 text-md md:text-lg leading-6 md:leading-8 text-white backdrop-blur-sm bg-white/30 p-4 rounded">
 						&quot;Where Quality Meets Community&quot; represents our commitment to providing high-quality plumbing services to our local community. We believe that by delivering top-notch plumbing solutions with a focus on customer service, we can make a positive impact on the neighborhoods we serve. At Wade&apos;s Plumbing & Septic, we take pride in being more than just a plumbing company; we&apos;re a part of the community we serve, and we&apos;re dedicated to providing the best
@@ -49,7 +48,7 @@ export default function HeroSection() {
 									First name
 								</label>
 								<div className="mt-2.5">
-									<input type="text" name="first-name" id="first-name" autoComplete="given-name" className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
+									<input type="text" name="first-name" id="first-name" autoComplete="given-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
 								</div>
 							</div>
 							<div>
@@ -57,7 +56,7 @@ export default function HeroSection() {
 									Last name
 								</label>
 								<div className="mt-2.5">
-									<input type="text" name="last-name" id="last-name" autoComplete="family-name" className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
+									<input type="text" name="last-name" id="last-name" autoComplete="family-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
 								</div>
 							</div>
 							<div>
@@ -65,7 +64,7 @@ export default function HeroSection() {
 									Phone
 								</label>
 								<div className="mt-2.5">
-									<input id="phone" name="phone" type="text" className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
+									<input id="phone" name="phone" type="text" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
 								</div>
 							</div>
 							<div>
@@ -73,7 +72,7 @@ export default function HeroSection() {
 									Address
 								</label>
 								<div className="mt-2.5">
-									<input id="address" name="address" type="text" className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
+									<input id="address" name="address" type="text" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
 								</div>
 							</div>
 							<div className="sm:col-span-2">
@@ -81,12 +80,12 @@ export default function HeroSection() {
 									Message
 								</label>
 								<div className="mt-2.5">
-									<textarea id="message" name="message" rows={4} className="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" defaultValue={""} />
+									<textarea id="message" name="message" rows={4} className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" defaultValue={""} />
 								</div>
 							</div>
 						</div>
 						<div className="mt-10">
-							<button type="submit" className="block w-full rounded-md bg-brand-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">
+							<button type="submit" className="block w-full rounded bg-brand-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">
 								Get a Quote
 							</button>
 						</div>
