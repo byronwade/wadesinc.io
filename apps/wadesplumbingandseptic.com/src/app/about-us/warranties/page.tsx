@@ -9,146 +9,50 @@ export default function Example() {
 			<div className="flex pt-8">
 				<div className="prose max-w-2xl">
 					<h1>Warranty and Registrations</h1>
+					<p>At Wade&apos;s Plumbing & Septic, we stand behind our work and are committed to providing our customers with the highest quality plumbing and septic services. To ensure your satisfaction and confidence in our work, we offer the following warranty:</p>
+					<ul>
+						<li>
+							<strong>100% Satisfaction Guarantee:</strong> We strive to provide exceptional customer service and high-quality workmanship. If you are not completely satisfied with our services, please let us know and we will make it right. We will either fix the issue to your satisfaction or provide a full refund for the work performed.
+						</li>
+						<li>
+							<strong>1 Year Test Drive:</strong> We stand behind all of our new water heater, ductless mini split, furnace, and air conditioning installations with our 1 Year Test Drive warranty. If for any reason you are not happy with your new system within the first year, we will remove the equipment and refund 100% of your original investment minus the cost paid to any subcontractors. This offer is not available for installed piping, sewer, or underground projects or
+							installations.
+						</li>
+						<li>
+							<strong>1 Year Labor Warranty:</strong> We provide a one-year labor warranty on any new product that we supply and install. This warranty covers any faulty workmanship issues that may arise during this time. If you experience any problems due to faulty workmanship, we will return to your property and repair the issue at no cost to you.
+						</li>
+						<li>
+							<strong>Parts Warranty:</strong> We use only high-quality parts and materials in our work, and we stand behind them. We offer a [insert number] year warranty on all parts and materials we supply. If any of the parts or materials we installed fail within this warranty period, we will replace them at no cost to you. However, this warranty does not cover any parts or materials supplied by the customer or any damages caused by customer-supplied materials.
+						</li>
+					</ul>
+					<h3>Plumbing Warranties:</h3>
+					<ul>
+						<li>Home Water Line Replacement - 15 years</li>
+						<li>Underground Water and Gas Line Replacement - 10 years</li>
+						<li>Sewer Line Replacement - 15 years</li>
+						<li>Sewer Line Spot Repair - 1 year</li>
+						<li>Hydrojetting - 1 year</li>
+						<li>Drain Clogs - 30 days</li>
+					</ul>
+					<p>We guarantee our workmanship on all plumbing projects covered by the warranties above. If any issues arise within the warranty period, we will repair the issue free of charge. Please note that warranties do not cover damages caused by normal wear and tear, misuse, neglect, or acts of God.</p>
+					<h3>Generator Warranties:</h3>
+					<p>We offer warranty registration services for the following brands of generators:</p>
+					<ul>
+						<li>Generac</li>
+						<li>Honeywell</li>
+					</ul>
+					<p>To activate your generator warranty, please follow the manufacturer&apos;s instructions for warranty registration.</p>
+					<p>Please note that our warranty is subject to the following limitations:</p>
+					<ul>
+						<li>The warranty is only valid for the original customer and is non-transferable.</li>
+						<li>The warranty does not cover damages caused by repairs or installations made by anyone other than our company.</li>
+						<li>The warranty does not cover damages caused by customer-supplied parts or materials.</li>
+						<li>The warranty does not cover damages caused by work performed on equipment or systems that have been previously modified or repaired by anyone other than our company.</li>
+					</ul>
+					<p>Thank you for choosing Wade&apos;s Plumbing & Septic for your plumbing and septic needs. We are confident in our work and our warranty and look forward to serving you.</p>
 					<p>
-						<strong>We have some of the strongest guarantees in the Bay Area. Call Wade&apos;s Plumbing &amp; Septic today and experience our solid workmanship and customer service. Serving Santa Cruz, Marin, Sonoma, and Santa Clara Counties since 2021.</strong>
+						Please don&apos;t hesitate to contact us if you have any questions about our warranty or any of our plumbing and septic services. We are always here to help and ensure your satisfaction with our work. <a href="tel:8312254344">831-225-4344.</a>
 					</p>
-					<p>A warranty is only as good as the company that stands behind it. Since 2021 Wade&apos;s Plumbing &amp; Septic has offered unmatched warranties, including our “1 Year Test Drive” on all new water heater, ductless mini split, furnace and air conditioning installs and our 100% Satisfaction Guarantee on all repairs.</p>
-					<div className="hide-content">
-						<p>If you are not completely satisfied with the service we have provided, we’ll make it right or refund your money. Additionally, all new plumbing and HVAC system install projects come with our “1-Year Test Drive Guarantee”. If for some reason you’re not happy with your new system during the first year, let us know. If we cannot resolve your issues we will remove the equipment and help you with a refund.</p>
-						<p>
-							<strong>The following is a list of our labor and parts warranties as of November 1, 2020</strong>
-						</p>
-						<p>
-							<strong>
-								<em>Equipment install, replacements, and repairs completed prior to this date may be subject to different warranty coverage. Please reference your invoice or call for questions.</em>
-							</strong>
-						</p>
-						<h3>
-							<span>ONE-YEAR “TEST DRIVE” WARRANTY</span>
-						</h3>
-						<p>
-							If you are unhappy for any reason with your new installation and we can’t fix it, we will remove the system and refund 100% of your original investment at any time during the first year minus the cost paid to any subcontractors. <em>*This offer is not available for installed piping, sewer, or underground projects or installs</em>
-						</p>
-						<h3>
-							<span>1 YEAR LABOR WARRANTY</span>
-						</h3>
-						<p>
-							We will warranty the labor on any new product that we supplied and installed for a period of <span>one year from the date of install.</span> This is separate from the manufacturer labor warranty.
-						</p>
-						<h3>
-							<span>MAINTENANCE PLAN LABOR EXTENSION WARRANTY</span>
-						</h3>
-						<p>
-							Preventative maintenance is required by all equipment manufacturers to keep current your equipment warranty. Bellows Plumbing, Heating, &amp; Air offers up to three visit maintenance visits per year for your plumbing, heating, and cooling system which provides you with a current equipment warranty and a well running system. Plus every year you are enrolled in Bellows’ Maintenance Plan you get{" "}
-							<strong>
-								<u>an added one year of extra labor warranty</u>
-							</strong>{" "}
-							to any new system install. Credit card is required, automatic billing applied annually. Click here to learn more about our{" "}
-							<strong>
-								<a href="https://www.bellowsservice.com/about/maintenance/">Annual Home Protection Plans</a>
-							</strong>
-							.
-						</p>
-						<h3>
-							<span>
-								HVAC WARRANTIES – <em>Customer Entry Required</em>
-							</span>
-						</h3>
-						<p>
-							<strong>Lennox Furnaces, ACs, PureAir, iComfort, iHarmony, Heat Pumps and Mini Splits</strong>: To activate your 10-Year Lennox parts warranty on your new equipment, go to the <a href="https://www.lennox.com/owners/register-and-review/product-registration">Lennox Warranty Registration Site</a>. You will need the following:
-						</p>
-						<ul>
-							<li>The serial number and model number for each piece of equipment you purchased.</li>
-							<li>If you’re registering equipment in a newly constructed home, Lennox will ask for the date you closed on the purchase of the home.</li>
-							<li>If your equipment was added on or replaced in an existing home, Lennox will ask for the date of installation and installer’s name and address. Enter “Wade&apos;s Plumbing &amp; Septic, Inc.” and the address of branch that installed equipment (either Marin/Sonoma, Santa Clara, or Santa Cruz County office), which can be found in our website footer.</li>
-						</ul>
-						<p>
-							<strong>Mitsubishi Mini Splits and Heat Pumps</strong>: To activate your extended Mitsubishi Diamond Contractor 12-Year parts warranty on your new equipment, Bellows will have to enter the equipment for you. This will be completed within 60-days of your install and a notification emailed to the email address on file.
-						</p>
-						<p>
-							<strong>American Standard Furnaces and ACs:&nbsp;</strong>To activate your American Standard 10-Year parts warranty on your new equipment, go to <a href="https://warrantyregistration.tranetechnologies.com/wrApp/index.html#/americanStandard/welcome">American Standard Warranty and Registration</a>
-							.&nbsp;You will need the following:
-						</p>
-						<ul>
-							<li>The serial number and model number for each piece of equipment you purchased.</li>
-							<li>Installing Dealer: Wade&apos;s Plumbing &amp; Septic, Inc.</li>
-						</ul>
-						<p>
-							<em>*Annual maintenance is required by all equipment manufacturers to keep current your equipment warranty. If you call in a warranty claim there the manufacturer may ask you to show proof of annual maintenance receipts.&nbsp;</em>
-						</p>
-						<p>
-							<em>**If you have any questions about the process please call us at 877-477-7151. If the above steps are not accurate, please let us know as the manufacturer may change the registration flow and entry process.</em>
-						</p>
-						<h3>
-							<span>PLUMBING WARRANTIES</span>
-						</h3>
-						<div id="leftstory">
-							<p>
-								<strong>Home Water Line Replacement – 15 years</strong>
-							</p>
-							<p>We guarantee our workmanship for a period of 15 years on all new complete home repipes. If your pipes fail at any time during that period, we will repair the failure free of charge.</p>
-							<p>
-								<strong>Underground Water &amp; Gas Line Replacement – 10 years</strong>
-							</p>
-							<p>We guarantee our workmanship for a period of 10 years on all underground pipe replacement. Warranty does not cover connection point to “old” pipe.</p>
-							<p>
-								<strong>Sewer Line Replacement – 15 years</strong>
-							</p>
-							<p>We guarantee our workmanship on all complete sewer line projects. We guarantee that the newly installed section of your sewer line will perform trouble free for a period of 15 years. This does not include clogs due to abuse or “non-flushable” items.</p>
-							<p>
-								<strong>Sewer Line Spot Repair – 1 year</strong>
-							</p>
-							<p>We guarantee our workmanship on all sewer line spot repair projects for a period of 1 year. We guarantee that the line will not clog or fail at the point of spot repair for a period of 1 year.</p>
-							<p>
-								<strong>Hydrojetting – 1 year</strong>
-							</p>
-							<p>Hydrojetting is the most effective method for removing drain clogs, roots, and grease from drain and sewer lines. We guarantee that your hydrojetted line will remain clog free for a period of 1 year. In the event that your line cannot be covered under warranty your technician will inform you in writing.</p>
-							<p>
-								<strong>Drain Clogs – 30 days</strong>
-							</p>
-							<p>Drain clogs can be a nasty mess. We guarantee that your drain clog will remain unclogged for a period of 30 days. Warranty is limited to proper clean out access and does not cover lines that have collapsed, are clogged with a foreign object, misaligned, or have been clogged due to negligence.</p>
-							<p>If drain line has roots, offsets or other issues that should be repaired technician may notify client that the line is not covered under this warranty. Technician has the right to deems a sewer or drain line as no warranty.</p>
-						</div>
-						<p>
-							<strong>Tank Water Heaters – 6 Years / Tankless – 10-12 Years</strong>
-						</p>
-						<p>Depending on your home’s requirements, you may have had one of the following branded tank or tankless water heaters installed. Click on one of the six below links to go directly to each manufacturer’s warranty registration site. You will need your model and serial number (found on the equipment name plate) and Installing Company’s name for registration, use Wade&apos;s Plumbing &amp; Septic, Inc.</p>
-						<p>
-							<a href="https://www.hotwater.com/product_registration.aspx?id=3060">A.O. Smith Water Heaters</a>, <a href="https://www.statewaterheaters.com/register/">State Water Heaters</a>, <a href="https://www.rheem.com/products/resource-center/">Rheem Water Heaters</a>, <a href="https://www.ruud.com/warranty/">RUUD Water Heaters</a>, <a href="https://www.navieninc.com/series/npe-a/warranty">Navien Tankless Water Heaters</a>, and{" "}
-							<a href="https://warrantycenter.bradfordwhite.com/">Bradford White Water Heaters</a>.
-						</p>
-						<div>
-							<h3>
-								<span>GENERATOR WARRANTIES</span>
-							</h3>
-							<p>
-								<b>Generac and Honeywell Generators: </b>To activate your *5-year Generac parts warranty on your new equipment, go to the <a href="https://register.generac.com/">Generac Warranty Registration Site</a>. You will need the following:
-							</p>
-							<ul>
-								<li>The serial number and model number for each piece of equipment you purchased.</li>
-								<li>Portable generators, pressure washers, and transfer switches do not require activation. However, Generac encourages you to register these products in order to receive the full range of benefits of being a Generac owner.</li>
-								<li>Clean energy storage systems require to be registered. Your unit needs to be registered and internet connected to fulfill your 10 year warranty. In addition, monitoring capabilities will not function until your unit is connected to the internet.</li>
-								<li>*Generac sometimes offers a 7-year warranty but these are not offered by Bellows. They are only valid if the lead was originally booked through Generac’s website or via their phone number they advertise during promotions and commercials</li>
-							</ul>
-							<h3>
-								<span>DISCLAIMERS</span>
-							</h3>
-							<p>
-								<strong>Customer Supplied Material Guarantee:&nbsp;</strong>
-								Unfortunately we are unable to offer any type of guarantee on customer supplied material. There are literally hundreds of great brands and products out there, but we only offer guarantees on the products and material that we supply. We only offer products and material that we’ve tested on our own homes. Further, customers will be responsible for payment on projects where the supplied product cannot be completely installed due to manufacturing defects, lack of
-								proper material, or incompatibility.
-							</p>
-							<p>
-								<strong>Restrictions:</strong> All warranties are subject to proper use of the product. Abuse, negligence, or customer inflicted damage will void any and all warranties. Further, these warranties do not cover acts of God or natural disaster. Warranties are subject to full payment for the project. Failure to make full payment may limit warranty coverage. Warranties are only valid for the original purchaser and not transferable unless otherwise indicated. Warranties
-								may be voided if code plumbing or mechanical code violations contribute to failure. For more information on our guarantees please contact our main office.
-							</p>
-							<p>
-								<strong>
-									Convinced that Wade&apos;s Plumbing &amp; Septic is the right team to get the job done? Reach out to us to discuss your needs and we will work with you to come up with the best solution. Our number is <a href="tel:831-225-4344">831-225-4344</a>.&nbsp;
-								</strong>
-							</p>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
