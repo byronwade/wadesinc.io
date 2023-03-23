@@ -53,10 +53,10 @@ export default function Example() {
 									</svg>
 								</a>
 							</div>
-							<img src="https://cdn.devdojo.com/images/april2021/iphone-121.jpg" className="w-2/3" />
+							<img alt="somthing" src="https://cdn.devdojo.com/images/april2021/iphone-121.jpg" className="w-2/3" />
 						</div>
 						<div className="relative flex flex-col items-center justify-center flex-1 py-32 mt-10 overflow-hidden text-center bg-white md:mt-0 md:rounded">
-							<Image src="/reports-icon.webp" width={107} height={107} className="w-20 h-auto" />
+							<Image alt="image" src="/reports-icon.webp" width={107} height={107} className="w-20 h-auto" />
 							<div className="flex flex-col px-10 space-y-6 md:px-8">
 								<h3 className="text-3xl font-semibold leading-none md:text-4xl">Reports</h3>
 								<p className="text-xl font-light text-gray-800">Full county reports in your email the same day</p>
