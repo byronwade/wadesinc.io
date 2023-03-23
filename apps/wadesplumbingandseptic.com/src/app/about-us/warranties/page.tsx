@@ -8,7 +8,7 @@ export default function Example() {
 			<div className="relative z-1 py-16 px-6 sm:py-24 lg:px-8">
 				<div className="mx-auto max-w-7xl">
 					<div className="prose max-w-2xl bg-white p-4 md:p-8 rounded">
-						<Image src="/WadesLogo.png" width={100} height={100} alt="Wade's Plumbing & Septic Logo" />
+						<Image src="/WadesLogo.png" width={100} height={100} alt="Wade' Plumbing & Septic Logo" />
 
 						<h1>Warranty and Registrations</h1>
 						<p>At Wade&apos;s Plumbing & Septic, we stand behind our work and are committed to providing our customers with the highest quality plumbing and septic services. To ensure your satisfaction and confidence in our work, we offer the following warranty:</p>

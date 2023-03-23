@@ -98,7 +98,7 @@ export default function Header() {
 				<>
 					<div className="relitive flex p-3 items-center justify-between mx-auto max-w-7xl px-6 lg:px-8">
 						<Link className="flex items-center space-x-4" href="/">
-							<Image src="/WadesLogo.png" width={40} height={40} alt="Wade's Plumbing & Septic Logo" />
+							<Image src="/WadesLogo.png" width={40} height={40} alt="Wade' Plumbing & Septic Logo" />
 							<h1 className="font-bold text-2xl hidden xl:inline-flex">Wades Plumbing & Septic</h1>
 						</Link>
 						<div className="flex font-bold items-center md:hidden">
@@ -524,7 +524,7 @@ export default function Header() {
 							<a className="text-lg font-extrabold hover:underline" href="tel:+18312254344">
 								831.225.4344
 							</a>
-							<a target="_blank" className="hover:underline" href="https://www.google.com/maps/place/Wade's+Plumbing+%26+Septic/@37.0691872,-122.0863327,17z/data=!4m15!1m8!3m7!1s0x808e45d553ee3671:0x11e65c09abb0758b!2s7737+CA-9,+Ben+Lomond,+CA+95005!3b1!8m2!3d37.0691829!4d-122.084144!16s%2Fg%2F11jzwrnb7h!3m5!1s0x6b4df86479b11ce3:0x6dc60026b2e543b9!8m2!3d37.0691829!4d-122.084144!16s%2Fg%2F11np4mj1hk" rel="noreferrer">
+							<a target="_blank" className="hover:underline" href="https://www.google.com/maps/place/Wade'+Plumbing+%26+Septic/@37.0691872,-122.0863327,17z/data=!4m15!1m8!3m7!1s0x808e45d553ee3671:0x11e65c09abb0758b!2s7737+CA-9,+Ben+Lomond,+CA+95005!3b1!8m2!3d37.0691829!4d-122.084144!16s%2Fg%2F11jzwrnb7h!3m5!1s0x6b4df86479b11ce3:0x6dc60026b2e543b9!8m2!3d37.0691829!4d-122.084144!16s%2Fg%2F11np4mj1hk" rel="noreferrer">
 								7737 HWY 9, Ben Lomond, CA, 95005
 							</a>
 						</div>

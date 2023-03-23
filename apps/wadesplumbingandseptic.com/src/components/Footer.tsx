@@ -100,7 +100,7 @@ export default function Footer() {
 					<div className="mx-auto max-w-7xl">
 						<div className="xl:grid xl:grid-cols-3 xl:gap-8">
 							<div className="space-y-8">
-								<Image src="/WadesLogo.png" width={40} height={40} alt="Wade's Plumbing & Septic Logo" />
+								<Image src="/WadesLogo.png" width={40} height={40} alt="Wade' Plumbing & Septic Logo" />
 								<p className="text-sm leading-6 text-gray-300">Making the world a better place through constructing elegant hierarchies.</p>
 								<div className="flex space-x-6">
 									{navigation.social.map((item) => (
