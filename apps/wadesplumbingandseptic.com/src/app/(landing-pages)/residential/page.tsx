@@ -1,5 +1,3 @@
-"use client";
-
 export default function Example() {
 	return (
 		<div className="mb-12">

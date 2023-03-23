@@ -1,139 +1,221 @@
 "use client";
+import { Fragment, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
-export default function Example() {
+const people = [
+	{ id: 1, name: "Septic" },
+	{ id: 2, name: "Drain Clearing" },
+	{ id: 3, name: "Plumbing" },
+	{ id: 4, name: "Engineered Septic" },
+	{ id: 5, name: "Residential" },
+	{ id: 6, name: "Commercial" },
+];
+
+function classNames(...classes: string[]) {
+	return classes.filter(Boolean).join(" ");
+}
+
+export default function ExpertTips() {
+	const [selected, setSelected] = useState(people[3]);
 	return (
-		<div className="flex justify-center items-center">
-			{/*- more free and premium Tailwind CSS components at https://tailwinduikit.com/ -*/}
-			<div className="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
-				<div role="main" className="flex flex-col">
-					<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">Frequently asked questions</h2>
-					<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Learn more about our company</p>
-				</div>
-				<div className="lg:flex items-stretch md:mt-12 mt-8">
-					<div className="lg:w-1/2">
-						<div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
-							<div className="sm:w-1/2 relative">
-								<div>
-									<p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-									<div className="absolute bottom-0 left-0 p-6">
-										<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-										<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-										<a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-											<p className="pr-2 text-sm font-medium leading-none">Read More</p>
-											<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-											</svg>
-										</a>
-									</div>
-								</div>
-								<img src="https://i.ibb.co/DYxtCJq/img-1.png" className="w-full rounded" alt="chair" />
-							</div>
-							<div className="sm:w-1/2 sm:mt-0 mt-4 relative">
-								<div>
-									<p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-									<div className="absolute bottom-0 left-0 p-6">
-										<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-										<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-										<a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-											<p className="pr-2 text-sm font-medium leading-none">Read More</p>
-											<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-											</svg>
-										</a>
-									</div>
-								</div>
-								<img src="https://i.ibb.co/3C5HvxC/img-2.png" className="w-full rounded" alt="wall design" />
-							</div>
+		<section className="bg-gray-50 relative overflow-hidden">
+			<div className="py-16 px-6 sm:py-24 lg:px-8">
+				<div className="mx-auto max-w-7xl">
+					<div className="flex flex-col space-y-6 justify-center items-start">
+						<div>
+							<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">We have 102 Expert Tips</h2>
+							<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Tips from experts</p>
+							<p className="max-w-2xl text-lg leading-6 text-gray-600">
+								Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
+								<a href="#" className="font-semibold text-brand-600 hover:text-brand-500">
+									{` `}sending us an email{` `}
+								</a>
+								and we’ll get back to you as soon as we can.
+							</p>
 						</div>
-						<div className="relative">
-							<div>
-								<p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-								<div className="absolute bottom-0 left-0 md:p-10 p-6">
-									<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-									<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-									<a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-										<p className="pr-2 text-sm font-medium leading-none">Read More</p>
-										<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-										</svg>
-									</a>
-								</div>
-							</div>
-							<img src="https://i.ibb.co/Ms4qyXp/img-3.png" alt="sitting place" className="w-full mt-8 md:mt-6 hidden sm:block rounded" />
-							<img className="w-full mt-4 sm:hidden rounded" src="https://i.ibb.co/6XYbN7f/Rectangle-29.png" alt="sitting place" />
-						</div>
-					</div>
-					<div className="lg:w-1/2 xl:ml-8 lg:ml-4 lg:mt-0 md:mt-6 mt-4 lg:flex flex-col justify-between">
-						<div className="relative">
-							<div>
-								<p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-								<div className="absolute bottom-0 left-0 md:p-10 p-6">
-									<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-									<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-									<a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-										<p className="pr-2 text-sm font-medium leading-none">Read More</p>
-										<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-										</svg>
-									</a>
-								</div>
-							</div>
-							<img src="https://i.ibb.co/6Wfjf2w/img-4.png" alt="sitting place" className="w-full sm:block hidden rounded" />
-							<img className="w-full sm:hidden rounded" src="https://i.ibb.co/dpXStJk/Rectangle-29.png" alt="sitting place" />
-						</div>
-						<div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
-							<div className="relative w-full">
-								<div>
-									<p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-									<div className="absolute bottom-0 left-0 p-6">
-										<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-										<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-										<a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-											<p className="pr-2 text-sm font-medium leading-none">Read More</p>
-											<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-											</svg>
-										</a>
-									</div>
-								</div>
-								<img src="https://i.ibb.co/3yvZBpm/img-5.png" className="w-full rounded" alt="chair" />
-							</div>
-							<div className="relative w-full sm:mt-0 mt-4">
-								<div>
-									<p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-									<div className="absolute bottom-0 left-0 p-6">
-										<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
-										<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-										<a href="javascript:void(0)" className="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-											<p className="pr-2 text-sm font-medium leading-none">Read More</p>
-											<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-											</svg>
-										</a>
-									</div>
-								</div>
-								<img src="https://i.ibb.co/gDdnJb5/img-6.png" className="w-full rounded" alt="wall design" />
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<nav className="flex items-center justify-between py-3" aria-label="Pagination">
-					<div className="hidden sm:block">
-						<p className="text-sm text-gray-700">
-							Showing <span className="font-medium">1</span> to <span className="font-medium">10</span> of <span className="font-medium">20</span> results
-						</p>
+						<form className="flex w-full space-x-2 items-center mt-4">
+							<Listbox value={selected} onChange={setSelected}>
+								{({ open }) => (
+									<>
+										<div className="relative">
+											<Listbox.Button className="relative min-w-[170px] cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-600 sm:text-sm sm:leading-6">
+												<span className="block truncate">{selected.name}</span>
+												<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+													<ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+												</span>
+											</Listbox.Button>
+
+											<Transition show={open} as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+												<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+													{people.map((person) => (
+														<Listbox.Option key={person.id} className={({ active }) => classNames(active ? "bg-brand-600 text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9")} value={person}>
+															{({ selected, active }) => (
+																<>
+																	<span className={classNames(selected ? "font-semibold" : "font-normal", "block truncate")}>{person.name}</span>
+
+																	{selected ? (
+																		<span className={classNames(active ? "text-white" : "text-brand-600", "absolute inset-y-0 right-0 flex items-center pr-4")}>
+																			<CheckIcon className="h-5 w-5" aria-hidden="true" />
+																		</span>
+																	) : null}
+																</>
+															)}
+														</Listbox.Option>
+													))}
+												</Listbox.Options>
+											</Transition>
+										</div>
+									</>
+								)}
+							</Listbox>
+							<label htmlFor="simple-search" className="sr-only">
+								Search
+							</label>
+							<div className="relative w-full">
+								<div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+									<svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+										<path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+									</svg>
+								</div>
+								<input type="text" id="simple-search" className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand-500 focus:border-brand-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="We have 203 Services..." required />
+							</div>
+							<button type="submit" className="p-2.5 text-sm font-medium text-white bg-brand-700 rounded-lg border border-brand-700 hover:bg-brand-800 focus:ring-4 focus:outline-none focus:ring-brand-300 dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800">
+								<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+								</svg>
+							</button>
+						</form>
+
+						<div className="flex mt-10 items-stretch">
+							<div className="md:w-1/2">
+								<div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
+									<Link href="/expert-tips/single" className="sm:w-1/2 relative group">
+										<div>
+											<p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+											<div className="absolute bottom-0 left-0 p-6">
+												<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+												<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+												<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+													<p className="pr-2 text-sm font-medium leading-none">Read More</p>
+													<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+													</svg>
+												</span>
+											</div>
+										</div>
+										<img src="https://i.ibb.co/DYxtCJq/img-1.png" className="w-full rounded" alt="chair" />
+									</Link>
+									<Link href="/expert-tips/single" className="sm:w-1/2 sm:mt-0 mt-4 relative group">
+										<div>
+											<p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+											<div className="absolute bottom-0 left-0 p-6">
+												<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+												<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+												<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+													<p className="pr-2 text-sm font-medium leading-none">Read More</p>
+													<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+													</svg>
+												</span>
+											</div>
+										</div>
+										<img src="https://i.ibb.co/3C5HvxC/img-2.png" className="w-full rounded" alt="wall design" />
+									</Link>
+								</div>
+								<Link href="/expert-tips/single" className="relative group">
+									<div>
+										<p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+										<div className="absolute bottom-0 left-0 md:p-10 p-6">
+											<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+											<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+											<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+												<p className="pr-2 text-sm font-medium leading-none">Read More</p>
+												<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+												</svg>
+											</span>
+										</div>
+									</div>
+									<img src="https://i.ibb.co/Ms4qyXp/img-3.png" alt="sitting place" className="w-full mt-8 md:mt-6 hidden sm:block rounded" />
+									<img className="w-full mt-4 sm:hidden rounded" src="https://i.ibb.co/6XYbN7f/Rectangle-29.png" alt="sitting place" />
+								</Link>
+							</div>
+							<div className="md:w-1/2 xl:ml-8 lg:ml-4 lg:mt-0 md:mt-6 mt-4 lg:flex flex-col justify-between">
+								<Link href="/expert-tips/single" className="relative group">
+									<div>
+										<p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+										<div className="absolute bottom-0 left-0 md:p-10 p-6">
+											<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+											<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+											<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+												<p className="pr-2 text-sm font-medium leading-none">Read More</p>
+												<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+												</svg>
+											</span>
+										</div>
+									</div>
+									<img src="https://i.ibb.co/6Wfjf2w/img-4.png" alt="sitting place" className="w-full sm:block hidden rounded" />
+									<img className="w-full sm:hidden rounded" src="https://i.ibb.co/dpXStJk/Rectangle-29.png" alt="sitting place" />
+								</Link>
+								<div className="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
+									<Link href="/expert-tips/single" className="group relative w-full">
+										<div>
+											<p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+											<div className="absolute bottom-0 left-0 p-6">
+												<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+												<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+												<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+													<p className="pr-2 text-sm font-medium leading-none">Read More</p>
+													<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+													</svg>
+												</span>
+											</div>
+										</div>
+										<img src="https://i.ibb.co/3yvZBpm/img-5.png" className="w-full rounded" alt="chair" />
+									</Link>
+									<Link href="/expert-tips/single" className="relative w-full sm:mt-0 mt-4 group">
+										<div>
+											<p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+											<div className="absolute bottom-0 left-0 p-6">
+												<h2 className="text-xl font-semibold 5 text-white">The Decorated Ways</h2>
+												<p className="text-base leading-4 text-white mt-2">Dive into minimalism</p>
+												<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+													<p className="pr-2 text-sm font-medium leading-none">Read More</p>
+													<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+													</svg>
+												</span>
+											</div>
+										</div>
+										<img src="https://i.ibb.co/gDdnJb5/img-6.png" className="w-full rounded" alt="wall design" />
+									</Link>
+								</div>
+							</div>
+						</div>
+
+						<nav className="flex w-full items-center justify-between" aria-label="Pagination">
+							<div className="hidden sm:block">
+								<p className="text-sm text-gray-700">
+									Showing <span className="font-medium">1</span> to <span className="font-medium">10</span> of <span className="font-medium">20</span> results
+								</p>
+							</div>
+							<div className="flex flex-1 justify-between sm:justify-end">
+								<a href="#" className="relative inline-flex items-center rounded bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">
+									Previous
+								</a>
+								<a href="#" className="relative ml-3 inline-flex items-center rounded bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">
+									Next
+								</a>
+							</div>
+						</nav>
 					</div>
-					<div className="flex flex-1 justify-between sm:justify-end">
-						<a href="#" className="relative inline-flex items-center rounded bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">
-							Previous
-						</a>
-						<a href="#" className="relative ml-3 inline-flex items-center rounded bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">
-							Next
-						</a>
-					</div>
-				</nav>
+				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

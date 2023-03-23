@@ -34,13 +34,13 @@ export const metadata = {
 
 export default function Home() {
 	return (
-		<main className="relative isolate overflow-hidden">
+		<>
 			<HeroSection />
 			<Step />
 			<FeatureSection />
 			<FAQ />
 			{/* <Testimonials /> */}
 			<LogoCloud />
-		</main>
+		</>
 	);
 }

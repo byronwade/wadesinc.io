@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import CTA from "@/components/pageSections/CTA";
 
 export const metadata = {
 	title: {
@@ -32,10 +31,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className="bg-brandCream">
+			<body className="bg-gray-50">
 				<Header />
 				{children}
-				<CTA />
 				<Footer />
 			</body>
 		</html>

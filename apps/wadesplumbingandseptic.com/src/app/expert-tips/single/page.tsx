@@ -1,8 +1,8 @@
 export default function BlogPage() {
 	return (
 		<>
-			<>
-				<main className="pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+			<section className="bg-white dark:bg-gray-900">
+				<div className="relative">
 					<header className="bg-[url('https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/background.png')] w-full h-[460px] xl:h-[537px] bg-no-repeat bg-cover bg-center bg-blend-darken relative">
 						<div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />
 						<div className="absolute top-20 left-1/2 px-4 mx-auto w-full max-w-screen-xl -translate-x-1/2 xl:top-1/2 xl:-translate-y-1/2 xl:px-0">
@@ -474,148 +474,107 @@ export default function BlogPage() {
 							</div>
 						</aside>
 					</div>
-				</main>
-				<aside aria-label="Related articles" className="py-8 lg:py-24 bg-white dark:bg-gray-900">
-					<div className="px-4 mx-auto max-w-screen-xl">
-						<h2 className="mb-6 lg:mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
-						<div className="grid gap-6 lg:gap-12 md:grid-cols-2">
-							<article className="flex flex-col xl:flex-row">
-								<a href="#" className="mb-2 xl:mb-0">
-									<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" className="mr-5 max-w-sm" alt="Image 1" />
+				</div>
+			</section>
+			<aside aria-label="Related articles" className="py-8 lg:py-24 bg-white dark:bg-gray-900">
+				<div className="px-4 mx-auto max-w-screen-xl">
+					<h2 className="mb-6 lg:mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
+					<div className="grid gap-6 lg:gap-12 md:grid-cols-2">
+						<article className="flex flex-col xl:flex-row">
+							<a href="#" className="mb-2 xl:mb-0">
+								<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" className="mr-5 max-w-sm" alt="Image 1" />
+							</a>
+							<div className="flex flex-col justify-center">
+								<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+									<a href="#">Our first office</a>
+								</h2>
+								<p className="mb-4 font-light text-gray-500 dark:text-gray-400 max-w-sm">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
+								<a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-brand-600 dark:text-brand-500 hover:no-underline">
+									Read in 2 minutes
 								</a>
-								<div className="flex flex-col justify-center">
-									<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-										<a href="#">Our first office</a>
-									</h2>
-									<p className="mb-4 font-light text-gray-500 dark:text-gray-400 max-w-sm">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-									<a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-brand-600 dark:text-brand-500 hover:no-underline">
-										Read in 2 minutes
-									</a>
-								</div>
-							</article>
-							<article className="flex flex-col xl:flex-row">
-								<a href="#" className="mb-2 xl:mb-0">
-									<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" className="mr-5 max-w-sm" alt="Image 2" />
-								</a>
-								<div className="flex flex-col justify-center">
-									<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-										<a href="#">Enterprise design tips</a>
-									</h2>
-									<p className="mb-4 font-light text-gray-500 dark:text-gray-400 max-w-sm">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-									<a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-brand-600 dark:text-brand-500 hover:no-underline">
-										Read in 12 minutes
-									</a>
-								</div>
-							</article>
-							<article className="flex flex-col xl:flex-row">
-								<a href="#" className="mb-2 xl:mb-0">
-									<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" className="mr-5 max-w-sm" alt="Image 3" />
-								</a>
-								<div className="flex flex-col justify-center">
-									<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-										<a href="#">We partnered up with Google</a>
-									</h2>
-									<p className="mb-4 font-light text-gray-500 dark:text-gray-400 max-w-sm">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-									<a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-brand-600 dark:text-brand-500 hover:no-underline">
-										Read in 8 minutes
-									</a>
-								</div>
-							</article>
-							<article className="flex flex-col xl:flex-row">
-								<a href="#" className="mb-2 xl:mb-0">
-									<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png" className="mr-5 max-w-sm" alt="Image 4" />
-								</a>
-								<div className="flex flex-col justify-center">
-									<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-										<a href="#">Our first project with React</a>
-									</h2>
-									<p className="mb-4 font-light text-gray-500 dark:text-gray-400 max-w-sm">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-									<a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-brand-600 dark:text-brand-500 hover:no-underline">
-										Read in 12 minutes
-									</a>
-								</div>
-							</article>
-						</div>
-					</div>
-				</aside>
-				<section className="bg-gray-50 dark:bg-gray-800">
-					<div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-						<div className="mx-auto max-w-screen-md sm:text-center">
-							<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Sign up for our newsletter</h2>
-							<p className="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
-							<form action="#">
-								<div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-									<div className="relative w-full">
-										<label htmlFor="email" className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-											Email address
-										</label>
-										<div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-											<svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-												<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-												<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-											</svg>
-										</div>
-										<input className="block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-brand-500 focus:border-brand-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Enter your email" type="email" id="email" required />
-									</div>
-									<div>
-										<button type="submit" className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded border cursor-pointer bg-brand border-brand-600 sm:rounded-none sm:rounded-r-lg hover:bg-brand-600 focus:ring-4 focus:ring-brand-300 dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800">
-											Subscribe
-										</button>
-									</div>
-								</div>
-								<div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300">
-									We care about the protection of your data.{" "}
-									<a href="#" className="font-medium text-brand-600 dark:text-brand-500 hover:underline">
-										Read our Privacy Policy
-									</a>
-									.
-								</div>
-							</form>
-						</div>
-					</div>
-				</section>
-				<div id="newsletter-modal" tabIndex={-1} className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-					<div className="relative p-4 w-full max-w-2xl h-full rounded md:h-auto">
-						{/* Modal content */}
-						<div className="flex relative items-center bg-white rounded shadow dark:bg-gray-800">
-							<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/newsletter/people-at-office.png" className="hidden h-64 rounded-l-lg md:flex" alt="office" />
-							<div>
-								<button type="button" data-modal-toggle="newsletter-modal" className="text-gray-400 absolute top-3 right-3 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
-									<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-										<path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-									</svg>
-								</button>
-								{/* Modal body */}
-								<div className="p-6 pt-4">
-									<h3 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Join our Newsletter</h3>
-									<p className="mb-4 text-base leading-relaxed text-gray-500 dark:text-gray-400">Get started with our monthly newsletter for helpful tips on how to run your business smoothly.</p>
-									<form action="#">
-										<div className="items-center mx-auto space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-											<div className="relative mr-3 w-full">
-												<label htmlFor="email" className="hidden mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
-													Email address
-												</label>
-												<div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-													<svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-														<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-														<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-													</svg>
-												</div>
-												<input className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-brand-500 focus:border-brand-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Your email" type="email" id="email" required />
-											</div>
-											<div>
-												<button type="submit" className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded cursor-pointer bg-brand hover:bg-brand-600 focus:ring-4 focus:ring-brand-300 dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800">
-													Subscribe
-												</button>
-											</div>
-										</div>
-									</form>
-								</div>
 							</div>
-						</div>
+						</article>
+						<article className="flex flex-col xl:flex-row">
+							<a href="#" className="mb-2 xl:mb-0">
+								<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" className="mr-5 max-w-sm" alt="Image 2" />
+							</a>
+							<div className="flex flex-col justify-center">
+								<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+									<a href="#">Enterprise design tips</a>
+								</h2>
+								<p className="mb-4 font-light text-gray-500 dark:text-gray-400 max-w-sm">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
+								<a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-brand-600 dark:text-brand-500 hover:no-underline">
+									Read in 12 minutes
+								</a>
+							</div>
+						</article>
+						<article className="flex flex-col xl:flex-row">
+							<a href="#" className="mb-2 xl:mb-0">
+								<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" className="mr-5 max-w-sm" alt="Image 3" />
+							</a>
+							<div className="flex flex-col justify-center">
+								<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+									<a href="#">We partnered up with Google</a>
+								</h2>
+								<p className="mb-4 font-light text-gray-500 dark:text-gray-400 max-w-sm">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
+								<a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-brand-600 dark:text-brand-500 hover:no-underline">
+									Read in 8 minutes
+								</a>
+							</div>
+						</article>
+						<article className="flex flex-col xl:flex-row">
+							<a href="#" className="mb-2 xl:mb-0">
+								<img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png" className="mr-5 max-w-sm" alt="Image 4" />
+							</a>
+							<div className="flex flex-col justify-center">
+								<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+									<a href="#">Our first project with React</a>
+								</h2>
+								<p className="mb-4 font-light text-gray-500 dark:text-gray-400 max-w-sm">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
+								<a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-brand-600 dark:text-brand-500 hover:no-underline">
+									Read in 12 minutes
+								</a>
+							</div>
+						</article>
 					</div>
 				</div>
-			</>
+			</aside>
+			<section className="bg-gray-50 dark:bg-gray-800">
+				<div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+					<div className="mx-auto max-w-screen-md sm:text-center">
+						<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Sign up for our newsletter</h2>
+						<p className="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
+						<form action="#">
+							<div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+								<div className="relative w-full">
+									<label htmlFor="email" className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+										Email address
+									</label>
+									<div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+										<svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+											<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+											<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+										</svg>
+									</div>
+									<input className="block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-brand-500 focus:border-brand-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Enter your email" type="email" id="email" required />
+								</div>
+								<div>
+									<button type="submit" className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded border cursor-pointer bg-brand border-brand-600 sm:rounded-none sm:rounded-r-lg hover:bg-brand-600 focus:ring-4 focus:ring-brand-300 dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800">
+										Subscribe
+									</button>
+								</div>
+							</div>
+							<div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300">
+								We care about the protection of your data.{" "}
+								<a href="#" className="font-medium text-brand-600 dark:text-brand-500 hover:underline">
+									Read our Privacy Policy
+								</a>
+								.
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 }

@@ -93,7 +93,7 @@ function classNames(...classes: string[]) {
 
 export default function Header() {
 	return (
-		<Disclosure as="nav" className="isolate bg-black text-white sticky top-0 z-50">
+		<Disclosure as="nav" className="bg-black text-white sticky top-0 z-50">
 			{({ open }) => (
 				<>
 					<div className="relitive flex p-3 items-center justify-between mx-auto max-w-7xl px-6 lg:px-8">
@@ -172,9 +172,9 @@ export default function Header() {
 														</div>
 
 														<Link
-															href="/industrial"
+															href="/services"
 															onClick={async () => {
-																await fetch("/industrial", { method: "POST" });
+																await fetch("/services", { method: "POST" });
 																close();
 															}}
 															className="inline-flex items-center font-normal hover:underline"
@@ -231,9 +231,9 @@ export default function Header() {
 														</div>
 
 														<Link
-															href="/industrial"
+															href="/services"
 															onClick={async () => {
-																await fetch("/industrial", { method: "POST" });
+																await fetch("/services", { method: "POST" });
 																close();
 															}}
 															className="inline-flex items-center font-normal hover:underline"
@@ -290,9 +290,9 @@ export default function Header() {
 														</div>
 
 														<Link
-															href="/industrial"
+															href="/services"
 															onClick={async () => {
-																await fetch("/industrial", { method: "POST" });
+																await fetch("/services", { method: "POST" });
 																close();
 															}}
 															className="inline-flex items-center font-normal hover:underline"
@@ -349,9 +349,9 @@ export default function Header() {
 														</div>
 
 														<Link
-															href="/industrial"
+															href="/services"
 															onClick={async () => {
-																await fetch("/industrial", { method: "POST" });
+																await fetch("/services", { method: "POST" });
 																close();
 															}}
 															className="inline-flex items-center font-normal hover:underline"
@@ -365,15 +365,15 @@ export default function Header() {
 												</div>
 												<div className="flex flex-col space-y-4">
 													<div>
-														<a href="#" className="block max-w-sm p-4 bg-white border border-gray-200 rounded shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-															<h5 className="mb-2 text-xl font-bold tracking-tight text-black dark:text-white">View Our Work</h5>
-															<p className="font-normal text-gray-700 dark:text-gray-400">Take a look at all of our work, everything from septic to commerical and underground.</p>
+														<a href="#" className="block max-w-sm p-4 bg-white rounded shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+															<h5 className="mb-0.5 text-md font-bold tracking-tight text-black dark:text-white">View Our Work</h5>
+															<p className="text-sm font-normal text-gray-700 dark:text-gray-400">Take a look at all of our work, everything from septic to commerical and underground.</p>
 														</a>
 													</div>
 													<div>
-														<a href="#" className="block max-w-sm p-4 bg-white border border-gray-200 rounded shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-															<h5 className="mb-2 text-xl font-bold tracking-tight text-black dark:text-white">We offer 203 Services</h5>
-															<p className="font-normal text-gray-700 dark:text-gray-400">Take a look at all of our work, everything from septic to commerical and underground.</p>
+														<a href="#" className="block max-w-sm p-4 bg-white rounded shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+															<h5 className="mb-0.5 text-md font-bold tracking-tight text-black dark:text-white">We offer 203 Services</h5>
+															<p className="text-sm font-normal text-gray-700 dark:text-gray-400">Take a look at all of our work, everything from septic to commerical and underground.</p>
 														</a>
 													</div>
 												</div>
@@ -486,25 +486,26 @@ export default function Header() {
 										{({ close }) => (
 											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-5 lg:gap-4 lg:px-8 xl:gap-8">
 												{solutions.map((item) => (
-													<div key={item.name} className="group relative -mx-3 flex gap-6 rounded p-3 text-sm leading-6 hover:bg-gray-50 sm:flex-col sm:p-6">
+													<Link
+														href={item.href}
+														onClick={async () => {
+															await fetch(item.href, { method: "POST" });
+															close();
+														}}
+														key={item.name}
+														className="group relative -mx-3 flex gap-6 rounded p-3 text-sm leading-6 hover:bg-black-600 sm:flex-col sm:p-6"
+													>
 														<div className="flex h-11 w-11 flex-none items-center justify-center rounded bg-black-400 group-hover:bg-white">
 															<item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
 														</div>
 														<div>
-															<Link
-																href={item.href}
-																onClick={async () => {
-																	await fetch(item.href, { method: "POST" });
-																	close();
-																}}
-																className="font-semibold text-gray-900"
-															>
+															<div className="font-semibold text-gray-900">
 																{item.name}
 																<span className="absolute inset-0" />
-															</Link>
+															</div>
 															<p className="mt-1 text-gray-600">{item.description}</p>
 														</div>
-													</div>
+													</Link>
 												))}
 											</div>
 										)}
@@ -517,7 +518,7 @@ export default function Header() {
 							</Link>
 						</div>
 					</div>
-					<div className="hidden md:block bg-brand  text-black font-bold py-1 px-4">
+					<div className="hidden md:block bg-brand text-black font-bold py-1 px-4 shadow">
 						<div className="hidden lg:flex mx-auto max-w-7xl px-6 lg:px-8 p-1 items-center justify-center text-sm space-x-10 pr-4">
 							<div>Mon - Fri 9:00am - 5:00pm</div>
 							<a className="text-lg font-extrabold hover:underline" href="tel:+18312254344">

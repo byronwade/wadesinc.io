@@ -1,12 +1,14 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Example() {
 	return (
-		<div className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
+		<section className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
 			<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">Frequently asked questions</h2>
 			<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Learn more about our company</p>
 			<div className="relative flex flex-col overflow-hidden">
-				<div className="border bg-white shadow shadow-gray-100 w-full flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded">
+				<div className="bg-white shadow shadow-gray-100 w-full flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded">
 					<div>
 						<span className="text-brand-800 text-sm">Engineering</span>
 						<h3 className="font-bold mt-px">Senior Full Stack Backend Engineer</h3>
@@ -23,15 +25,15 @@ export default function Example() {
 						</div>
 					</div>
 					<div>
-						<button className="bg-brand text-white font-medium px-4 py-2 rounded flex gap-1 items-center">
+						<Link href="/about-us/jobs/single" className="bg-brand text-black font-medium px-4 py-2 rounded flex gap-1 items-center">
 							Apply Now{" "}
 							<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
 							</svg>
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

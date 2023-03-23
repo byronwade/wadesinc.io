@@ -1,83 +1,62 @@
+"use client";
+import ContactForm from "@/components/ContactForm";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 export default function Example() {
+	const pathname = usePathname();
 	return (
-		<div className="relative isolate py-24 px-6 sm:py-32 lg:px-8">
-			<div className="mx-auto max-w-xl lg:max-w-4xl">
-				<h2 className="text-4xl font-bold tracking-tight text-gray-900">Let’s talk about your project</h2>
-				<p className="mt-2 text-lg leading-8 text-gray-600">We help companies and individuals build out their brand guidelines.</p>
-				<div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
-					<form action="#" method="POST" className="lg:flex-auto">
-						<div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
-							<div>
-								<label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
-									First name
-								</label>
-								<div className="mt-2.5">
-									<input type="text" name="first-name" id="first-name" autoComplete="given-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
-								</div>
-							</div>
-							<div>
-								<label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-gray-900">
-									Last name
-								</label>
-								<div className="mt-2.5">
-									<input type="text" name="last-name" id="last-name" autoComplete="family-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
-								</div>
-							</div>
-							<div>
-								<label htmlFor="budget" className="block text-sm font-semibold leading-6 text-gray-900">
-									Budget
-								</label>
-								<div className="mt-2.5">
-									<input id="budget" name="budget" type="text" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
-								</div>
-							</div>
-							<div>
-								<label htmlFor="website" className="block text-sm font-semibold leading-6 text-gray-900">
-									Website
-								</label>
-								<div className="mt-2.5">
-									<input type="url" name="website" id="website" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
-								</div>
-							</div>
-							<div className="sm:col-span-2">
-								<label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
-									Message
-								</label>
-								<div className="mt-2.5">
-									<textarea id="message" name="message" rows={4} className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" defaultValue={""} />
-								</div>
-							</div>
-						</div>
-						<div className="mt-10">
-							<button type="submit" className="block w-full rounded bg-brand-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">
-								Get a Quote
-							</button>
-						</div>
-						<p className="mt-4 text-sm leading-6 text-gray-500">
-							By submitting this form, I agree to the{" "}
-							<a href="#" className="font-semibold text-brand-600">
-								privacy&nbsp;policy
-							</a>
-							.
-						</p>
-					</form>
-					<div className="lg:mt-6 lg:w-80 lg:flex-none">
-						<img className="h-12 w-auto" src="https://tailwindui.com/img/logos/workcation-logo-brand-600.svg" alt="" />
-						<figure className="mt-10">
-							<blockquote className="text-lg font-semibold leading-8 text-gray-900">
-								<p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”</p>
-							</blockquote>
-							<figcaption className="mt-10 flex gap-x-6">
-								<img src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=96&h=96&q=80" alt="" className="h-12 w-12 flex-none rounded-full bg-gray-50" />
+		<section className="relative flex flex-row">
+			<div className="hidden md:block w-full md:w-1/2 relative">
+				<Image className="object-cover h-full w-full brightness-80" src="/trees-river.jpg" width={3000} height={3000} alt="Redwood trees" />
+				<div className="absolute bottom-10 right-10">
+					<p className="text-white backdrop-blur-sm bg-white/30 p-2 rounded">
+						Photo by a local resident{" "}
+						<a className="underline" href="#">
+							Luca Bravo
+						</a>
+						.
+					</p>
+				</div>
+			</div>
+			<div className="w-full md:w-1/2 mx-auto">
+				<div className="py-16 px-6 sm:py-24 lg:px-8">
+					<h2 className="text-4xl font-bold tracking-tight text-gray-900">Let’s talk about your project</h2>
+					<p className="mt-2 text-lg leading-8 text-gray-600">We help homeowners and businesses fix thier problems.</p>
+					<div className="mt-16 flex flex-col gap-10 sm:gap-y-20 lg:flex-row">
+						<div className="hidden md:block">
+							<h3 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Points of contact</h3>
+							<h4 className="mb-1 font-medium text-gray-900 dark:text-white">Wade&apos;s Plumbing & Septic</h4>
+							<address className="text-sm font-normal text-gray-500 non-italic">
+								7737 hwy 9
+								<br />
+								Ben Lomond, CA, 95005
+							</address>
+							<div className="mt-4 space-y-4">
 								<div>
-									<div className="text-base font-semibold text-gray-900">Brenna Goyette</div>
-									<div className="text-sm leading-6 text-gray-600">CEO of Workcation</div>
+									<h4 className="mb-1 font-medium text-gray-900 dark:text-white">Information &amp; Sales</h4>
+									<p className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-500">
+										<a href="mailto:support@wadesinc.io">support@wadesinc.io</a>
+									</p>
 								</div>
-							</figcaption>
-						</figure>
+								<div>
+									<h4 className="mb-1 font-medium text-gray-900 dark:text-white">Support</h4>
+									<p className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-500">
+										<a href="mailto:support@wadesinc.io">support@wadesinc.io</a>
+									</p>
+								</div>
+								<div>
+									<h4 className="mb-1 font-medium text-gray-900 dark:text-white">Verification of Employment</h4>
+									<p className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-500">
+										<a href="mailto:support@wadesinc.io">support@wadesinc.io</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<ContactForm pathname={pathname} />
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
