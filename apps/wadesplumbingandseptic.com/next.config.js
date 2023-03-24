@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
-}
+	images: {
+		domains: ["wadesplumbingandseptic.byronw35.sg-host.com"],
+	},
+	experimental: {
+		appDir: true,
+	},
+};
 
 module.exports = nextConfig

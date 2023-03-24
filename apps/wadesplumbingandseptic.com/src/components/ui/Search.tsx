@@ -7,8 +7,8 @@ function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
 
-export default function Search({ catergories }) {
-	const [selected, setSelected] = useState(catergories[3]);
+export default function Search({ categories, placeholder }) {
+	const [selected, setSelected] = useState(categories[3]);
 	return (
 		<>
 			<form className="flex w-full space-x-2 items-center mt-4">
@@ -25,7 +25,7 @@ export default function Search({ catergories }) {
 
 								<Transition show={open} as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
 									<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-										{catergories.map((category) => (
+										{categories.map((category) => (
 											<Listbox.Option key={category.id} className={({ active }) => classNames(active ? "bg-brand-600 text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9 m-1 rounded")} value={category}>
 												{({ selected, active }) => (
 													<>
@@ -55,7 +55,7 @@ export default function Search({ catergories }) {
 							<path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
 						</svg>
 					</div>
-					<input type="text" id="simple-search" className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand-500 focus:border-brand-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="We have 203 Services..." required />
+					<input type="text" id="simple-search" className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-brand-500 focus:border-brand-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder={placeholder} required />
 				</div>
 				<button type="submit" className="p-2.5 text-sm font-medium text-white bg-brand-700 rounded-lg border border-brand-700 hover:bg-brand-800 focus:ring-4 focus:outline-none focus:ring-brand-300 dark:bg-brand-600 dark:hover:bg-brand-700 dark:focus:ring-brand-800">
 					<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
