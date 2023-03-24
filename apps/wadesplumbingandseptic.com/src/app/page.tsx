@@ -5,6 +5,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import { Step } from "@/components/sections/Step";
 import FeatureSection from "@/components/sections/FeatureSection";
 import HeroSection from "@/components/sections/HeroSection";
+import StatsSection from "@/components/sections/StatsSection";
 
 export const metadata = {
 	title: {
@@ -41,6 +42,8 @@ export default function Home() {
 			<FAQ />
 			{/* <Testimonials /> */}
 			<LogoCloud />
+			<StatsSection />
+			<Testimonials />
 		</>
 	);
 }

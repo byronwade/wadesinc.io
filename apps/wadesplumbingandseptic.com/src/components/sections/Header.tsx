@@ -87,17 +87,17 @@ const solutions = [
 		icon: BriefcaseIcon,
 	},
 	{
-		name: "Promotions",
+		name: "Promotions & Discounts",
 		description: "Find a discount here",
 		href: "/about-us/discounts",
 		icon: MegaphoneIcon,
 	},
-	{
-		name: "Reviews",
-		description: "Our Reviews are top notch",
-		href: "/about-us/reviews",
-		icon: StarIcon,
-	},
+	// {
+	// 	name: "Reviews",
+	// 	description: "Our Reviews are top notch",
+	// 	href: "/about-us/reviews",
+	// 	icon: StarIcon,
+	// },
 ];
 
 function classNames(...classes: string[]) {
@@ -589,7 +589,7 @@ export default function Header() {
 								<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
 									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[112px] shadow">
 										{({ close }) => (
-											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-5 lg:gap-4 lg:px-8 xl:gap-8">
+											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-6 lg:gap-4 lg:px-8 xl:gap-8">
 												{solutions.map((item) => (
 													<Link
 														href={item.href}

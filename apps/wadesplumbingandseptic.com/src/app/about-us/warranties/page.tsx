@@ -1,5 +1,5 @@
 "use client";
-export default function Example() {
+export default function Warranties() {
 	return (
 		<>
 			<h1>Warranty and Registrations</h1>

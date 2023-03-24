@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	const router = usePathname();
 
-	if (router == "/about-us" || "/about-us/jobs" || "/about-us/promotions" || "/about-us/reviews") {
+	if (router == "/about-us" || router == "/about-us/jobs" || router == "/about-us/promotions" || router == "/about-us/reviews" || router == "/about-us/discounts") {
 		return <>{children}</>;
 	}
 
