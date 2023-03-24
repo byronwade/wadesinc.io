@@ -2,34 +2,34 @@
 import Image from "next/image";
 
 const stats = [
-	{ label: "Transactions every 24 hours", value: "44 million" },
-	{ label: "Assets under holding", value: "$119 trillion" },
-	{ label: "New users annually", value: "46,000" },
+	{ label: "Servicing Santa Cruz Couny and areas", value: "250,000 people" },
+	{ label: "Customers calling per day", value: "22 people" },
+	{ label: "Discounts given to the elderly and veterans last month", value: "$21,465" },
 ];
 const values = [
 	{
 		name: "Be world-class",
-		description: "Aut illo quae. Ut et harum ea animi natus. Culpa maiores et sed sint et magnam exercitationem quia. Ullam voluptas nihil vitae dicta molestiae et. Aliquid velit porro vero.",
+		description: "We strive for excellence in every aspect of our work, from the quality of our services to the professionalism and skill of our team. Our goal is to set the benchmark for outstanding plumbing and septic solutions in our community and beyond.",
 	},
 	{
 		name: "Share everything you know",
-		description: "Mollitia delectus a omnis. Quae velit aliquid. Qui nulla maxime adipisci illo id molestiae. Cumque cum ut minus rerum architecto magnam consequatur. Quia quaerat minima.",
+		description: "Knowledge is power, and we believe in empowering our customers by sharing our expertise, tips, and advice. We aim to educate and inform our clients, enabling them to make informed decisions about their plumbing and septic needs.",
 	},
 	{
 		name: "Always learning",
-		description: "Aut repellendus et officiis dolor possimus. Deserunt velit quasi sunt fuga error labore quia ipsum. Commodi autem voluptatem nam. Quos voluptatem totam.",
+		description: "We are dedicated to continuous learning and improvement, staying updated on the latest industry advancements and techniques. By investing in our team's growth and development, we ensure that we provide the most effective and innovative solutions for our customers.",
 	},
 	{
 		name: "Be supportive",
-		description: "Magnam provident veritatis odit. Vitae eligendi repellat non. Eum fugit impedit veritatis ducimus. Non qui aspernatur laudantium modi. Praesentium rerum error deserunt harum.",
+		description: "We take pride in offering empathetic and attentive customer service, understanding that each client's needs are unique. Our team is always ready to listen, offer guidance, and provide tailored solutions that address specific plumbing and septic challenges.",
 	},
 	{
 		name: "Take responsibility",
-		description: "Sit minus expedita quam in ullam molestiae dignissimos in harum. Tenetur dolorem iure. Non nesciunt dolorem veniam necessitatibus laboriosam voluptas perspiciatis error.",
+		description: "We hold ourselves accountable for the quality and impact of our work, taking full responsibility for the outcomes of our services. We are committed to addressing any concerns and making things right for our customers, ensuring their satisfaction and trust.",
 	},
 	{
 		name: "Enjoy downtime",
-		description: "Ipsa in earum deserunt aut. Quos minus aut animi et soluta. Ipsum dicta ut quia eius. Possimus reprehenderit iste aspernatur ut est velit consequatur distinctio.",
+		description: "We understand the importance of work-life balance, both for our team and our customers. By delivering efficient and reliable services, we help our clients enjoy the comfort and convenience of their homes without worrying about plumbing and septic issues.",
 	},
 ];
 const team = [
@@ -110,10 +110,10 @@ export default function Example() {
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our mission</h2>
 					<div className="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
 						<div className="lg:w-full lg:max-w-2xl lg:flex-auto">
-							<p className="text-xl leading-8 text-gray-600">Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend egestas fringilla sapien.</p>
+							<p className="text-xl leading-8 text-gray-600">At Wade&apos;s Plumbing & Septic, our mission is to provide exceptional, reliable, and affordable plumbing and septic services to our local community. We are committed to delivering the highest level of customer service, emphasizing professionalism, integrity, and personalized solutions for every client.</p>
 							<div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
-								<p>Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id.</p>
-								<p className="mt-10">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.</p>
+								<p>As a proud local company, we strive to build lasting relationships with our customers and contribute positively to the well-being and sustainability of our community. By continuously enhancing our skills, utilizing the latest technologies, and prioritizing safety, we aim to exceed customer expectations and set new standards for excellence in the plumbing and septic industry.</p>
+								<p className="mt-10">Our dedicated team at Wade&apos;s Plumbing & Septic is passionate about serving you and ensuring that your plumbing and septic systems remain in optimal condition, so you can enjoy the comfort and convenience of your home or business with confidence and peace of mind.</p>
 							</div>
 						</div>
 						<div className="lg:flex lg:flex-auto lg:justify-center">
@@ -139,7 +139,7 @@ export default function Example() {
 			<div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:mx-0">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our values</h2>
-					<p className="mt-6 text-lg leading-8 text-gray-600">Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
+					<p className="mt-6 text-lg leading-8 text-gray-600">We are driven by a strong commitment to our core values, which shape our approach to delivering exceptional plumbing and septic services.</p>
 				</div>
 				<dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 					{values.map((value) => (
@@ -155,7 +155,15 @@ export default function Example() {
 			<div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:mx-0">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our team</h2>
-					<p className="mt-6 text-lg leading-8 text-gray-600">Sit facilis neque ab nulla vel. Cum eos in laudantium. Temporibus eos totam in dolorum. Nemo vel facere repellendus ut eos dolores similique.</p>
+					<p className="mt-6 text-xl leading-8 text-gray-600">
+						At Wade&apos;s Plumbing & Septic, our greatest asset is our dedicated and skilled team of professionals. We take pride in the exceptional talent, experience, and passion that each of our team members brings to their work. Our team consists of licensed and certified plumbers, septic specialists, and support staff, all of whom share a common goal: to provide the highest level of customer service and plumbing solutions for our valued clients.
+					</p>
+					<div className="mt-10 max-w-xl text-base leading-7 text-gray-700">
+						<p>
+							Our team members are not only experts in their respective fields, but they are also committed to continuous learning and professional development. This ensures that we stay at the forefront of industry advancements and best practices, enabling us to deliver cutting-edge solutions to our customers. Furthermore, our team is characterized by their friendly, approachable demeanor and strong work ethic, fostering a positive and collaborative work environment that
+							translates to exceptional results for our clients. At Wade&apos;s Plumbing & Septic, we are proud of our team and the outstanding work they do for our community.
+						</p>
+					</div>
 				</div>
 				<ul role="list" className="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-y-16 gap-x-8 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-5">
 					{team.map((person) => (

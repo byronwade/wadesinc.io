@@ -1,6 +1,7 @@
-import Header from "@/components/Header";
+import Header from "@/components/sections/Header";
 import "./globals.css";
-import Footer from "@/components/Footer";
+import Footer from "@/components/sections/Footer";
+import Script from "next/script";
 
 export const metadata = {
 	title: {
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<Header />
 				{children}
 				<Footer />
+				<Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=06e45130-bfd2-4b2b-8137-28903b96f527"></Script>
 			</body>
 		</html>
 	);

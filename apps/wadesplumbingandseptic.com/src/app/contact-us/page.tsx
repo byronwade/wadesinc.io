@@ -1,5 +1,5 @@
 "use client";
-import ContactForm from "@/components/ContactForm";
+import ContactForm from "@/components/forms/ContactForm";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -8,7 +8,7 @@ export default function Example() {
 	return (
 		<section className="relative flex flex-row">
 			<div className="hidden md:block w-full md:w-1/2 relative">
-				<Image className="object-cover h-full w-full brightness-80" src="/trees-river.jpg" width={3000} height={3000} alt="Redwood trees" />
+				<Image placeholder="blur" blurDataURL="/placeholder.webp" className="object-cover h-full w-full brightness-80" src="/trees-river.jpg" width={1500} height={1500} alt="Redwood trees" />
 				<div className="absolute bottom-10 right-10">
 					<p className="text-white backdrop-blur-sm bg-white/30 p-2 rounded">
 						Photo by a local resident{" "}

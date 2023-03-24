@@ -1,5 +1,5 @@
 "use client";
-import ContactForm from "@/components/ContactForm";
+import ContactForm from "@/components/forms/ContactForm";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 

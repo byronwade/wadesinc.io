@@ -1,17 +1,10 @@
-import Image from "next/image";
-
-export default function Example() {
+export default function Reviews() {
 	return (
-		<section className="bg-gray-50 relative overflow-hidden">
-			<Image fill className="object-right-top object-cover pointer-events-none" src="/background.png" alt="Background image for our plumbing website" />
-			<div className="relative z-1 py-16 px-6 sm:py-24 lg:px-8">
-				<div className="mx-auto max-w-7xl">
-					<div className="prose max-w-2xl bg-white p-4 md:p-8 rounded">
-						<Image src="/WadesLogo.png" width={100} height={100} alt="Wade' Plumbing & Septic Logo" />
-						<h1>Reviews</h1>
-						<p>reviews</p>
-					</div>
-				</div>
+		<section className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
+			<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">Frequently asked questions</h2>
+			<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Learn more about our company</p>
+			<div className="relative flex flex-col overflow-hidden">
+				<div>Reviews</div>
 			</div>
 		</section>
 	);

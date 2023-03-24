@@ -1,10 +1,10 @@
-import Banner from "@/components/Banner";
-import LogoCloud from "@/components/pageSections/LogoCloud";
-import FAQ from "@/components/pageSections/FAQ";
-import Testimonials from "@/components/pageSections/Testimonials";
-import { Step } from "@/components/pageSections/Step";
-import FeatureSection from "@/components/pageSections/FeatureSection";
-import HeroSection from "@/components/pageSections/HeroSection";
+import Banner from "@/components/ui/Banner";
+import LogoCloud from "@/components/sections/LogoCloud";
+import FAQ from "@/components/sections/FAQ";
+import Testimonials from "@/components/sections/Testimonials";
+import { Step } from "@/components/sections/Step";
+import FeatureSection from "@/components/sections/FeatureSection";
+import HeroSection from "@/components/sections/HeroSection";
 
 export const metadata = {
 	title: {
