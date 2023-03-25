@@ -1,41 +1,97 @@
+"use client";
 import Comments from "@/components/comments/Comments";
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import RelatedArticlesSection from "@/components/sections/RelatedArticlesSection";
 import Sidebar from "@/components/sections/Sidebar";
 import Link from "next/link";
 
-export default function BlogPage() {
+import { useQuery, gql } from "@apollo/client";
+import Image from "next/image";
+
+const TIPS = gql`
+	query NewQuery($uri: ID!) {
+		post(id: $uri, idType: URI) {
+			content(format: RENDERED)
+			date
+			categories {
+				nodes {
+					name
+				}
+			}
+			featuredImage {
+				node {
+					altText
+					sourceUrl(size: LARGE)
+				}
+			}
+			title(format: RENDERED)
+			author {
+				node {
+					name
+				}
+			}
+		}
+	}
+`;
+
+export default function BlogPage({ params }) {
+	//graphql query
+	const { loading, error, data } = useQuery(TIPS, {
+		variables: { uri: `/${params.uri.join("/")}` },
+	});
+
+	if (loading) return <div>Submitting...</div>;
+	if (error) return <div>{error.message}</div>;
+	const tips = data.post;
+	console.log(tips);
+
+	//format data
+	const dateObj = new Date(tips.date); // Convert the string to a Date object
+	const formattedDate = dateObj.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }); // Format the date as "Month Day, Year"
+	const formattedTime = dateObj.toLocaleTimeString([], { hour: "numeric", minute: "numeric", hour12: true }); // Format the time as "hh:mm AM/PM"
+
 	return (
 		<>
 			<section className="bg-white dark:bg-gray-900">
 				<div className="relative">
-					<header className="bg-[url('https://flowbite.s3.amazonaws.com/blocks/marketing-ui/articles/background.png')] w-full h-[460px] xl:h-[537px] bg-no-repeat bg-cover bg-center bg-blend-darken relative">
+					<header className="w-full h-[460px] xl:h-[537px] relative">
+						<Image className="w-full object-cover object-center" fill src={tips?.featuredImage?.node?.sourceUrl ? tips.featuredImage.node.sourceUrl : "/placeholder.webp"} alt={tips?.featuredImage?.node?.altText ? tips.featuredImage.node.altText : "placeholder image"} />
 						<div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />
 						<div className="absolute top-20 left-1/2 px-4 mx-auto w-full max-w-screen-xl -translate-x-1/2 xl:top-1/2 xl:-translate-y-1/2 xl:px-0">
 							<span className="block mb-4 text-gray-300">
 								Published in{" "}
 								<a href="#" className="font-semibold text-white hover:underline">
-									World News
+									{tips.categories.nodes.map((categories, index) => (
+										<span key={categories.name}>
+											{categories.name}
+											{index !== tips.categories.nodes.length - 1 && ", "}
+										</span>
+									))}
 								</a>
 							</span>
-							<h1 className="mb-4 max-w-4xl text-2xl font-extrabold leading-none text-white sm:text-3xl lg:text-4xl">Flowbite Blocks Tutorial - Learn how to get started with custom sections using the Flowbite Blocks</h1>
-							<p className="text-lg font-normal text-gray-300">Before going digital, you might scribbling down some ideas in a sketchbook.</p>
+							<h1 className="mb-4 max-w-4xl text-2xl font-extrabold leading-none text-white sm:text-3xl lg:text-4xl">
+								<div dangerouslySetInnerHTML={{ __html: tips.title }} />
+							</h1>
 						</div>
 					</header>
 					<div className="flex relative z-20 justify-between p-6 -m-36 mx-4 max-w-screen-xl bg-white dark:bg-gray-800 rounded xl:-m-32 xl:p-9 xl:mx-auto">
 						<article className="xl:w-[828px] w-full max-w-none format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
 							<div className="flex flex-col lg:flex-row justify-between lg:items-center">
 								<div className="flex items-center space-x-3 text-gray-500 dark:text-gray-400 text-base mb-2 lg:mb-0">
+									{tips?.author ? (
+										<>
+											<span>
+												By{" "}
+												<a href="#" className="text-gray-900 dark:text-white hover:underline no-underline font-semibold">
+													{tips.author.node.name}
+												</a>
+											</span>
+											<span className="bg-gray-300 dark:bg-gray-400 w-2 h-2 rounded-full" />
+										</>
+									) : null}
 									<span>
-										By{" "}
-										<a href="#" className="text-gray-900 dark:text-white hover:underline no-underline font-semibold">
-											Jese Leos
-										</a>
-									</span>
-									<span className="bg-gray-300 dark:bg-gray-400 w-2 h-2 rounded-full" />
-									<span>
-										<time className="font-normal text-gray-500 dark:text-gray-400" dateTime="2022-03-08" title="August 3rd, 2022">
-											August 3, 2022, 2:20am EDT
+										<time className="font-normal text-gray-500 dark:text-gray-400" dateTime={tips.date} title={`${formattedDate} at ${formattedTime}`}>
+											{formattedDate} at {formattedTime}
 										</time>
 									</span>
 								</div>
@@ -128,41 +184,7 @@ export default function BlogPage() {
 								</aside>
 							</div>
 							<div className="prose lg:prose-xl">
-								<p className="lead">
-									At XYZ Plumbing, we understand the importance of protecting your privacy and personal information. This{" "}
-									<Link href="/about-us/privacy-policy" className="font-medium text-brand-600 dark:text-brand-500 hover:underline">
-										privacy policy
-									</Link>{" "}
-									explains how we collect, use, and protect the personal information you provide to us through our website.
-								</p>
-								<h2>What information do we collect?</h2>
-								<p>When you visit our website, we may collect certain personal information from you, such as your name, email address, phone number, and any other information you choose to provide us. We may also collect information about your browsing behavior and usage of our website.</p>
-								<h2>How do we use your information?</h2>
-								<p>We may use your personal information to provide you with information about our services, to communicate with you about your inquiries or requests, and to improve our website and services. We may also use your information to send you marketing communications or promotional offers, unless you opt out of receiving such communications.</p>
-								<h2>Do we share your information?</h2>
-								<p>We do not sell, rent, or lease your personal information to third parties. However, we may share your information with trusted service providers who help us operate our website or provide services to you, such as payment processors, shipping companies, or marketing agencies. We require these third parties to protect your information and use it only for the purposes for which it was provided.</p>
-								<h2>How do we protect your information?</h2>
-								<p>We take reasonable measures to protect your personal information from unauthorized access, disclosure, alteration, and destruction. We use SSL encryption to secure sensitive information transmitted through our website. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee the absolute security of your information.</p>
-								<h2>Cookies</h2>
-								<p>We may use cookies and other tracking technologies to collect information about your browsing behavior and usage of our website. Cookies are small text files that are stored on your device when you visit our website. You may choose to disable cookies in your browser settings, but this may affect your ability to use certain features of our website.</p>
-								<h2>Links to other websites</h2>
-								<p>Our website may contain links to other websites that are not owned or controlled by us. We are not responsible for the privacy practices of these websites, and we encourage you to read their privacy policies before providing any personal information to them.</p>
-								<h2>Changes to this policy</h2>
-								<p>
-									We may update this{" "}
-									<Link href="/about-us/privacy-policy" className="font-medium text-brand-600 dark:text-brand-500 hover:underline">
-										privacy policy
-									</Link>{" "}
-									from time to time. If we make any material changes, we will notify you by posting the updated policy on our website or by email.
-								</p>
-								<h2>Contact us</h2>
-								<p>
-									If you have any questions or concerns about our{" "}
-									<Link href="/about-us/privacy-policy" className="font-medium text-brand-600 dark:text-brand-500 hover:underline">
-										privacy policy
-									</Link>
-									, please contact us at <a href="mailto:support@wadesinc.io">support@wadesinc.io</a>.
-								</p>
+								<div dangerouslySetInnerHTML={{ __html: tips.content }} />
 							</div>
 							{/* <Comments /> */}
 						</article>

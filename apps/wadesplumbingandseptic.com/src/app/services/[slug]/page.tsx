@@ -60,7 +60,7 @@ export default function ServicesPage({ params }) {
 					<div className="flex justify-between px-4 mx-auto max-w-screen-xl">
 						<article className="space-y-4 mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
 							<div className="w-full relative">
-								<Image className="w-full mb-6 brightness-75 rounded" width={1000} height={1000} src={service.featuredImage.node.sourceUrl} alt={service.featuredImage.node.altText} />
+								<Image className="w-full mb-6 brightness-75 rounded" width={1000} height={1000} src={service?.featuredImage?.node?.sourceUrl ? service.featuredImage.node.sourceUrl : "/placeholder.webp"} alt={service?.featuredImage?.node?.altText ? service.featuredImage.node.altText : "/placeholder.webp"} />
 								<div className="absolute space-y-1 p-6 bottom-0 left-0 mx-auto w-full">
 									<span className="block text-gray-100">
 										Published in{" "}

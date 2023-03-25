@@ -21,6 +21,9 @@ const SERVICES = gql`
 					}
 				}
 			}
+			pageInfo {
+				total
+			}
 		}
 	}
 `;

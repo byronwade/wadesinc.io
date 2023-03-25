@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useQuery } from "@apollo/client";
 import Pagnation from "@/components/ui/Pagnation";
 import Search from "@/components/ui/Search";
@@ -7,7 +8,6 @@ import Search from "@/components/ui/Search";
 //GraphQL Queries
 import { SERVICES } from "../../graphql/services";
 import { CATEGORIES } from "../../graphql/categories";
-import Image from "next/image";
 
 export default function Services() {
 	const { loading, error, data } = useQuery(SERVICES);
@@ -16,6 +16,7 @@ export default function Services() {
 	if (error || catergoryError) return <div>{error?.message}</div>;
 
 	const services = data.services.edges;
+	const total = data.services.pageInfo.total;
 	console.log(services);
 
 	//data for the dropdown on the search bar
@@ -26,7 +27,7 @@ export default function Services() {
 				<div className="mx-auto max-w-7xl">
 					<div className="flex flex-col space-y-6 justify-center items-start">
 						<div>
-							<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">We have {services.length} Services</h2>
+							<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">We have {total} Services</h2>
 							<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Search for any service</p>
 							<p className="max-w-2xl text-lg leading-6 text-gray-600">
 								Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
@@ -37,7 +38,7 @@ export default function Services() {
 							</p>
 						</div>
 
-						<Search categories={categories} placeholder={`We offer ${services.length} services...`} />
+						<Search categories={categories} placeholder={`We offer ${total} services...`} />
 
 						<div className="flex mt-10 items-center justify-center">
 							<div className="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
@@ -46,7 +47,7 @@ export default function Services() {
 										return (
 											<Link href={service.node.uri} key={service.node.id} className="max-h-min relative group row-span-2 flex flex-col rounded border border-slate-200 bg-white">
 												<div className="h-96 relative">
-													<Image fill src={service.node.featuredImage.node.sourceUrl} className="w-full object-cover object-center rounded-t" alt={service.node.featuredImage.node.altText} />
+													<Image fill src={service?.node?.featuredImage?.node?.sourceUrl ? service.node.featuredImage.node.sourceUrl : "/placeholder.webp"} className="w-full object-cover object-center rounded-t" alt={service?.node?.featuredImage?.node?.altText ? service.node.featuredImage.node.altText : "placeholder text"} />
 												</div>
 												<div className="p-10">
 													<h3 className="text-xl font-medium text-gray-700">{service.node.title}</h3>
@@ -65,7 +66,7 @@ export default function Services() {
 												</div>
 												<div className="relative hidden h-full w-1/3 overflow-hidden lg:block">
 													<div className="absolute inset-0">
-														<Image fill src={service.node.featuredImage.node.sourceUrl} className="rounded-r h-full w-full object-cover object-left-top" alt={service.node.featuredImage.node.altText} />
+														<Image fill src={service?.node?.featuredImage?.node?.sourceUrl ? service.node.featuredImage.node.sourceUrl : "/placeholder.webp"} className="w-full object-cover object-center rounded-t" alt={service?.node?.featuredImage?.node?.altText ? service.node.featuredImage.node.altText : "placeholder text"} />
 													</div>
 												</div>
 											</Link>
@@ -75,7 +76,7 @@ export default function Services() {
 							</div>
 						</div>
 
-						<Pagnation pageMin={1} pageMax={services.length} total={2000} />
+						<Pagnation pageMin={1} pageMax={services.length} total={total} />
 					</div>
 				</div>
 			</div>
