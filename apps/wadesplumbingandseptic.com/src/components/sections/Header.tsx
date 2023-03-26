@@ -17,6 +17,7 @@ const navigation = [
 	{ name: "Expert Tips", href: "/expert-tips", current: false },
 	// { name: "Our Work", href: "/portfolio", current: false },
 	{ name: "About Us", href: "/about-us", current: false },
+	{ name: "Get a Quote", href: "/contact-us", current: false },
 ];
 
 const solutions = [
@@ -454,16 +455,6 @@ export default function Header() {
 									</Disclosure.Button>
 								</Link>
 							))}
-							<Link
-								href="/contact-us"
-								onClick={async () => {
-									await fetch("/contact-us", { method: "POST" });
-									close();
-								}}
-								className="inline-flex justify-center rounded font-bold py-2 px-2 w-full bg-brand text-black hover:bg-brand-600"
-							>
-								Get a Quote
-							</Link>
 						</div>
 					</Disclosure.Panel>
 				</>
