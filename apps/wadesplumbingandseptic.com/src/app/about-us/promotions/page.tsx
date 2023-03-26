@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-no-undef */
 "use client";
 import Image from "next/image";
 import { useQuery, gql } from "@apollo/client";
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { toSvg } from "html-to-image";
+import React from "react";
 
 const PROMOTIONS = gql`
 	query NewQuery {
@@ -21,7 +23,7 @@ const PROMOTIONS = gql`
 export default function Discounts() {
 	const { loading, error, data } = useQuery(PROMOTIONS);
 	const [svgDataUrls, setSvgDataUrls] = useState<Array<string>>([]);
-	const htmlRefs = useRef<Array<HTMLDivElement>>([]);
+	const htmlRefs = useRef<(HTMLDivElement | null)[]>([]);
 
 	useEffect(() => {
 		if (data && data.promotions) {
@@ -61,8 +63,8 @@ export default function Discounts() {
 							const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
 							return (
-								<>
-									<div key={index} className="absolute -top-[9999px]">
+								<React.Fragment key={index}>
+									<div className="absolute -top-[9999px]">
 										<div ref={(ref) => (htmlRefs.current[index] = ref)} className="h-full space-y-4 w-full flex flex-col items-center text-center p-6 bg-white overflow-hidden rounded-xl border-4 border-dashed border-gray-500">
 											<Image priority className="w-auto h-auto" src="/WadesLogo.png" width={100} height={100} alt="Wade' Plumbing & Septic Logo" />
 											<div>
@@ -83,7 +85,7 @@ export default function Discounts() {
 										</div>
 									</div>
 									{svgDataUrls[index] && <Image width={500} height={500} src={svgDataUrls[index]} alt="SVG" />}
-								</>
+								</React.Fragment>
 							);
 						})
 					) : (
