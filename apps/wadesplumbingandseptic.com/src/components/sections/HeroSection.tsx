@@ -7,7 +7,7 @@ export default function HeroSection() {
 	const pathname = usePathname();
 	return (
 		<section className="bg-black-400 relative overflow-hidden">
-			<video autoPlay muted loop className="hidden md:block absolute w-auto brightness-50 min-w-full min-h-full max-w-none">
+			<video autoPlay muted loop className="absolute w-auto brightness-50 min-w-full min-h-full max-w-none">
 				<source src="/treeCompressed.mp4" type="video/mp4" />
 			</video>
 			<Image className="hidden md:block absolute bottom-0 right-10" src="/mario.png" height={100} width={100} alt="Mario Plumber" />
