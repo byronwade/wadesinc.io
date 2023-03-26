@@ -8,6 +8,7 @@ import Search from "@/components/ui/Search";
 //GraphQL Queries
 import { EXPERTTIPS } from "../../graphql/expertTips";
 import { CATEGORIES } from "../../graphql/categories";
+import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 
 export default function ExpertTips() {
 	const { loading, error, data } = useQuery(EXPERTTIPS);
@@ -44,20 +45,19 @@ export default function ExpertTips() {
 							{tips.map((tip, index) => {
 								if (index % 7 === 0) {
 									return (
-										<Link href={`/expert-tips/${tip.uri}`} key={tip.id} className="max-h-90 w-full relative group col-span-2 row-span-2">
+										<Link href={`/expert-tips/${tip.uri}`} key={index} className="max-h-90 w-full relative group col-span-2 row-span-2">
 											<div className="z-20">
 												<p className="z-20 md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
 												<div className="z-20 absolute bottom-0 left-0 md:p-10 p-6">
 													<h2 className="text-xl font-semibold 5 text-white">{tip.title}</h2>
 													<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-														<p className="pr-2 text-sm font-medium leading-none">Read More</p>
-														<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-														</svg>
+														<p className="pr-2 text-sm font-medium leading-none">
+															Read in {tip.readingTime} min <ArrowLongRightIcon className="inline-block self-center ml-3 w-4 h-4" />
+														</p>
 													</span>
 												</div>
 											</div>
-											<Image width={500} height={500} src={tip?.featuredImage?.node?.sourceUrl ? tip.featuredImage.node.sourceUrl : "/placeholder.webp"} className="brightness-75 z-10 h-full w-full object-cover object-center rounded" alt={tip?.featuredImage?.node?.altText ? tip.featuredImage.node.altText : "placeholder text"} />
+											<Image placeholder="blur" blurDataURL={tip?.node?.featuredImage?.node?.sourceUrl ? tip.node.featuredImage.node.sourceUrl : "/placeholder.webp"} width={500} height={500} src={tip?.featuredImage?.node?.sourceUrl ? tip.featuredImage.node.sourceUrl : "/placeholder.webp"} className="brightness-75 z-10 h-full w-full object-cover object-center rounded" alt={tip?.featuredImage?.node?.altText ? tip.featuredImage.node.altText : "placeholder text"} />
 										</Link>
 									);
 								} else {
@@ -68,14 +68,13 @@ export default function ExpertTips() {
 												<div className="z-20 absolute bottom-0 left-0 p-6">
 													<h2 className="text-xl font-semibold 5 text-white">{tip.title}</h2>
 													<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-														<p className="pr-2 text-sm font-medium leading-none">Read More</p>
-														<svg className="fill-stroke" width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-														</svg>
+														<p className="pr-2 text-sm font-medium leading-none">
+															Read in {tip.readingTime} min <ArrowLongRightIcon className="inline-block self-center ml-3 w-4 h-4" />
+														</p>
 													</span>
 												</div>
 											</div>
-											<Image width={250} height={250} src={tip?.featuredImage?.node?.sourceUrl ? tip.featuredImage.node.sourceUrl : "/placeholder.webp"} className="brightness-75 z-10 h-full w-full object-cover object-center rounded" alt={tip?.featuredImage?.node?.altText ? tip.featuredImage.node.altText : "placeholder text"} />
+											<Image placeholder="blur" blurDataURL={tip?.node?.featuredImage?.node?.sourceUrl ? tip.node.featuredImage.node.sourceUrl : "/placeholder.webp"} width={250} height={250} src={tip?.featuredImage?.node?.sourceUrl ? tip.featuredImage.node.sourceUrl : "/placeholder.webp"} className="brightness-75 z-10 h-full w-full object-cover object-center rounded" alt={tip?.featuredImage?.node?.altText ? tip.featuredImage.node.altText : "placeholder text"} />
 										</Link>
 									);
 								}

@@ -25,8 +25,8 @@ export default function Search({ categories, placeholder }) {
 
 								<Transition show={open} as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
 									<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-										{categories.map((category) => (
-											<Listbox.Option key={category.id} className={({ active }) => classNames(active ? "bg-brand-600 text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9 m-1 rounded")} value={category}>
+										{categories.map((category, index) => (
+											<Listbox.Option key={index} className={({ active }) => classNames(active ? "bg-brand-600 text-white" : "text-gray-900", "relative cursor-default select-none py-2 pl-3 pr-9 m-1 rounded")} value={category}>
 												{({ selected, active }) => (
 													<>
 														<span className={classNames(selected ? "font-semibold" : "font-normal", "block truncate")}>{category.name}</span>

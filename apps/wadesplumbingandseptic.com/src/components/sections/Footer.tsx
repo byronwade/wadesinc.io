@@ -93,18 +93,18 @@ export default function Footer() {
 			{pathname === "/contact-us" ? <></> : <CTA />}
 			<footer className="bg-black relative overflow-hidden" aria-labelledby="footer-heading">
 				<div className="py-16 px-6 sm:py-24 lg:px-8">
-					<Image className="hidden md:block absolute -bottom-0 left-10" src="/wario.png" height={100} width={100} alt="Mario Plumber" />
+					<Image className="hidden md:block absolute -bottom-0 left-10 w-auto h-auto" src="/wario.png" height={100} width={100} alt="Mario Plumber" />
 					<h2 id="footer-heading" className="sr-only">
 						Footer
 					</h2>
 					<div className="mx-auto max-w-7xl">
 						<div className="xl:grid xl:grid-cols-3 xl:gap-8">
 							<div className="space-y-8">
-								<Image src="/WadesLogo.png" width={40} height={40} alt="Wade' Plumbing & Septic Logo" />
+								<Image className="w-auto h-auto" src="/WadesLogo.png" width={40} height={40} alt="Wade' Plumbing & Septic Logo" />
 								<p className="text-sm leading-6 text-gray-300">Making the world a better place through constructing elegant hierarchies.</p>
 								<div className="flex space-x-6">
-									{navigation.social.map((item) => (
-										<a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+									{navigation.social.map((item, index) => (
+										<a key={index} href={item.href} className="text-gray-500 hover:text-gray-400">
 											<span className="sr-only">{item.name}</span>
 											<item.icon className="h-6 w-6" aria-hidden="true" />
 										</a>
@@ -116,8 +116,8 @@ export default function Footer() {
 									<div>
 										<h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
 										<ul role="list" className="mt-6 space-y-4">
-											{navigation.solutions.map((item) => (
-												<li key={item.name}>
+											{navigation.solutions.map((item, index) => (
+												<li key={index}>
 													<a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
 														{item.name}
 													</a>
@@ -128,8 +128,8 @@ export default function Footer() {
 									<div className="mt-10 md:mt-0">
 										<h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
 										<ul role="list" className="mt-6 space-y-4">
-											{navigation.support.map((item) => (
-												<li key={item.name}>
+											{navigation.support.map((item, index) => (
+												<li key={index}>
 													<a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
 														{item.name}
 													</a>
@@ -142,8 +142,8 @@ export default function Footer() {
 									<div>
 										<h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
 										<ul role="list" className="mt-6 space-y-4">
-											{navigation.company.map((item) => (
-												<li key={item.name}>
+											{navigation.company.map((item, index) => (
+												<li key={index}>
 													<a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
 														{item.name}
 													</a>
@@ -154,8 +154,8 @@ export default function Footer() {
 									<div className="mt-10 md:mt-0">
 										<h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
 										<ul role="list" className="mt-6 space-y-4">
-											{navigation.legal.map((item) => (
-												<li key={item.name}>
+											{navigation.legal.map((item, index) => (
+												<li key={index}>
 													<a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
 														{item.name}
 													</a>

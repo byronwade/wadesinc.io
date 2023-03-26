@@ -37,8 +37,8 @@ export default function FeatureSection() {
 					<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">All-in-One Plumbing Solutions</p>
 					<p className="max-w-2xl text-lg leading-6 text-gray-600">Experience top-notch plumbing services that cater to all your needs. Our team of licensed professionals ensures your satisfaction, every step of the way.</p>
 					<dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-						{features.map((feature) => (
-							<div key={feature.name}>
+						{features.map((feature, index) => (
+							<div key={index}>
 								<dt className="font-semibold text-gray-900">{feature.name}</dt>
 								<dd className="mt-1 text-gray-600">{feature.description}</dd>
 							</div>

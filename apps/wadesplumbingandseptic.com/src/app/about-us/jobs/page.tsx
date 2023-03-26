@@ -1,36 +1,80 @@
+"use client";
 import Link from "next/link";
+import { useQuery, gql } from "@apollo/client";
+import { ArrowLongRightIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import { Fragment } from "react";
+
+const JOBS = gql`
+	query NewQuery {
+		categories(where: { slug: "jobs" }) {
+			nodes {
+				children {
+					nodes {
+						jobs {
+							nodes {
+								title(format: RENDERED)
+								uri
+								JobsData {
+									jobType
+									location
+									payRange
+									shiftAndSchedule
+								}
+							}
+						}
+						name
+					}
+				}
+				name
+			}
+		}
+	}
+`;
 
 export default function Jobs() {
+	const { loading, error, data } = useQuery(JOBS);
+	if (loading) return <div>Loading...</div>;
+	if (error) return <div>{error?.message}</div>;
+
+	const {
+		categories: { nodes },
+	} = data;
+
+	console.log(nodes);
+
 	return (
 		<section className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
-			<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">Frequently asked questions</h2>
-			<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Learn more about our company</p>
-			<div className="relative flex flex-col overflow-hidden">
-				<div className="bg-white shadow shadow-gray-100 w-full flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded">
-					<div>
-						<span className="text-brand-800 text-sm">Engineering</span>
-						<h3 className="font-bold mt-px">Senior Full Stack Backend Engineer</h3>
-						<div className="flex items-center gap-3 mt-2">
-							<span className="bg-brand-100 text-brand-700 rounded-full px-3 py-1 text-sm">Full-time</span>
-							<span className="text-slate-600 text-sm flex gap-1 items-center">
-								{" "}
-								<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-									<path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-								</svg>{" "}
-								Santa Cruz, CA
-							</span>
-						</div>
-					</div>
-					<div>
-						<Link href="/about-us/jobs/single" className="bg-brand text-black font-medium px-4 py-2 rounded flex gap-1 items-center">
-							Apply Now{" "}
-							<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-							</svg>
-						</Link>
-					</div>
-				</div>
+			<div className="space-y-6 relative flex flex-col overflow-hidden">
+				{nodes?.map((category) =>
+					category?.children?.nodes?.map((child) => (
+						<Fragment key={child.id}>
+							<h2 className="text-lg font-bold leading-6 text-black">{child.name}</h2>
+							{child?.jobs?.nodes?.map((job, index) => (
+								<div key={index} className="relative flex flex-col overflow-hidden">
+									<div className="bg-white shadow shadow-gray-100 w-full flex flex-col sm:flex-row gap-3 sm:items-center justify-between px-5 py-4 rounded">
+										<div>
+											<span className="text-brand-800 text-sm">Engineering</span>
+											<h3 className="font-bold mt-px">{job.title}</h3>
+											<div className="flex items-center gap-3 mt-2">
+												<span className="bg-brand-100 text-brand-700 rounded-full px-3 py-1 text-sm">{job.JobsData.shiftAndSchedule}</span>
+												<span className="text-slate-600 text-sm flex gap-1 items-center">
+													<MapPinIcon className="h-4 w-4" />
+													{job.JobsData.location}
+												</span>
+												<span className="text-green-600 text-sm flex gap-1 items-center">{job.JobsData.payRange}</span>
+											</div>
+										</div>
+										<div>
+											<Link href={`/about-us/${job.uri}`} className="bg-brand text-black font-medium px-4 py-2 rounded flex gap-1 items-center">
+												Apply Now <ArrowLongRightIcon className="self-center ml-3 h-4 w-4" />
+											</Link>
+										</div>
+									</div>
+								</div>
+							))}
+						</Fragment>
+					))
+				)}
 			</div>
 		</section>
 	);

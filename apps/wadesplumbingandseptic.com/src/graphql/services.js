@@ -9,6 +9,7 @@ const SERVICES = gql`
 					slug
 					uri
 					excerpt
+					readingTime
 					featuredImage {
 						node {
 							altText

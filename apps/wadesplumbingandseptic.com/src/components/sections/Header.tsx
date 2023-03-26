@@ -1,63 +1,22 @@
 "use client";
-import { Disclosure, Popover, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { BanknotesIcon, Bars3Icon, MegaphoneIcon, StarIcon, BriefcaseIcon, CheckBadgeIcon, CurrencyDollarIcon, UserCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
-import PageHeader from "./PageHeader";
+import { useQuery } from "@apollo/client";
+import { Disclosure, Popover, Transition } from "@headlessui/react";
+import { ArrowLongRightIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
+import { BanknotesIcon, Bars3Icon, MegaphoneIcon, BriefcaseIcon, CheckBadgeIcon, CurrencyDollarIcon, UserCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
+
+import { CATEGORIESANDSERVICES } from "../../graphql/header";
 
 const navigation = [
 	{ name: "Home", href: "/", current: true },
 	// { name: "Residential", href: "/residential", current: false },
 	// { name: "Commercial", href: "/commercial", current: false },
 	{ name: "Services", href: "/services", current: false },
-	{ name: "Rebates & Financing", href: "/financing", current: false },
+	{ name: "Expert Tips", href: "/expert-tips", current: false },
 	// { name: "Our Work", href: "/portfolio", current: false },
 	{ name: "About Us", href: "/about-us", current: false },
-];
-const featuredPost = {
-	id: 1,
-	title: "We’re incredibly proud to announce we have secured $75m in Series B",
-	href: "#",
-	description: "Libero neque aenean tincidunt nec consequat tempor. Viverra odio id velit adipiscing id. Nisi vestibulum orci eget bibendum dictum. Velit viverra posuere vulputate volutpat nunc. Nunc netus sit faucibus.",
-	date: "Mar 16, 2020",
-	datetime: "2020-03-16",
-	author: {
-		name: "Michael Foster",
-		href: "#",
-		imageUrl: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-	},
-};
-const posts = [
-	{
-		id: 1,
-		title: "Boost your conversion rate",
-		href: "/expert-tips/single",
-		description: "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta laboris incididunt.",
-		date: "Mar 10, 2020",
-		datetime: "2020-03-16",
-		author: {
-			name: "Lindsay Walton",
-			href: "#",
-			imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-		},
-	},
-	{
-		id: 2,
-		title: "Boost your conversion rate",
-		href: "/expert-tips/single",
-		description: "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta laboris incididunt.",
-		date: "Mar 10, 2020",
-		datetime: "2020-03-16",
-		author: {
-			name: "Lindsay Walton",
-			href: "#",
-			imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-		},
-	},
-	// More posts...
 ];
 
 const solutions = [
@@ -89,7 +48,7 @@ const solutions = [
 	{
 		name: "Promotions & Discounts",
 		description: "Find a discount here",
-		href: "/about-us/discounts",
+		href: "/about-us/promotions",
 		icon: MegaphoneIcon,
 	},
 	// {
@@ -105,13 +64,16 @@ function classNames(...classes: string[]) {
 }
 
 export default function Header() {
+	const { loading, error, data } = useQuery(CATEGORIESANDSERVICES);
+	// if (loading) return <div>Loading...</div>;
+	// if (error) return <div>{error?.message}</div>;
 	return (
 		<Disclosure as="nav" className="bg-black text-white sticky top-0 z-50">
 			{({ open }) => (
 				<>
 					<div className="relitive flex p-3 items-center justify-between mx-auto max-w-7xl px-6 lg:px-8">
 						<Link className="flex items-center space-x-4" href="/">
-							<Image src="/WadesLogo.png" width={40} height={40} alt="Wade' Plumbing & Septic Logo" />
+							<Image className="w-auto h-auto" src="/WadesLogo.png" width={40} height={40} alt="Wade's Plumbing & Septic Logo" />
 							<h1 className="font-bold text-2xl hidden xl:inline-flex">Wades Plumbing & Septic</h1>
 						</Link>
 						<div className="flex font-bold items-center md:hidden">
@@ -143,280 +105,118 @@ export default function Header() {
 												<div className="grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">
 													<div className="grid grid-cols-6 col-span-6 gap-x-6 sm:gap-x-8">
 														<div className="flex flex-col space-y-6">
-															<h3 className="text-sm font-bold leading-6 text-brand">Residential</h3>
-															<div className="flex flex-col space-y-1">
-																<Link
-																	href="/residential"
-																	onClick={async () => {
-																		await fetch("/residential", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Residential
-																</Link>
-																<Link
-																	href="/commercial"
-																	onClick={async () => {
-																		await fetch("/commercial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Commercial
-																</Link>
-																<Link
-																	href="/medical"
-																	onClick={async () => {
-																		await fetch("/medical", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Medical
-																</Link>
-																<Link
-																	href="/industrial"
-																	onClick={async () => {
-																		await fetch("/industrial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Industrial
-																</Link>
+															<h3 className="text-sm font-bold leading-6 text-brand">{data?.residential?.name}</h3>
+															<div className="flex flex-col space-y-4">
+																{data?.residential?.services?.nodes.slice(0, 4).map((services, index) => (
+																	<Link
+																		key={index}
+																		href={services.uri}
+																		onClick={async () => {
+																			await fetch(services.uri, { method: "POST" });
+																			close();
+																		}}
+																		className="font-normal hover:underline text-sm"
+																	>
+																		{services.title}
+																	</Link>
+																))}
 															</div>
 														</div>
 														<div className="flex flex-col space-y-6">
-															<h3 className="text-sm font-bold leading-6 text-brand">Commercial</h3>
-															<div className="flex flex-col space-y-1">
-																<Link
-																	href="/residential"
-																	onClick={async () => {
-																		await fetch("/residential", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Residential
-																</Link>
-																<Link
-																	href="/commercial"
-																	onClick={async () => {
-																		await fetch("/commercial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Commercial
-																</Link>
-																<Link
-																	href="/medical"
-																	onClick={async () => {
-																		await fetch("/medical", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Medical
-																</Link>
-																<Link
-																	href="/industrial"
-																	onClick={async () => {
-																		await fetch("/industrial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Industrial
-																</Link>
+															<h3 className="text-sm font-bold leading-6 text-brand">{data?.commercial?.name}</h3>
+															<div className="flex flex-col space-y-4">
+																{data?.commercial?.services?.nodes.slice(0, 4).map((services, index) => (
+																	<Link
+																		key={index}
+																		href={services.uri}
+																		onClick={async () => {
+																			await fetch(services.uri, { method: "POST" });
+																			close();
+																		}}
+																		className="font-normal hover:underline text-sm"
+																	>
+																		{services.title}
+																	</Link>
+																))}
 															</div>
 														</div>
 														<div className="flex flex-col space-y-6">
-															<h3 className="text-sm font-bold leading-6 text-brand">Drain Clearing</h3>
-															<div className="flex flex-col space-y-1">
-																<Link
-																	href="/residential"
-																	onClick={async () => {
-																		await fetch("/residential", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Residential
-																</Link>
-																<Link
-																	href="/commercial"
-																	onClick={async () => {
-																		await fetch("/commercial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Commercial
-																</Link>
-																<Link
-																	href="/medical"
-																	onClick={async () => {
-																		await fetch("/medical", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Medical
-																</Link>
-																<Link
-																	href="/industrial"
-																	onClick={async () => {
-																		await fetch("/industrial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Industrial
-																</Link>
+															<h3 className="text-sm font-bold leading-6 text-brand">{data?.drainClearing?.name}</h3>
+															<div className="flex flex-col space-y-4">
+																{data?.drainClearing?.services?.nodes.slice(0, 4).map((services, index) => (
+																	<Link
+																		key={index}
+																		href={services.uri}
+																		onClick={async () => {
+																			await fetch(services.uri, { method: "POST" });
+																			close();
+																		}}
+																		className="font-normal hover:underline text-sm"
+																	>
+																		{services.title}
+																	</Link>
+																))}
 															</div>
 														</div>
 														<div className="flex flex-col space-y-6">
-															<h3 className="text-sm font-bold leading-6 text-brand">Septic</h3>
-															<div className="flex flex-col space-y-1">
-																<Link
-																	href="/residential"
-																	onClick={async () => {
-																		await fetch("/residential", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Residential
-																</Link>
-																<Link
-																	href="/commercial"
-																	onClick={async () => {
-																		await fetch("/commercial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Commercial
-																</Link>
-																<Link
-																	href="/medical"
-																	onClick={async () => {
-																		await fetch("/medical", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Medical
-																</Link>
-																<Link
-																	href="/industrial"
-																	onClick={async () => {
-																		await fetch("/industrial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Industrial
-																</Link>
+															<h3 className="text-sm font-bold leading-6 text-brand">{data?.septic?.name}</h3>
+															<div className="flex flex-col space-y-4">
+																{data?.septic?.services?.nodes.slice(0, 4).map((services, index) => (
+																	<Link
+																		key={index}
+																		href={services.uri}
+																		onClick={async () => {
+																			await fetch(services.uri, { method: "POST" });
+																			close();
+																		}}
+																		className="font-normal hover:underline text-sm"
+																	>
+																		{services.title}
+																	</Link>
+																))}
 															</div>
 														</div>
 														<div className="flex flex-col space-y-6">
-															<h3 className="text-sm font-bold leading-6 text-brand">Engineered Septic</h3>
-															<div className="flex flex-col space-y-1">
-																<Link
-																	href="/residential"
-																	onClick={async () => {
-																		await fetch("/residential", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Residential
-																</Link>
-																<Link
-																	href="/commercial"
-																	onClick={async () => {
-																		await fetch("/commercial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Commercial
-																</Link>
-																<Link
-																	href="/medical"
-																	onClick={async () => {
-																		await fetch("/medical", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Medical
-																</Link>
-																<Link
-																	href="/industrial"
-																	onClick={async () => {
-																		await fetch("/industrial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Industrial
-																</Link>
+															<h3 className="text-sm font-bold leading-6 text-brand">{data?.engineeredSeptic?.name}</h3>
+															<div className="flex flex-col space-y-4">
+																{data?.engineeredSeptic?.services?.nodes.slice(0, 4).map((services, index) => (
+																	<Link
+																		key={index}
+																		href={services.uri}
+																		onClick={async () => {
+																			await fetch(services.uri, { method: "POST" });
+																			close();
+																		}}
+																		className="font-normal hover:underline text-sm"
+																	>
+																		{services.title}
+																	</Link>
+																))}
 															</div>
 														</div>
 														<div className="flex flex-col space-y-6">
-															<h3 className="text-sm font-bold leading-6 text-brand">Drainage</h3>
-															<div className="flex flex-col space-y-1">
-																<Link
-																	href="/residential"
-																	onClick={async () => {
-																		await fetch("/residential", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Residential
-																</Link>
-																<Link
-																	href="/commercial"
-																	onClick={async () => {
-																		await fetch("/commercial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Commercial
-																</Link>
-																<Link
-																	href="/medical"
-																	onClick={async () => {
-																		await fetch("/medical", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Medical
-																</Link>
-																<Link
-																	href="/industrial"
-																	onClick={async () => {
-																		await fetch("/industrial", { method: "POST" });
-																		close();
-																	}}
-																	className="font-normal hover:underline"
-																>
-																	Industrial
-																</Link>
+															<h3 className="text-sm font-bold leading-6 text-brand">{data?.drainage?.name}</h3>
+															<div className="flex flex-col space-y-4">
+																{data?.drainage?.services?.nodes.slice(0, 4).map((services, index) => (
+																	<Link
+																		key={index}
+																		href={services.uri}
+																		onClick={async () => {
+																			await fetch(services.uri, { method: "POST" });
+																			close();
+																		}}
+																		className="font-normal hover:underline text-sm"
+																	>
+																		{services.title}
+																	</Link>
+																))}
 															</div>
 														</div>
 													</div>
 
 													<div className="bg-brand p-4 rounded relative col-span-3 flex flex-wrap items-center justify-between">
 														<div className="w-full lg:w-1/2">
-															<h2 className="text-lg font-semibold leading-8 tracking-tight text-black-600">We have 102 Services</h2>
+															<h2 className="text-lg font-semibold leading-8 tracking-tight text-black-600">We have {data?.servicesTotals?.pageInfo?.total} Services</h2>
 															<p className="mb-4 text-4xl tracking-tight font-extrabold text-black">Search for any service</p>
 														</div>
 														<div className="w-fulllg:w-1/2">
@@ -463,89 +263,92 @@ export default function Header() {
 											<div className="mx-auto max-w-7xl py-10 px-6 lg:px-8">
 												<div className="grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-2">
 													<div className="grid grid-cols-1 col-span-2 gap-x-8 gap-y-12 sm:gap-y-16 lg:grid-cols-3">
-														<Link
-															href="/expert-tips/single"
-															onClick={async () => {
-																await fetch("/expert-tips/single", { method: "POST" });
-																close();
-															}}
-															className="group space-y-2 mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg"
-														>
+														<div className="flex flex-col">
 															<h3 className="text-sm font-bold leading-6 text-brand">Featured Post</h3>
-															<h2 id="featured-post" className="mt-4 text-1xl font-bold tracking-tight text-white sm:text-2xl">
-																{featuredPost.title}
-															</h2>
-
-															<div className="inline-flex items-center font-normal hover:underline">
-																<span className="group-hover:underline">Read More</span>
-																<svg className="self-center ml-3 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-																	<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-																</svg>
-															</div>
-														</Link>
-														<div className="flex flex-col space-y-6">
-															<h3 className="text-sm font-bold leading-6 text-brand">Septic</h3>
-															{posts.map((post) => (
+															{data?.featuredPost?.nodes.slice(0, 1).map((post, index) => (
 																<Link
-																	href={post.href}
+																	key={index}
+																	href={`/expert-tips/${post.uri}`}
 																	onClick={async () => {
-																		await fetch(post.href, { method: "POST" });
+																		await fetch(`/expert-tips/${post.uri}`, { method: "POST" });
 																		close();
 																	}}
-																	key={post.id}
+																	className="group space-y-2 mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg"
 																>
-																	<div className="space-y-2 group relative max-w-xl">
-																		<h2 className="text-lg text-white">
-																			<div>
-																				<span className="absolute inset-0" />
-																				{post.title}
-																			</div>
-																		</h2>
+																	<h2 id="featured-post" className="mt-4 text-1xl font-bold tracking-tight text-white sm:text-2xl">
+																		{post.title}
+																	</h2>
 
-																		<div className="inline-flex items-center font-normal hover:underline">
-																			<span className="group-hover:underline">Read More</span>
-																			<svg className="self-center ml-3 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-																				<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-																			</svg>
-																		</div>
+																	<div className="inline-flex items-center font-normal hover:underline text-sm">
+																		<span className="group-hover:underline">Read in {post.readingTime} min</span>
+																		<ArrowLongRightIcon className="self-center ml-3 w-4 h-4" />
 																	</div>
 																</Link>
 															))}
 														</div>
 														<div className="flex flex-col space-y-6">
-															<h3 className="text-sm font-bold leading-6 text-brand">Plumbing</h3>
-															{posts.map((post) => (
-																<Link
-																	href={post.href}
-																	onClick={async () => {
-																		await fetch(post.href, { method: "POST" });
-																		close();
-																	}}
-																	key={post.id}
-																>
-																	<div className="space-y-2 group relative max-w-xl">
-																		<h2 className="text-lg text-white">
-																			<div>
-																				<span className="absolute inset-0" />
-																				{post.title}
-																			</div>
-																		</h2>
+															<h3 className="text-sm font-bold leading-6 text-brand">{data?.postsSeptic?.name}</h3>
+															<div className="flex flex-col space-y-4">
+																{data?.postsSeptic?.posts?.nodes.slice(0, 2).map((post, index) => (
+																	<Link
+																		key={index}
+																		href={`/expert-tips/${post.uri}`}
+																		onClick={async () => {
+																			await fetch(`/expert-tips/${post.uri}`, { method: "POST" });
+																			close();
+																		}}
+																	>
+																		<div className="space-y-2 group relative max-w-xl">
+																			<h2 className="text-lg text-white">
+																				<div>
+																					<span className="absolute inset-0" />
+																					{post.title}
+																				</div>
+																			</h2>
 
-																		<div className="inline-flex items-center font-normal hover:underline">
-																			<span className="group-hover:underline">Read More</span>
-																			<svg className="self-center ml-3 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-																				<path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-																			</svg>
+																			<div className="inline-flex items-center font-normal hover:underline text-sm">
+																				<span className="group-hover:underline">Read in {post.readingTime} min</span>
+																				<ArrowLongRightIcon className="self-center ml-3 w-4 h-4" />
+																			</div>
 																		</div>
-																	</div>
-																</Link>
-															))}
+																	</Link>
+																))}
+															</div>
+														</div>
+														<div className="flex flex-col space-y-6">
+															<h3 className="text-sm font-bold leading-6 text-brand">{data?.postsPlumbing?.name}</h3>
+															<div className="flex flex-col space-y-4">
+																{data?.postsPlumbing?.posts?.nodes.slice(0, 2).map((post, index) => (
+																	<Link
+																		key={index}
+																		href={`/expert-tips/${post.uri}`}
+																		onClick={async () => {
+																			await fetch(`/expert-tips/${post.uri}`, { method: "POST" });
+																			close();
+																		}}
+																	>
+																		<div className="space-y-2 group relative max-w-xl">
+																			<h2 className="text-lg text-white">
+																				<div>
+																					<span className="absolute inset-0" />
+																					{post.title}
+																				</div>
+																			</h2>
+
+																			<div className="inline-flex items-center font-normal hover:underline text-sm">
+																				<span className="group-hover:underline">Read in {post.readingTime} min</span>
+																				<ArrowLongRightIcon className="self-center ml-3 w-4 h-4" />
+																			</div>
+																		</div>
+																	</Link>
+																))}
+															</div>
 														</div>
 													</div>
 
 													<div className="bg-brand p-4 rounded relative col-span-2 flex flex-wrap items-center justify-between">
 														<div className="w-full lg:w-1/2">
-															<h2 className="text-lg font-semibold leading-8 tracking-tight text-black-600">We have 50 Expert Tips/Information</h2>
+															<h2 className="text-lg font-semibold leading-8 tracking-tight text-black-600">We have {data?.expertTipsTotals?.pageInfo?.total} Expert Tips</h2>
 															<p className="mb-4 text-4xl tracking-tight font-extrabold text-black">Search for any Tip or Post</p>
 														</div>
 														<div className="w-fulllg:w-1/2">
@@ -590,14 +393,14 @@ export default function Header() {
 									<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[112px] shadow">
 										{({ close }) => (
 											<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-6 lg:gap-4 lg:px-8 xl:gap-8">
-												{solutions.map((item) => (
+												{solutions.map((item, index) => (
 													<Link
 														href={item.href}
 														onClick={async () => {
 															await fetch(item.href, { method: "POST" });
 															close();
 														}}
-														key={item.name}
+														key={index}
 														className="group relative -mx-3 flex gap-6 rounded p-3 text-sm leading-6 hover:bg-black-600 sm:flex-col sm:p-6"
 													>
 														<div className="flex h-11 w-11 flex-none items-center justify-center rounded bg-black-400 group-hover:bg-white">
@@ -636,13 +439,13 @@ export default function Header() {
 					</div>
 
 					<Disclosure.Panel className="md:hidden">
-						<div className="space-y-1 px-2 pt-2 pb-3">
-							{navigation.map((item) => (
-								<Disclosure.Button key={item.name} as="a" href={item.href} className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded px-3 py-2 text-base font-bold")} aria-current={item.current ? "page" : undefined}>
+						<div className="space-y-3 px-2 pt-2 pb-3">
+							{navigation.map((item, index) => (
+								<Disclosure.Button key={index} as="a" href={item.href} className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded px-3 py-2 text-base font-bold")} aria-current={item.current ? "page" : undefined}>
 									{item.name}
 								</Disclosure.Button>
 							))}
-							<Link href="/contact-us" className="inline-flex justify-center rounded font-bold py-1 px-2 w-full bg-brand text-black hover:bg-brand-600">
+							<Link href="/contact-us" className="inline-flex justify-center rounded font-bold py-2 px-2 w-full bg-brand text-black hover:bg-brand-600">
 								Get a Quote
 							</Link>
 						</div>

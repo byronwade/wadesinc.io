@@ -8,6 +8,7 @@ const EXPERTTIPS = gql`
 				excerpt(format: RENDERED)
 				uri
 				date
+				readingTime
 				author {
 					node {
 						id
@@ -18,6 +19,7 @@ const EXPERTTIPS = gql`
 					node {
 						altText
 						sourceUrl(size: LARGE)
+						sizes(size: LARGE)
 					}
 				}
 			}

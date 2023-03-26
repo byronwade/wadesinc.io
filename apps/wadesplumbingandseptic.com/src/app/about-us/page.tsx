@@ -118,8 +118,8 @@ export default function Example() {
 						</div>
 						<div className="lg:flex lg:flex-auto lg:justify-center">
 							<dl className="w-64 space-y-8 xl:w-80">
-								{stats.map((stat) => (
-									<div key={stat.label} className="flex flex-col-reverse gap-y-4">
+								{stats.map((stat, index) => (
+									<div key={index} className="flex flex-col-reverse gap-y-4">
 										<dt className="text-base leading-7 text-gray-600">{stat.label}</dt>
 										<dd className="text-5xl font-semibold tracking-tight text-gray-900">{stat.value}</dd>
 									</div>
@@ -142,8 +142,8 @@ export default function Example() {
 					<p className="mt-6 text-lg leading-8 text-gray-600">We are driven by a strong commitment to our core values, which shape our approach to delivering exceptional plumbing and septic services.</p>
 				</div>
 				<dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-					{values.map((value) => (
-						<div key={value.name}>
+					{values.map((value, index) => (
+						<div key={index}>
 							<dt className="font-semibold text-gray-900">{value.name}</dt>
 							<dd className="mt-1 text-gray-600">{value.description}</dd>
 						</div>
@@ -166,8 +166,8 @@ export default function Example() {
 					</div>
 				</div>
 				<ul role="list" className="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-y-16 gap-x-8 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-5">
-					{team.map((person) => (
-						<li key={person.name}>
+					{team.map((person, index) => (
+						<li key={index}>
 							<Image src={person.imageUrl} width={96} height={96} alt="Photo of Byron Wade" className="mx-auto h-24 w-24 rounded-full" />
 							<h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
 							<p className="text-sm leading-6 text-gray-600">{person.role}</p>
