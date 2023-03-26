@@ -39,7 +39,7 @@ export default function ExpertTips() {
 							</p>
 						</div>
 
-						<Search categories={categories} placeholder="Search for a tip..." />
+						<Search placeholder="Search for a tip..." />
 
 						<div className="grid grid-cols-4 auto-rows-auto gap-6 mt-10 items-stretch w-full">
 							{tips.map((tip, index) => {

@@ -39,7 +39,7 @@ export default function Services() {
 							</p>
 						</div>
 
-						<Search categories={categories} placeholder={`We offer ${total} services...`} />
+						<Search placeholder={`We offer ${total} services...`} />
 
 						<div className="flex mt-10 items-center justify-center">
 							<div className="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
