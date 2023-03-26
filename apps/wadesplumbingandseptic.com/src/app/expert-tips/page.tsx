@@ -41,11 +41,11 @@ export default function ExpertTips() {
 
 						<Search placeholder="Search for a tip..." />
 
-						<div className="grid grid-cols-4 auto-rows-auto gap-6 mt-10 items-stretch w-full">
+						<div className="grid gird-col-1 md:grid-cols-2 lg:grid-col-3 xl:grid-cols-4 auto-rows-auto gap-6 mt-10 items-stretch w-full">
 							{tips.map((tip, index) => {
 								if (index % 7 === 0) {
 									return (
-										<Link href={`/expert-tips/${tip.uri}`} key={index} className="max-h-90 w-full relative group col-span-2 row-span-2">
+										<Link href={`/expert-tips/${tip.uri}`} key={index} className="max-h-90 w-full relative group col-spane-1 row-span-1 xl:col-span-2 xl:row-span-2">
 											<div className="z-20">
 												<p className="z-20 md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
 												<div className="z-20 absolute bottom-0 left-0 md:p-10 p-6">
