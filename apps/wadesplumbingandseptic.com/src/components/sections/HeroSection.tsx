@@ -8,14 +8,12 @@ export default function HeroSection() {
 	const pathname = usePathname();
 	return (
 		<section className="bg-black-400 relative overflow-hidden">
-			<BrowserView>
-				{isBrowser ? (
-					<video autoPlay muted loop className="absolute w-auto brightness-50 min-w-full min-h-full max-w-none">
-						<source src="/treeCompressed.mp4" type="video/mp4" />
-					</video>
-				) : null}
-			</BrowserView>
-			<MobileView>{isMobile ? <Image priority src="/redwoods.jpg" fill className="object-cover object-center w-auto brightness-50 min-w-full min-h-full max-w-none" alt="Trees" /> : null}</MobileView>
+			{isBrowser && (
+				<video autoPlay muted loop className="absolute w-auto brightness-50 min-w-full min-h-full max-w-none">
+					<source src="/treeCompressed.mp4" type="video/mp4" />
+				</video>
+			)}
+			{isMobile && <Image priority src="/redwoods.jpg" fill className="object-cover object-center w-auto brightness-50 min-w-full min-h-full max-w-none" alt="Trees" />}
 			<Image className="hidden md:block absolute bottom-0 right-10" src="/mario.png" height={100} width={100} alt="Mario Plumber" />
 			<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
 				<div className="z-10 place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0 p-4 m:p-6 lg:p-8">
