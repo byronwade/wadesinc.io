@@ -4,7 +4,7 @@ import { truncateHtml } from "../../helpers/truncate";
 
 export default function RelatedArticlesSection({ posts }) {
 	const categories = posts.nodes;
-	const allPosts = [];
+	const allPosts: any[] = [];
 
 	categories.forEach((category) => {
 		const categoryPosts = category.posts.nodes;
