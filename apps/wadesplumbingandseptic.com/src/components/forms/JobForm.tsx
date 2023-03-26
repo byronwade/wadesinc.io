@@ -24,7 +24,7 @@ export default function JobForm({ pathname }) {
 						First name
 					</label>
 					<div className="mt-2.5">
-						<input placeholder="Mario" required type="text" name="first-name" id="first-name" autoComplete="given-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
+						<input placeholder="Mario" required type="text" name="first-name" id="first-name" autoComplete="given-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 text-base sm:leading-6" />
 					</div>
 					<ValidationError prefix="First Name" field="first-name" errors={state.errors} />
 				</div>
@@ -33,7 +33,7 @@ export default function JobForm({ pathname }) {
 						Last name
 					</label>
 					<div className="mt-2.5">
-						<input placeholder="Mario" required type="text" name="last-name" id="last-name" autoComplete="family-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
+						<input placeholder="Mario" required type="text" name="last-name" id="last-name" autoComplete="family-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 text-base sm:leading-6" />
 					</div>
 					<ValidationError prefix="Last Name" field="last-name" errors={state.errors} />
 				</div>
@@ -42,7 +42,7 @@ export default function JobForm({ pathname }) {
 						Phone
 					</label>
 					<div className="mt-2.5">
-						<input placeholder="831-225-4344" required id="phone" name="phone" type="text" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
+						<input placeholder="831-225-4344" required id="phone" name="phone" type="text" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 text-base sm:leading-6" />
 					</div>
 					<ValidationError prefix="Phone" field="phone" errors={state.errors} />
 				</div>
@@ -51,7 +51,7 @@ export default function JobForm({ pathname }) {
 						Address
 					</label>
 					<div className="mt-2.5">
-						<input placeholder="Mashroom Kingdom" autoComplete="street-address" required id="address" name="address" type="text" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" />
+						<input placeholder="Mashroom Kingdom" autoComplete="street-address" required id="address" name="address" type="text" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 text-base sm:leading-6" />
 					</div>
 					<ValidationError prefix="Address" field="address" errors={state.errors} />
 				</div>
@@ -83,7 +83,7 @@ export default function JobForm({ pathname }) {
 						Message
 					</label>
 					<div className="mt-2.5">
-						<textarea placeholder="Tell us why you would be a good fit..." required id="message" name="message" rows={4} className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 sm:text-sm sm:leading-6" defaultValue={""} />
+						<textarea placeholder="Tell us why you would be a good fit..." required id="message" name="message" rows={4} className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 text-base sm:leading-6" defaultValue={""} />
 					</div>
 					<ValidationError prefix="Message" field="message" errors={state.errors} />
 				</div>
