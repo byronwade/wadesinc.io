@@ -14,7 +14,7 @@ export default function HeroSection() {
 				</video>
 			</BrowserView>
 			<MobileView>
-				<Image src="/redwoods.jpg" fill className="object-cover object-center w-auto brightness-50 min-w-full min-h-full max-w-none" alt="Trees" />
+				<Image priority src="/redwoods.jpg" fill className="object-cover object-center w-auto brightness-50 min-w-full min-h-full max-w-none" alt="Trees" />
 			</MobileView>
 			<Image className="hidden md:block absolute bottom-0 right-10" src="/mario.png" height={100} width={100} alt="Mario Plumber" />
 			<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
