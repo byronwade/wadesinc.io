@@ -440,22 +440,15 @@ export default function Header() {
 					</div>
 
 					<Disclosure.Panel className="md:hidden">
-						<div className="space-y-3 px-2 pt-2 pb-3">
-							{navigation.map((item, index) => (
-								<Link
-									key={index}
-									href={item.href}
-									onClick={async () => {
-										await fetch(item.href, { method: "POST" });
-										close();
-									}}
-								>
-									<Disclosure.Button as="button" className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded px-3 py-2 text-base font-bold")} aria-current={item.current ? "page" : undefined}>
+						{({ close }) => (
+							<div className="space-y-3 px-2 pt-2 pb-3">
+								{navigation.map((item, index) => (
+									<Link key={index} href={item.href} onClick={() => close()} className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block rounded px-3 py-2 text-base font-bold")} aria-current={item.current ? "page" : undefined}>
 										{item.name}
-									</Disclosure.Button>
-								</Link>
-							))}
-						</div>
+									</Link>
+								))}
+							</div>
+						)}
 					</Disclosure.Panel>
 				</>
 			)}
