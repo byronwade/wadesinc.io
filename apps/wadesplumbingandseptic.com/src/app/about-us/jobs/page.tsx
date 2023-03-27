@@ -2,6 +2,57 @@ import Link from "next/link";
 import { ArrowLongRightIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import { Fragment } from "react";
 
+export const metadata = {
+	title: "Job Opportunities | Wade's Plumbing & Septic",
+	description: "Looking for plumbing job opportunities in your local area? Look no further than Wade's Plumbing & Septic. Our team is hiring skilled plumbers now.",
+	generator: "Next.js",
+	applicationName: "Wade's Plumbing & Septic",
+	referrer: "origin-when-cross-origin",
+	keywords: ["Next.js", "React", "JavaScript"],
+	authors: [{ name: "Byron Wade" }, { name: "Byron Wade", url: "https://www.wadesplumbingandseptic.com/" }],
+	creator: "Byron Wade",
+	publisher: "Byron Wade",
+	alternates: {},
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	category: "construction",
+	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/jobs/"],
+	twitter: {
+		card: "summary_large_image",
+		title: "Job Opportunities | Wade's Plumbing & Septic",
+		description: "Looking for plumbing job opportunities in your local area? Look no further than Wade's Plumbing & Septic. Our team is hiring skilled plumbers now.",
+		creator: "@wadesplumbing",
+		images: {
+			url: "https://www.wadesplumbingandseptic.com/api/og?title=Job Opportunities&link=www.wadesplumbingandseptic.com&description=Looking for plumbing job opportunities in your local area? Look no further than Wade's Plumbing & Septic. Our team is hiring skilled plumbers now.",
+			alt: "Wade's Plumbing & Septic Social Logo",
+		},
+	},
+	openGraph: {
+		title: "Job Opportunities | Wade's Plumbing & Septic",
+		description: "Looking for plumbing job opportunities in your local area? Look no further than Wade's Plumbing & Septic. Our team is hiring skilled plumbers now.",
+		url: "https://wwww.wadesplumbingandseptic.com/about-us/jobs/",
+		siteName: "Wade's Plumbing & Septic",
+		images: [
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Job Opportunities&link=www.wadesplumbingandseptic.com&description=Looking for plumbing job opportunities in your local area? Look no further than Wade's Plumbing & Septic. Our team is hiring skilled plumbers now.",
+				width: 800,
+				height: 600,
+			},
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Job Opportunities&link=www.wadesplumbingandseptic.com&description=Looking for plumbing job opportunities in your local area? Look no further than Wade's Plumbing & Septic. Our team is hiring skilled plumbers now.",
+				width: 1800,
+				height: 1600,
+				alt: "Wade's Plumbing & Septic",
+			},
+		],
+		locale: "en-US",
+		type: "website",
+	},
+};
+
 async function getJobs() {
 	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
 		method: "POST",

@@ -1,4 +1,53 @@
-import Image from "next/image";
+export const metadata = {
+	title: "Financing | Wade's Plumbing & Septic",
+	description: "Looking for local financing options for your plumbing needs? Look no further than Wade's Plumbing & Septic. Our team can help you find the perfect financing solution for your local plumbing projects.",
+	generator: "Next.js",
+	applicationName: "Wade's Plumbing & Septic",
+	referrer: "origin-when-cross-origin",
+	keywords: ["Next.js", "React", "JavaScript"],
+	authors: [{ name: "Byron Wade" }, { name: "Byron Wade", url: "https://www.wadesplumbingandseptic.com/" }],
+	creator: "Byron Wade",
+	publisher: "Byron Wade",
+	alternates: {},
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	category: "construction",
+	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/financing/"],
+	twitter: {
+		card: "summary_large_image",
+		title: "Financing | Wade's Plumbing & Septic",
+		description: "Looking for local financing options for your plumbing needs? Look no further than Wade's Plumbing & Septic. Our team can help you find the perfect financing solution for your local plumbing projects.",
+		creator: "@wadesplumbing",
+		images: {
+			url: "https://www.wadesplumbingandseptic.com/api/og?title=Financing&link=www.wadesplumbingandseptic.com&description=Looking for local financing options for your plumbing needs? Look no further than Wade's Plumbing & Septic. Our team can help you find the perfect financing solution for your local plumbing projects.",
+			alt: "Wade's Plumbing & Septic Social Logo",
+		},
+	},
+	openGraph: {
+		title: "Financing | Wade's Plumbing & Septic",
+		description: "Looking for local financing options for your plumbing needs? Look no further than Wade's Plumbing & Septic. Our team can help you find the perfect financing solution for your local plumbing projects.",
+		url: "https://wwww.wadesplumbingandseptic.com/about-us/financing/",
+		siteName: "Wade's Plumbing & Septic",
+		images: [
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Financing&link=www.wadesplumbingandseptic.com&description=Looking for local financing options for your plumbing needs? Look no further than Wade's Plumbing & Septic. Our team can help you find the perfect financing solution for your local plumbing projects.",
+				width: 800,
+				height: 600,
+			},
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Financing&link=www.wadesplumbingandseptic.com&description=Looking for local financing options for your plumbing needs? Look no further than Wade's Plumbing & Septic. Our team can help you find the perfect financing solution for your local plumbing projects.",
+				width: 1800,
+				height: 1600,
+				alt: "Wade's Plumbing & Septic",
+			},
+		],
+		locale: "en-US",
+		type: "website",
+	},
+};
 
 export default function Example() {
 	return (
@@ -54,7 +103,7 @@ export default function Example() {
 				<p>We&apos;re Here to Help</p>
 				<p>At Wade&apos;s Plumbing & Septic, our goal is to provide you with the best possible plumbing solutions and support you every step of the way. If you have any questions about financing your project with WiseStack or need assistance with the application process, please don&apos;t hesitate to reach out to our team. We&apos;re here to help make your plumbing upgrades a reality.</p>
 				<p>
-					Contact us today at{" "}
+					Financing today at{" "}
 					<a href="tel:8314306011" className="text-brand hover:underline">
 						(831) 430-6011
 					</a>{" "}

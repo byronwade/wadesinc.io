@@ -1,3 +1,54 @@
+export const metadata = {
+	title: "Privacy Policy | Wade's Plumbing & Septic",
+	description: "Looking for a trusted plumbing and septic company in your local area? Look no further than Wade's Plumbing & Septic! Our privacy policy page ensures your information is safe and secure.",
+	generator: "Next.js",
+	applicationName: "Wade's Plumbing & Septic",
+	referrer: "origin-when-cross-origin",
+	keywords: ["Next.js", "React", "JavaScript"],
+	authors: [{ name: "Byron Wade" }, { name: "Byron Wade", url: "https://www.wadesplumbingandseptic.com/" }],
+	creator: "Byron Wade",
+	publisher: "Byron Wade",
+	alternates: {},
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	category: "construction",
+	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/privacy-policy/"],
+	twitter: {
+		card: "summary_large_image",
+		title: "Privacy Policy | Wade's Plumbing & Septic",
+		description: "Looking for a trusted plumbing and septic company in your local area? Look no further than Wade's Plumbing & Septic! Our privacy policy page ensures your information is safe and secure.",
+		creator: "@wadesplumbing",
+		images: {
+			url: "https://www.wadesplumbingandseptic.com/api/og?title=Privacy Policy&link=www.wadesplumbingandseptic.com&description=Looking for a trusted plumbing and septic company in your local area? Look no further than Wade's Plumbing & Septic! Our privacy policy page ensures your information is safe and secure.",
+			alt: "Wade's Plumbing & Septic Social Logo",
+		},
+	},
+	openGraph: {
+		title: "Privacy Policy | Wade's Plumbing & Septic",
+		description: "Looking for a trusted plumbing and septic company in your local area? Look no further than Wade's Plumbing & Septic! Our privacy policy page ensures your information is safe and secure.",
+		url: "https://wwww.wadesplumbingandseptic.com/about-us/privacy-policy/",
+		siteName: "Wade's Plumbing & Septic",
+		images: [
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Privacy Policy&link=www.wadesplumbingandseptic.com&description=Looking for a trusted plumbing and septic company in your local area? Look no further than Wade's Plumbing & Septic! Our privacy policy page ensures your information is safe and secure.",
+				width: 800,
+				height: 600,
+			},
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Privacy Policy&link=www.wadesplumbingandseptic.com&description=Looking for a trusted plumbing and septic company in your local area? Look no further than Wade's Plumbing & Septic! Our privacy policy page ensures your information is safe and secure.",
+				width: 1800,
+				height: 1600,
+				alt: "Wade's Plumbing & Septic",
+			},
+		],
+		locale: "en-US",
+		type: "website",
+	},
+};
+
 export default function PricavyPolicy() {
 	return (
 		<>
@@ -9,7 +60,7 @@ export default function PricavyPolicy() {
 				<li>Information Collection and Use</li>
 			</ol>
 			<p>While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your name, email address, phone number, and mailing address (&quot;Personal Information&quot;).</p>
-			<p>We use your Personal Information for providing and improving the Site and our services. By providing your Personal Information, you agree that we can contact you regarding our services, promotions, and any other relevant information.</p>
+			<p>We use your Personal Information for providing and improving the Site and our Privacy Policy. By providing your Personal Information, you agree that we can contact you regarding our Privacy Policy, promotions, and any other relevant information.</p>
 			<ol start={2}>
 				<li>Log Data</li>
 			</ol>
@@ -24,14 +75,14 @@ export default function PricavyPolicy() {
 			</ol>
 			<p>The security of your Personal Information is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.</p>
 			<ol start={5}>
-				<li>Third-Party Services</li>
+				<li>Third-Party Privacy Policy</li>
 			</ol>
-			<p>We may employ third-party companies and individuals to facilitate our services, provide services on our behalf, perform Site-related services, or assist us in analyzing how our Site is used. These third parties have access to your Personal Information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+			<p>We may employ third-party companies and individuals to facilitate our Privacy Policy, provide Privacy Policy on our behalf, perform Site-related Privacy Policy, or assist us in analyzing how our Site is used. These third parties have access to your Personal Information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
 			<ol start={6}>
 				<li>Links to Other Sites</li>
 			</ol>
 			<p>Our Site may contain links to other sites that are not operated by us. If you click on a third-party link, you will be directed to that third party&apos; site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
-			<p>Wade&apos; Plumbing &amp; Septic has no control over and assumes no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+			<p>Wade&apos; Plumbing &amp; Septic has no control over and assumes no responsibility for the content, privacy policies, or practices of any third-party sites or Privacy Policy.</p>
 			<ol start={7}>
 				<li>Children&apos; Privacy</li>
 			</ol>

@@ -1,4 +1,5 @@
 import JobForm from "@/components/forms/JobForm";
+import { Metadata } from "next";
 
 async function getJob(slug) {
 	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
@@ -22,6 +23,33 @@ async function getJob(slug) {
 						qualifications
 						shiftAndSchedule
 					}
+					seo {
+						canonical
+						cornerstone
+						focuskw
+						fullHead
+						metaKeywords
+						metaDesc
+						metaRobotsNofollow
+						metaRobotsNoindex
+						opengraphAuthor
+						opengraphDescription
+						opengraphModifiedTime
+						opengraphPublishedTime
+						opengraphPublisher
+						opengraphSiteName
+						opengraphTitle
+						opengraphType
+						opengraphUrl
+						title
+						schema {
+						  articleType
+						  pageType
+						  raw
+						}
+						twitterDescription
+						twitterTitle
+					  }
 					content(format: RENDERED)
 				}
 			}
@@ -30,6 +58,59 @@ async function getJob(slug) {
 		next: { revalidate: 10 },
 	}).then((res) => res.json());
 	return { data };
+}
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+	const { data } = await getJob(`"/${params.uri.join("/")}"`);
+	const seo = data?.job?.seo;
+	console.log(seo);
+	return {
+		title: data?.job?.title || "This is a title to the service",
+		description: seo?.metaDesc || seo?.opengraphDescription || "This is a Service from Wade's Plumbing & Septic",
+		generator: "Next.js",
+		applicationName: "Wade's Plumbing & Septic",
+		referrer: "origin-when-cross-origin",
+		keywords: seo?.metaKeywords,
+		authors: [{ name: data?.job?.author?.node?.name }, { name: data?.job?.author?.node?.name, url: `https://www.wadesplumbingandseptic.com/expert-tips/${params.uri.join("/")}` }],
+		creator: "Byron Wade",
+		publisher: data.post.author.node.name,
+		alternates: {},
+		formatDetection: {
+			email: false,
+			address: false,
+			telephone: false,
+		},
+		category: "construction",
+		bookmarks: [`https://www.wadesplumbingandseptic.com/expert-tips/${params.uri.join("/")}`],
+		twitter: {
+			card: "summary_large_image",
+			title: seo?.twitterTitle || seo?.title || data?.job?.title,
+			description: seo?.twitterDescription || seo?.metaDesc || seo?.opengraphDescription,
+			creator: "@wadesplumbing",
+			images: [`https://www.wadesplumbingandseptic.com/api/og?title=${data?.job?.title}&discription=${seo?.metaDesc.slice(0, 200) || seo?.opengraphDescription.slice(0, 200) || "This is a Service from Wade's Plumbing & Septic"}`],
+		},
+		openGraph: {
+			title: seo?.opengraphTitle || seo?.title,
+			description: seo?.opengraphDescription || seo?.metaDesc,
+			url: `https://www.wadesplumbingandseptic.com/expert-tips/${params.uri.join("/")}`,
+			siteName: seo?.opengraphTitle || seo?.title,
+			images: [
+				{
+					url: `https://www.wadesplumbingandseptic.com/api/og?title=${data?.job?.title}&discription=${seo?.metaDesc.slice(0, 200) || seo?.opengraphDescription.slice(0, 200) || "This is a Service from Wade's Plumbing & Septic"}}`,
+					width: 800,
+					height: 600,
+				},
+				{
+					url: `https://www.wadesplumbingandseptic.com/api/og?title=${data?.job?.title}&discription=${seo?.metaDesc.slice(0, 200) || seo?.opengraphDescription.slice(0, 200) || "This is a Service from Wade's Plumbing & Septic"}}`,
+					width: 1800,
+					height: 1600,
+					alt: "My custom alt",
+				},
+			],
+			locale: "en-US",
+			type: "website",
+		},
+	};
 }
 
 export default async function Job({ params }) {

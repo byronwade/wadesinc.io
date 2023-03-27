@@ -1,3 +1,54 @@
+export const metadata = {
+	title: "Warranties | Wade's Plumbing & Septic",
+	description: "Looking for a trusted plumbing & septic service in your local area? Explore our industry-leading warranties at Wade's Plumbing & Septic.",
+	generator: "Next.js",
+	applicationName: "Wade's Plumbing & Septic",
+	referrer: "origin-when-cross-origin",
+	keywords: ["Next.js", "React", "JavaScript"],
+	authors: [{ name: "Byron Wade" }, { name: "Byron Wade", url: "https://www.wadesplumbingandseptic.com/" }],
+	creator: "Byron Wade",
+	publisher: "Byron Wade",
+	alternates: {},
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	category: "construction",
+	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/warranties/"],
+	twitter: {
+		card: "summary_large_image",
+		title: "Warranties | Wade's Plumbing & Septic",
+		description: "Looking for a trusted plumbing & septic service in your local area? Explore our industry-leading warranties at Wade's Plumbing & Septic.",
+		creator: "@wadesplumbing",
+		images: {
+			url: "https://www.wadesplumbingandseptic.com/api/og?title=Warranties&link=www.wadesplumbingandseptic.com&description=Looking for a trusted plumbing & septic service in your local area? Explore our industry-leading warranties at Wade's Plumbing & Septic.",
+			alt: "Wade's Plumbing & Septic Social Logo",
+		},
+	},
+	openGraph: {
+		title: "Warranties | Wade's Plumbing & Septic",
+		description: "Looking for a trusted plumbing & septic service in your local area? Explore our industry-leading warranties at Wade's Plumbing & Septic.",
+		url: "https://wwww.wadesplumbingandseptic.com/about-us/warranties/",
+		siteName: "Wade's Plumbing & Septic",
+		images: [
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Warranties&link=www.wadesplumbingandseptic.com&description=Looking for a trusted plumbing & septic service in your local area? Explore our industry-leading warranties at Wade's Plumbing & Septic.",
+				width: 800,
+				height: 600,
+			},
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Warranties&link=www.wadesplumbingandseptic.com&description=Looking for a trusted plumbing & septic service in your local area? Explore our industry-leading warranties at Wade's Plumbing & Septic.",
+				width: 1800,
+				height: 1600,
+				alt: "Wade's Plumbing & Septic",
+			},
+		],
+		locale: "en-US",
+		type: "website",
+	},
+};
+
 export default function Warranties() {
 	return (
 		<>

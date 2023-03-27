@@ -1,3 +1,54 @@
+export const metadata = {
+	title: "Rebates | Wade's Plumbing & Septic",
+	description: "Looking for plumbing rebates in your local area? Look no further than Wade's Plumbing & Septic. Find savings and incentives for your next plumbing project now.",
+	generator: "Next.js",
+	applicationName: "Wade's Plumbing & Septic",
+	referrer: "origin-when-cross-origin",
+	keywords: ["Next.js", "React", "JavaScript"],
+	authors: [{ name: "Byron Wade" }, { name: "Byron Wade", url: "https://www.wadesplumbingandseptic.com/" }],
+	creator: "Byron Wade",
+	publisher: "Byron Wade",
+	alternates: {},
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	category: "construction",
+	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/rebates/"],
+	twitter: {
+		card: "summary_large_image",
+		title: "Rebates | Wade's Plumbing & Septic",
+		description: "Looking for plumbing rebates in your local area? Look no further than Wade's Plumbing & Septic. Find savings and incentives for your next plumbing project now.",
+		creator: "@wadesplumbing",
+		images: {
+			url: "https://www.wadesplumbingandseptic.com/api/og?title=Rebates&link=www.wadesplumbingandseptic.com&description=Looking for plumbing rebates in your local area? Look no further than Wade's Plumbing & Septic. Find savings and incentives for your next plumbing project now.",
+			alt: "Wade's Plumbing & Septic Social Logo",
+		},
+	},
+	openGraph: {
+		title: "Rebates | Wade's Plumbing & Septic",
+		description: "Looking for plumbing rebates in your local area? Look no further than Wade's Plumbing & Septic. Find savings and incentives for your next plumbing project now.",
+		url: "https://wwww.wadesplumbingandseptic.com/about-us/rebates/",
+		siteName: "Wade's Plumbing & Septic",
+		images: [
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Rebates&link=www.wadesplumbingandseptic.com&description=Looking for plumbing rebates in your local area? Look no further than Wade's Plumbing & Septic. Find savings and incentives for your next plumbing project now.",
+				width: 800,
+				height: 600,
+			},
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Rebates&link=www.wadesplumbingandseptic.com&description=Looking for plumbing rebates in your local area? Look no further than Wade's Plumbing & Septic. Find savings and incentives for your next plumbing project now.",
+				width: 1800,
+				height: 1600,
+				alt: "Wade's Plumbing & Septic",
+			},
+		],
+		locale: "en-US",
+		type: "website",
+	},
+};
+
 export default function Rebates() {
 	return (
 		<>

@@ -1,6 +1,57 @@
 /* eslint-disable react/jsx-no-undef */
 import Image from "next/image";
 
+export const metadata = {
+	title: "Promotions | Wade's Plumbing & Septic",
+	description: "Looking for quality plumbing services in your local area? Check out Wade's Plumbing & Septic promotions page for exclusive deals and discounts!",
+	generator: "Next.js",
+	applicationName: "Wade's Plumbing & Septic",
+	referrer: "origin-when-cross-origin",
+	keywords: ["Next.js", "React", "JavaScript"],
+	authors: [{ name: "Byron Wade" }, { name: "Byron Wade", url: "https://www.wadesplumbingandseptic.com/" }],
+	creator: "Byron Wade",
+	publisher: "Byron Wade",
+	alternates: {},
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	category: "construction",
+	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/promotions/"],
+	twitter: {
+		card: "summary_large_image",
+		title: "Promotions | Wade's Plumbing & Septic",
+		description: "Looking for quality plumbing services in your local area? Check out Wade's Plumbing & Septic promotions page for exclusive deals and discounts!",
+		creator: "@wadesplumbing",
+		images: {
+			url: "https://www.wadesplumbingandseptic.com/api/og?title=Promotions&link=www.wadesplumbingandseptic.com&description=Looking for quality plumbing services in your local area? Check out Wade's Plumbing & Septic promotions page for exclusive deals and discounts!",
+			alt: "Wade's Plumbing & Septic Social Logo",
+		},
+	},
+	openGraph: {
+		title: "Promotions | Wade's Plumbing & Septic",
+		description: "Looking for quality plumbing services in your local area? Check out Wade's Plumbing & Septic promotions page for exclusive deals and discounts!",
+		url: "https://wwww.wadesplumbingandseptic.com/about-us/promotions/",
+		siteName: "Wade's Plumbing & Septic",
+		images: [
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Promotions&link=www.wadesplumbingandseptic.com&description=Looking for quality plumbing services in your local area? Check out Wade's Plumbing & Septic promotions page for exclusive deals and discounts!",
+				width: 800,
+				height: 600,
+			},
+			{
+				url: "https://www.wadesplumbingandseptic.com/api/og?title=Promotions&link=www.wadesplumbingandseptic.com&description=Looking for quality plumbing services in your local area? Check out Wade's Plumbing & Septic promotions page for exclusive deals and discounts!",
+				width: 1800,
+				height: 1600,
+				alt: "Wade's Plumbing & Septic",
+			},
+		],
+		locale: "en-US",
+		type: "website",
+	},
+};
+
 async function getPromotions() {
 	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
 		method: "POST",
