@@ -120,7 +120,7 @@ export default async function Services() {
 							</p>
 						</div>
 
-						<Search placeholder={`We offer ${total} services...`} />
+						{/* <Search placeholder={`We offer ${total} services...`} /> */}
 
 						<div className="flex mt-10 items-center justify-center">
 							<div className="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
@@ -169,7 +169,7 @@ export default async function Services() {
 							</div>
 						</div>
 
-						<Pagnation pageMin={1} pageMax={services.length} total={total} />
+						{/* <Pagnation pageMin={1} pageMax={services.length} total={total} /> */}
 					</div>
 				</div>
 			</div>

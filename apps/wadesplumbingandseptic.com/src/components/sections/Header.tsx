@@ -89,11 +89,6 @@ export default function Header({ data }) {
 								</Disclosure.Button>
 							</div>
 							<div className="hidden md:flex space-x-8 items-center font-bold">
-								{/* {navigation.map((item) => (
-								<Link className={classNames(item.current ? "text-brand" : "hover:underline")} key={item.name} href={item.href}>
-									{item.name}
-								</Link>
-							))} */}
 								<Link className="hover:underline" href="/">
 									Home
 								</Link>
@@ -355,7 +350,7 @@ export default function Header({ data }) {
 														<div className="bg-brand p-4 rounded relative col-span-2 flex flex-wrap items-center justify-between">
 															<div className="w-full lg:w-1/2">
 																<h2 className="text-lg font-semibold leading-8 tracking-tight text-black-600">We have {data?.expertTipsTotals?.pageInfo?.total} Expert Tips</h2>
-																<p className="mb-4 text-4xl tracking-tight font-extrabold text-black">Search for any Tip or Post</p>
+																<p className="mb-4 text-4xl tracking-tight font-extrabold text-black">Search for any Tips or Post</p>
 															</div>
 															<div className="w-fulllg:w-1/2">
 																<div className="flex flex-wrap lg:justify-end">

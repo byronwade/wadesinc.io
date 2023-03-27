@@ -121,7 +121,7 @@ export default async function ExpertTips() {
 							</p>
 						</div>
 
-						<Search placeholder="Search for a tip..." />
+						{/* <Search placeholder="Search for a tip..." /> */}
 
 						<div className="grid gird-col-1 md:grid-cols-2 lg:grid-col-3 xl:grid-cols-4 auto-rows-auto gap-6 mt-10 items-stretch w-full">
 							<Suspense fallback={<div>Loading...</div>}>
@@ -165,7 +165,7 @@ export default async function ExpertTips() {
 							</Suspense>
 						</div>
 
-						<Pagnation pageMin={1} pageMax={1000} total={2000} />
+						{/* <Pagnation pageMin={1} pageMax={1000} total={2000} /> */}
 					</div>
 				</div>
 			</div>
