@@ -1,27 +1,57 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useQuery } from "@apollo/client";
 import Pagnation from "@/components/ui/Pagnation";
 import Search from "@/components/ui/Search";
-
-//GraphQL Queries
-import { SERVICES } from "../../graphql/services";
-import { CATEGORIES } from "../../graphql/categories";
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 
-export default function Services() {
-	const { loading, error, data } = useQuery(SERVICES);
-	const { loading: catergoryLoading, error: catergoryError, data: catergoryData } = useQuery(CATEGORIES);
-	if (loading || catergoryLoading) return <div>Loading...</div>;
-	if (error || catergoryError) return <div>{error?.message}</div>;
+//GraphQL Queries
+async function getService() {
+	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query NewQuery {
+				services(first: 11) {
+					edges {
+						node {
+							id
+							title
+							slug
+							uri
+							excerpt
+							readingTime
+							featuredImage {
+								node {
+									altText
+									sizes(size: LARGE)
+									slug
+									sourceUrl(size: LARGE)
+									title(format: RENDERED)
+									uri
+								}
+							}
+						}
+					}
+					pageInfo {
+						total
+					}
+				}
+			}
+	  `,
+		}),
+		next: { revalidate: 10 },
+	}).then((res) => res.json());
+	return { data };
+}
+
+export default async function Services() {
+	const { data } = await getService();
 
 	const services = data.services.edges;
 	const total = data.services.pageInfo.total;
-	console.log(services);
-
-	//data for the dropdown on the search bar
-	const categories = catergoryData.categories.nodes;
 	return (
 		<section className="bg-gray-50 relative overflow-hidden">
 			<div className="py-16 px-6 sm:py-24 lg:px-8">
@@ -52,7 +82,7 @@ export default function Services() {
 												</div>
 												<div className="p-10">
 													<h3 className="text-xl font-medium text-gray-700">{service.node.title}</h3>
-													<p className="mt-2 text-slate-500" dangerouslySetInnerHTML={{ __html: service.node.excerpt }} />
+													<div className="mt-2 text-slate-500" dangerouslySetInnerHTML={{ __html: service.node.excerpt }} />
 													<span className="group-hover:underline mt-2 inline-flex text-sky-500">
 														Read in {service.node.readingTime} min <ArrowLongRightIcon className="inline-block self-center ml-3 w-4 h-4" />
 													</span>
@@ -64,7 +94,7 @@ export default function Services() {
 											<Link href={service.node.uri} key={service.node.id} className="group flex rounded border border-slate-200 bg-white">
 												<div className="flex-1 p-10">
 													<h3 className="text-xl font-medium text-gray-700">{service.node.title}</h3>
-													<p className="mt-2 text-slate-500" dangerouslySetInnerHTML={{ __html: service.node.excerpt }} />
+													<div className="mt-2 text-slate-500" dangerouslySetInnerHTML={{ __html: service.node.excerpt }} />
 													<span className="group-hover:underline mt-2 inline-flex text-sky-500">
 														Read in {service.node.readingTime} min <ArrowLongRightIcon className="inline-block self-center ml-3 w-4 h-4" />
 													</span>

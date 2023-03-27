@@ -69,7 +69,10 @@ export default function Example() {
 						<div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
 							<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
 								<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Our team is offering a new customer service.</h1>
-								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">Cupidatat minim id magna ipsum sint dolor qui. Sunt sit in quis cupidatat mollit aute velit. Et labore commodo nulla aliqua proident mollit ullamco exercitation tempor. Sint aliqua anim nulla sunt mollit id pariatur in voluptate cillum. Eu voluptate tempor esse minim amet fugiat veniam occaecat aliqua.</p>
+								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+									At our plumbing and septic business, we are proud to offer exceptional customer service. We believe in going above and beyond to meet the needs of our valued clients. Our team is dedicated to providing you with the highest quality service, and we work tirelessly to ensure that you are completely satisfied with our work. We understand that plumbing and septic issues can be stressful, which is why we strive to make the process as easy and stress-free as
+									possible. Whether you need routine maintenance or emergency repairs, you can count on us to be there when you need us.
+								</p>
 							</div>
 							<div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
 								<div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">

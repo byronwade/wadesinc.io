@@ -1,40 +1,48 @@
-"use client";
 import Link from "next/link";
-import { useQuery, gql } from "@apollo/client";
 import { ArrowLongRightIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import { Fragment } from "react";
 
-const JOBS = gql`
-	query NewQuery {
-		categories(where: { slug: "jobs" }) {
-			nodes {
-				children {
+async function getJobs() {
+	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query NewQuery {
+				categories(where: { slug: "jobs" }) {
 					nodes {
-						jobs {
+						children {
 							nodes {
-								title(format: RENDERED)
-								uri
-								JobsData {
-									jobType
-									location
-									payRange
-									shiftAndSchedule
+								jobs {
+									nodes {
+										title(format: RENDERED)
+										uri
+										JobsData {
+											jobType
+											location
+											payRange
+											shiftAndSchedule
+										}
+									}
 								}
+								name
 							}
 						}
 						name
 					}
 				}
-				name
 			}
-		}
-	}
-`;
+	  `,
+		}),
+		next: { revalidate: 10 },
+	}).then((res) => res.json());
+	return { data };
+}
 
-export default function Jobs() {
-	const { loading, error, data } = useQuery(JOBS);
-	if (loading) return <div>Loading...</div>;
-	if (error) return <div>{error?.message}</div>;
+export default async function Jobs() {
+	const { data } = await getJobs();
 
 	const {
 		categories: { nodes },

@@ -1,27 +1,58 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useQuery } from "@apollo/client";
 import Pagnation from "@/components/ui/Pagnation";
 import Search from "@/components/ui/Search";
-
-//GraphQL Queries
-import { EXPERTTIPS } from "../../graphql/expertTips";
-import { CATEGORIES } from "../../graphql/categories";
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
+import { Suspense } from "react";
 
-export default function ExpertTips() {
-	const { loading, error, data } = useQuery(EXPERTTIPS);
-	const { loading: catergoryLoading, error: catergoryError, data: catergoryData } = useQuery(CATEGORIES);
-	if (loading || catergoryLoading) return <div>Loading...</div>;
-	if (error || catergoryError) return <div>{error?.message}</div>;
+async function getTips() {
+	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query NewQuery {
+				posts {
+					nodes {
+						id
+						title(format: RENDERED)
+						excerpt(format: RENDERED)
+						uri
+						date
+						readingTime
+						author {
+							node {
+								id
+								username
+							}
+						}
+						featuredImage {
+							node {
+								altText
+								sourceUrl(size: LARGE)
+								sizes(size: LARGE)
+							}
+						}
+					}
+					pageInfo {
+						total
+					}
+				}
+			}
+	  `,
+		}),
+		next: { revalidate: 10 },
+	}).then((res) => res.json());
+	return { data };
+}
 
-	const tips = data.posts.nodes;
-	const total = data.posts.pageInfo.total;
-	console.log(tips);
+export default async function ExpertTips() {
+	const { data } = await getTips();
 
-	//data for the dropdown on the search bar
-	const categories = catergoryData.categories.nodes;
+	const tips = data?.posts?.nodes;
+	const total = data?.posts?.pageInfo?.total;
 	return (
 		<section className="bg-gray-50 relative overflow-hidden">
 			<div className="py-16 px-6 sm:py-24 lg:px-8">
@@ -42,43 +73,45 @@ export default function ExpertTips() {
 						<Search placeholder="Search for a tip..." />
 
 						<div className="grid gird-col-1 md:grid-cols-2 lg:grid-col-3 xl:grid-cols-4 auto-rows-auto gap-6 mt-10 items-stretch w-full">
-							{tips.map((tip, index) => {
-								if (index % 7 === 0) {
-									return (
-										<Link href={`/expert-tips/${tip.uri}`} key={index} className="max-h-90 w-full relative group col-spane-1 row-span-1 xl:col-span-2 xl:row-span-2">
-											<div className="z-20">
-												<p className="z-20 md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-												<div className="z-20 absolute bottom-0 left-0 md:p-10 p-6">
-													<h2 className="text-xl font-semibold 5 text-white">{tip.title}</h2>
-													<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-														<p className="pr-2 text-sm font-medium leading-none">
-															Read in {tip.readingTime} min <ArrowLongRightIcon className="inline-block self-center ml-3 w-4 h-4" />
-														</p>
-													</span>
+							<Suspense fallback={<div>Loading...</div>}>
+								{tips.map((tip, index) => {
+									if (index % 7 === 0) {
+										return (
+											<Link href={`/expert-tips/${tip.uri}`} key={index} className="max-h-90 w-full relative group col-spane-1 row-span-1 xl:col-span-2 xl:row-span-2">
+												<div className="z-20">
+													<p className="z-20 md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+													<div className="z-20 absolute bottom-0 left-0 md:p-10 p-6">
+														<h2 className="text-xl font-semibold 5 text-white">{tip.title}</h2>
+														<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+															<p className="pr-2 text-sm font-medium leading-none">
+																Read in {tip.readingTime} min <ArrowLongRightIcon className="inline-block self-center ml-3 w-4 h-4" />
+															</p>
+														</span>
+													</div>
 												</div>
-											</div>
-											<Image placeholder="blur" blurDataURL={tip?.node?.featuredImage?.node?.sourceUrl ? tip.node.featuredImage.node.sourceUrl : "/placeholder.webp"} width={500} height={500} src={tip?.featuredImage?.node?.sourceUrl ? tip.featuredImage.node.sourceUrl : "/placeholder.webp"} className="brightness-75 z-10 h-full w-full object-cover object-center rounded" alt={tip?.featuredImage?.node?.altText ? tip.featuredImage.node.altText : "placeholder text"} />
-										</Link>
-									);
-								} else {
-									return (
-										<Link href={`/expert-tips/${tip.uri}`} key={tip.id} className="max-h-45 w-full relative group row-span-1">
-											<div className="z-20">
-												<p className="z-20 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-												<div className="z-20 absolute bottom-0 left-0 p-6">
-													<h2 className="text-xl font-semibold 5 text-white">{tip.title}</h2>
-													<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-														<p className="pr-2 text-sm font-medium leading-none">
-															Read in {tip.readingTime} min <ArrowLongRightIcon className="inline-block self-center ml-3 w-4 h-4" />
-														</p>
-													</span>
+												<Image placeholder="blur" blurDataURL={tip?.node?.featuredImage?.node?.sourceUrl ? tip.node.featuredImage.node.sourceUrl : "/placeholder.webp"} width={500} height={500} src={tip?.featuredImage?.node?.sourceUrl ? tip.featuredImage.node.sourceUrl : "/placeholder.webp"} className="brightness-75 z-10 h-full w-full object-cover object-center rounded" alt={tip?.featuredImage?.node?.altText ? tip.featuredImage.node.altText : "placeholder text"} />
+											</Link>
+										);
+									} else {
+										return (
+											<Link href={`/expert-tips/${tip.uri}`} key={tip.id} className="max-h-45 w-full relative group row-span-1">
+												<div className="z-20">
+													<p className="z-20 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
+													<div className="z-20 absolute bottom-0 left-0 p-6">
+														<h2 className="text-xl font-semibold 5 text-white">{tip.title}</h2>
+														<span className="group-hover:underline focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
+															<p className="pr-2 text-sm font-medium leading-none">
+																Read in {tip.readingTime} min <ArrowLongRightIcon className="inline-block self-center ml-3 w-4 h-4" />
+															</p>
+														</span>
+													</div>
 												</div>
-											</div>
-											<Image placeholder="blur" blurDataURL={tip?.node?.featuredImage?.node?.sourceUrl ? tip.node.featuredImage.node.sourceUrl : "/placeholder.webp"} width={250} height={250} src={tip?.featuredImage?.node?.sourceUrl ? tip.featuredImage.node.sourceUrl : "/placeholder.webp"} className="brightness-75 z-10 h-full w-full object-cover object-center rounded" alt={tip?.featuredImage?.node?.altText ? tip.featuredImage.node.altText : "placeholder text"} />
-										</Link>
-									);
-								}
-							})}
+												<Image placeholder="blur" blurDataURL={tip?.node?.featuredImage?.node?.sourceUrl ? tip.node.featuredImage.node.sourceUrl : "/placeholder.webp"} width={250} height={250} src={tip?.featuredImage?.node?.sourceUrl ? tip.featuredImage.node.sourceUrl : "/placeholder.webp"} className="brightness-75 z-10 h-full w-full object-cover object-center rounded" alt={tip?.featuredImage?.node?.altText ? tip.featuredImage.node.altText : "placeholder text"} />
+											</Link>
+										);
+									}
+								})}
+							</Suspense>
 						</div>
 
 						<Pagnation pageMin={1} pageMax={1000} total={2000} />

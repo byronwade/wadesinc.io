@@ -1,38 +1,39 @@
-"use client";
 import JobForm from "@/components/forms/JobForm";
-import { gql, useQuery } from "@apollo/client";
-import { usePathname } from "next/navigation";
 
-const JOB = gql`
-	query NewQuery($slug: ID!) {
-		job(id: $slug, idType: SLUG) {
-			title(format: RENDERED)
-			uri
-			JobsData {
-				benefits {
-					name
+async function getJob(slug) {
+	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query NewQuery {
+				job(id: ${slug}, idType: SLUG) {
+					title(format: RENDERED)
+					uri
+					JobsData {
+						benefits {
+							name
+						}
+						jobType
+						location
+						payRange
+						qualifications
+						shiftAndSchedule
+					}
+					content(format: RENDERED)
 				}
-				jobType
-				location
-				payRange
-				qualifications
-				shiftAndSchedule
 			}
-			content(format: RENDERED)
-		}
-	}
-`;
+	  `,
+		}),
+		next: { revalidate: 10 },
+	}).then((res) => res.json());
+	return { data };
+}
 
-export default function Job({ params }) {
-	const pathname = usePathname();
-
-	//graphql query
-	const { loading, error, data } = useQuery(JOB, {
-		variables: { slug: params.slug },
-	});
-
-	if (loading) return <div>Loading...</div>;
-	if (error) return <div>{error?.message}</div>;
+export default async function Job({ params }) {
+	const { data } = await getJob(`"${params.slug}"`);
 
 	console.log(data);
 
@@ -59,7 +60,7 @@ export default function Job({ params }) {
 
 			<div className="!mt-16">
 				<h1 className="font-extrabold text-black sm:text-3xl lg:text-4xl mb-4">Apply with this form</h1>
-				<JobForm pathname={pathname} />
+				<JobForm />
 			</div>
 		</>
 	);

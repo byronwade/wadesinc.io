@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { LinkIcon } from "@heroicons/react/20/solid";
-declare const chrome: any;
 
 export default function SocialBar() {
 	const [isCopied, setIsCopied] = useState(false);

@@ -1,4 +1,3 @@
-import Banner from "@/components/ui/Banner";
 import LogoCloud from "@/components/sections/LogoCloud";
 import FAQ from "@/components/sections/FAQ";
 import Testimonials from "@/components/sections/Testimonials";
@@ -42,8 +41,8 @@ export default function Home() {
 			<FAQ />
 			{/* <Testimonials /> */}
 			<LogoCloud />
-			<StatsSection />
 			<Testimonials />
+			<StatsSection />
 		</>
 	);
 }

@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { SVGProps } from "react";
 import CTA from "./CTA";
 
@@ -86,11 +85,20 @@ const navigation = {
 	],
 };
 
-export default function Footer() {
-	const pathname = usePathname();
+export default function Footer({ data }) {
+	const residential = data?.residential?.services?.nodes?.slice(0, 4);
+	const commmerical = data?.commercial?.services?.nodes?.slice(0, 4);
+	const drainClearing = data?.drainClearing?.services?.nodes?.slice(0, 4);
+	const septic = data?.septic?.services?.nodes?.slice(0, 4);
+	const engineeredSeptic = data?.engineeredSeptic?.services?.nodes?.slice(0, 4);
+	const drainage = data?.drainage?.services?.nodes?.slice(0, 4);
+
+	const featuredPost = data?.featuredPost?.nodes?.slice(0, 1);
+	const postsSeptic = data?.postsSeptic?.posts?.nodes?.slice(0, 2);
+	const postsPlumbing = data?.postsPlumbing?.posts?.nodes?.slice(0, 2);
 	return (
 		<>
-			{pathname === "/contact-us" ? <></> : <CTA />}
+			<CTA />
 			<footer className="bg-black relative overflow-hidden" aria-labelledby="footer-heading">
 				<div className="py-16 px-6 sm:py-24 lg:px-8">
 					<Image className="hidden md:block absolute -bottom-0 left-10 w-auto h-auto" src="/wario.png" height={100} width={100} alt="Mario Plumber" />

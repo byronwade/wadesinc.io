@@ -1,8 +1,10 @@
 "use client";
 import { useForm, ValidationError } from "@formspree/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function ContactForm({ pathname }) {
+export default function ContactForm() {
+	const pathname = usePathname();
 	const [state, handleSubmit] = useForm("xrgvaaqg");
 	if (state.succeeded) {
 		return (

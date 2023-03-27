@@ -1,28 +1,34 @@
 /* eslint-disable react/jsx-no-undef */
-"use client";
 import Image from "next/image";
-import { useQuery, gql } from "@apollo/client";
 
-const PROMOTIONS = gql`
-	query NewQuery {
-		promotions {
-			nodes {
-				title(format: RENDERED)
-				content(format: RENDERED)
-				promotionData {
-					expiration
+async function getPromotions() {
+	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `
+			query NewQuery {
+				promotions {
+					nodes {
+						title(format: RENDERED)
+						content(format: RENDERED)
+						promotionData {
+							expiration
+						}
+					}
 				}
 			}
-		}
-	}
-`;
+	  `,
+		}),
+		next: { revalidate: 10 },
+	}).then((res) => res.json());
+	return { data };
+}
 
-export default function Discounts() {
-	const { loading, error, data } = useQuery(PROMOTIONS);
-
-	if (loading) return <div>Submitting...</div>;
-	if (error) return <div>{error.message}</div>;
-
+export default async function Discounts() {
+	const { data } = await getPromotions();
 	const { nodes: promotions } = data?.promotions;
 	return (
 		<section className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
