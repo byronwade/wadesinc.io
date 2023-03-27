@@ -61,7 +61,7 @@ async function getJob(slug) {
 }
 
 export async function generateMetadata({ params }): Promise<Metadata> {
-	const { data } = await getJob(`"/${params.uri.join("/")}"`);
+	const { data } = await getJob(`"/${params.slug}"`);
 	const seo = data?.job?.seo;
 	console.log(seo);
 	return {
@@ -71,9 +71,9 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 		applicationName: "Wade's Plumbing & Septic",
 		referrer: "origin-when-cross-origin",
 		keywords: seo?.metaKeywords,
-		authors: [{ name: data?.job?.author?.node?.name }, { name: data?.job?.author?.node?.name, url: `https://www.wadesplumbingandseptic.com/expert-tips/${params.uri.join("/")}` }],
+		authors: [{ name: "Byron Wade" }, { name: "Byron Wade", url: `https://www.wadesplumbingandseptic.com/expert-tips/${params.slug}` }],
 		creator: "Byron Wade",
-		publisher: data.post.author.node.name,
+		publisher: "Byron Wade",
 		alternates: {},
 		formatDetection: {
 			email: false,
@@ -81,7 +81,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 			telephone: false,
 		},
 		category: "construction",
-		bookmarks: [`https://www.wadesplumbingandseptic.com/expert-tips/${params.uri.join("/")}`],
+		bookmarks: [`https://www.wadesplumbingandseptic.com/expert-tips/${params.slug}`],
 		twitter: {
 			card: "summary_large_image",
 			title: seo?.twitterTitle || seo?.title || data?.job?.title,
@@ -92,7 +92,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 		openGraph: {
 			title: seo?.opengraphTitle || seo?.title,
 			description: seo?.opengraphDescription || seo?.metaDesc,
-			url: `https://www.wadesplumbingandseptic.com/expert-tips/${params.uri.join("/")}`,
+			url: `https://www.wadesplumbingandseptic.com/expert-tips/${params.slug}`,
 			siteName: seo?.opengraphTitle || seo?.title,
 			images: [
 				{
