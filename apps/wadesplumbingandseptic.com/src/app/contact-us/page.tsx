@@ -53,7 +53,7 @@ export default function Example() {
 								</div>
 							</div>
 						</div>
-						<ContactForm pathname={pathname} />
+						<ContactForm />
 					</div>
 				</div>
 			</div>
