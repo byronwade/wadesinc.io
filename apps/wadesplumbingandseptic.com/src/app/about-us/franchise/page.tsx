@@ -15,7 +15,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/franchising/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/about-us/franchising/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Franchising | Wade's Plumbing & Septic",
@@ -29,7 +29,7 @@ export const metadata = {
 	openGraph: {
 		title: "Franchising | Wade's Plumbing & Septic",
 		description: "Join the Wade's Plumbing & Septic family and become a successful local franchise owner in the plumbing industry. Discover how to start your own business with our proven system.",
-		url: "https://wwww.wadesplumbingandseptic.com/about-us/franchising/",
+		url: "https://www.wadesplumbingandseptic.com/about-us/franchising/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{

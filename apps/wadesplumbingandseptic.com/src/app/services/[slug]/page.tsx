@@ -123,7 +123,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 			telephone: false,
 		},
 		category: "construction",
-		bookmarks: [`https://www.wadesplumbingandseptic.com/${params.slug}`],
+		bookmarks: [`https://www.wadesplumbingandseptic.com/services/${params.slug}`],
 		twitter: {
 			card: "summary_large_image",
 			title: seo?.twitterTitle || seo?.title || data?.service?.title,
@@ -134,7 +134,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 		openGraph: {
 			title: seo?.opengraphTitle || seo?.title,
 			description: seo?.opengraphDescription || seo?.metaDesc,
-			url: `https://www.wadesplumbingandseptic.com/${params?.slug}`,
+			url: `https://www.wadesplumbingandseptic.com/services/${params?.slug}`,
 			siteName: seo?.opengraphTitle || seo?.title,
 			images: [
 				{
@@ -179,14 +179,14 @@ export default async function ServicesPage({ params }) {
 								<div className="absolute space-y-1 p-6 bottom-0 left-0 mx-auto w-full">
 									<span className="block text-gray-100">
 										Published in{" "}
-										<a href="#" className="font-semibold text-white hover:underline">
+										<span className="font-semibold text-white">
 											{service?.categories?.nodes.map((categories, index) => (
 												<span key={index}>
 													{categories?.name}
 													{index !== service?.categories?.nodes?.length - 1 && ", "}
 												</span>
 											))}
-										</a>
+										</span>
 									</span>
 									<h1 dangerouslySetInnerHTML={{ __html: service?.title }} className="max-w-4xl text-2xl font-extrabold leading-none text-white sm:text-3xl lg:text-4xl" />
 								</div>
@@ -196,10 +196,7 @@ export default async function ServicesPage({ params }) {
 									{service?.author ? (
 										<>
 											<span>
-												By{" "}
-												<a href="#" className="text-gray-900 dark:text-white hover:underline no-underline font-semibold">
-													{service?.author?.node?.name}
-												</a>
+												By <span className="text-gray-900 dark:text-white no-underline font-semibold">{service?.author?.node?.name}</span>
 											</span>
 											<span className="bg-gray-300 dark:bg-gray-400 w-2 h-2 rounded-full" />
 										</>

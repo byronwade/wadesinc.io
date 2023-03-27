@@ -15,7 +15,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/warranties/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/about-us/warranties/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Warranties | Wade's Plumbing & Septic",
@@ -29,7 +29,7 @@ export const metadata = {
 	openGraph: {
 		title: "Warranties | Wade's Plumbing & Septic",
 		description: "Looking for a trusted plumbing & septic service in your local area? Explore our industry-leading warranties at Wade's Plumbing & Septic.",
-		url: "https://wwww.wadesplumbingandseptic.com/about-us/warranties/",
+		url: "https://www.wadesplumbingandseptic.com/about-us/warranties/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{

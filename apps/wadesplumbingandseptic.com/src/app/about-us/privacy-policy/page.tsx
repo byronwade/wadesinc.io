@@ -15,7 +15,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/privacy-policy/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/about-us/privacy-policy/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Privacy Policy | Wade's Plumbing & Septic",
@@ -29,7 +29,7 @@ export const metadata = {
 	openGraph: {
 		title: "Privacy Policy | Wade's Plumbing & Septic",
 		description: "Looking for a trusted plumbing and septic company in your local area? Look no further than Wade's Plumbing & Septic! Our privacy policy page ensures your information is safe and secure.",
-		url: "https://wwww.wadesplumbingandseptic.com/about-us/privacy-policy/",
+		url: "https://www.wadesplumbingandseptic.com/about-us/privacy-policy/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{

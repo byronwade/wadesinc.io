@@ -18,7 +18,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/contact-us/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/contact-us/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Contact Us | Wade's Plumbing & Septic",
@@ -32,7 +32,7 @@ export const metadata = {
 	openGraph: {
 		title: "Contact Us | Wade's Plumbing & Septic",
 		description: "Looking for reliable plumbing and septic services in your local area? Look no further than Wade's Plumbing & Septic. Contact us today for all your plumbing needs.",
-		url: "https://wwww.wadesplumbingandseptic.com/contact-us/",
+		url: "https://www.wadesplumbingandseptic.com/contact-us/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{
@@ -59,11 +59,7 @@ export default function Example() {
 				<Image placeholder="blur" blurDataURL="/placeholder.webp" className="object-cover h-full w-full brightness-80" src="/trees-river.jpg" width={1500} height={1500} alt="Redwood trees" />
 				<div className="absolute bottom-10 right-10">
 					<p className="text-white backdrop-blur-sm bg-white/30 p-2 rounded">
-						Photo by a local resident{" "}
-						<a className="underline" href="#">
-							Luca Bravo
-						</a>
-						.
+						Photo by a local resident <span className="underline">Luca Bravo</span>.
 					</p>
 				</div>
 			</div>

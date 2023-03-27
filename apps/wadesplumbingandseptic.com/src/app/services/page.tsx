@@ -21,7 +21,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/services/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/services/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Services | Wade's Plumbing & Septic",
@@ -35,7 +35,7 @@ export const metadata = {
 	openGraph: {
 		title: "Services | Wade's Plumbing & Septic",
 		description: "Looking for reliable plumbing services in the local area? Look no further than Wade's Plumbing & Septic! Our experienced team offers a wide range of plumbing services to meet all your needs.",
-		url: "https://wwww.wadesplumbingandseptic.com/services/",
+		url: "https://www.wadesplumbingandseptic.com/services/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{
@@ -113,9 +113,9 @@ export default async function Services() {
 							<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Search for any service</p>
 							<p className="max-w-2xl text-lg leading-6 text-gray-600">
 								Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
-								<a href="#" className="font-semibold text-brand-600 hover:text-brand-500">
+								<Link href="/contact-us" className="font-semibold text-brand-600 hover:text-brand-500">
 									{` `}sending us an email{` `}
-								</a>
+								</Link>
 								and we’ll get back to you as soon as we can.
 							</p>
 						</div>

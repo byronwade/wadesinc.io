@@ -19,7 +19,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/jobs/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/about-us/jobs/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Job Opportunities | Wade's Plumbing & Septic",
@@ -33,7 +33,7 @@ export const metadata = {
 	openGraph: {
 		title: "Job Opportunities | Wade's Plumbing & Septic",
 		description: "Looking for plumbing job opportunities in your local area? Look no further than Wade's Plumbing & Septic. Our team is hiring skilled plumbers now.",
-		url: "https://wwww.wadesplumbingandseptic.com/about-us/jobs/",
+		url: "https://www.wadesplumbingandseptic.com/about-us/jobs/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{

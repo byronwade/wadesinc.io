@@ -18,7 +18,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/promotions/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/about-us/promotions/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Promotions | Wade's Plumbing & Septic",
@@ -32,7 +32,7 @@ export const metadata = {
 	openGraph: {
 		title: "Promotions | Wade's Plumbing & Septic",
 		description: "Looking for quality plumbing services in your local area? Check out Wade's Plumbing & Septic promotions page for exclusive deals and discounts!",
-		url: "https://wwww.wadesplumbingandseptic.com/about-us/promotions/",
+		url: "https://www.wadesplumbingandseptic.com/about-us/promotions/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{

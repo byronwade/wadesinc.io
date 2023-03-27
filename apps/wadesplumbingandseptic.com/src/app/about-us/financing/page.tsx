@@ -15,7 +15,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/financing/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/about-us/financing/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Financing | Wade's Plumbing & Septic",
@@ -29,7 +29,7 @@ export const metadata = {
 	openGraph: {
 		title: "Financing | Wade's Plumbing & Septic",
 		description: "Looking for local financing options for your plumbing needs? Look no further than Wade's Plumbing & Septic. Our team can help you find the perfect financing solution for your local plumbing projects.",
-		url: "https://wwww.wadesplumbingandseptic.com/about-us/financing/",
+		url: "https://www.wadesplumbingandseptic.com/about-us/financing/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{

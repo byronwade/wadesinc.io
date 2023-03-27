@@ -176,14 +176,14 @@ export default async function BlogPage({ params }) {
 						<div className="absolute top-20 left-1/2 px-4 mx-auto w-full max-w-screen-xl -translate-x-1/2 xl:top-1/2 xl:-translate-y-1/2 xl:px-0">
 							<span className="block mb-4 text-gray-300">
 								Published in{" "}
-								<a href="#" className="font-semibold text-white hover:underline">
+								<span className="font-semibold text-white">
 									{tips?.categories?.nodes?.map((categories, index) => (
 										<span key={index}>
 											{categories?.name}
 											{index !== tips?.categories?.nodes?.length - 1 && ", "}
 										</span>
 									))}
-								</a>
+								</span>
 							</span>
 							<h1 dangerouslySetInnerHTML={{ __html: tips?.title }} className="mb-4 max-w-4xl text-2xl font-extrabold leading-none text-white sm:text-3xl lg:text-4xl" />
 						</div>
@@ -195,10 +195,7 @@ export default async function BlogPage({ params }) {
 									{tips?.author ? (
 										<>
 											<span>
-												By{" "}
-												<a href="#" className="text-gray-900 dark:text-white hover:underline no-underline font-semibold">
-													{tips?.author?.node?.name}
-												</a>
+												By <span className="text-gray-900 dark:text-white no-underline font-semibold">{tips?.author?.node?.name}</span>
 											</span>
 											<span className="bg-gray-300 dark:bg-gray-400 w-2 h-2 rounded-full" />
 										</>

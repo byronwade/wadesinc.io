@@ -24,32 +24,6 @@ export default function HeroSection() {
 						possible service to our friends and neighbors.
 					</p>
 					<p className="font-bold text-white mt-4">License Number (Plumbing & Septic): 1087260</p>
-					{/* <div className="text-white grid gap-8 lg:grid-cols-2 pt-8">
-							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium backdrop-blur-sm bg-white/30 hover:bg-white/60 rounded ">
-								<span className="w-full">Curious about our warranties?</span>
-								<svg className="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-								</svg>
-							</a>
-							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium backdrop-blur-sm bg-white/30 hover:bg-white/60 rounded ">
-								<span className="w-full">Learn more about our local customer support team</span>
-								<svg className="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-								</svg>
-							</a>
-							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium backdrop-blur-sm bg-white/30 hover:bg-white/60 rounded ">
-								<span className="w-full">Explore our list of services, plumbing & septic.</span>
-								<svg className="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-								</svg>
-							</a>
-							<a href="#" className="inline-flex justify-center items-center py-2 px-5 text-base font-medium backdrop-blur-sm bg-white/30 hover:bg-white/60 rounded ">
-								<span className="w-full">Take a look as our map to see the areas we serve.</span>
-								<svg className="ml-3 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-									<path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-								</svg>
-							</a>
-						</div> */}
 				</div>
 				<div className="z-10 ustify-center p-4 max-w-screen-sm bg-white rounded  lg:mt-0 lg:col-span-5 xl:col-span-4 sm:p-6 lg:p-8 dark:bg-gray-800">
 					<ContactForm />

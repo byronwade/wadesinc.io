@@ -114,9 +114,9 @@ export default async function ExpertTips() {
 							<p className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Tips from experts</p>
 							<p className="max-w-2xl text-lg leading-6 text-gray-600">
 								Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
-								<a href="#" className="font-semibold text-brand-600 hover:text-brand-500">
+								<Link href="/contact-us" className="font-semibold text-brand-600 hover:text-brand-500">
 									{` `}sending us an email{` `}
-								</a>
+								</Link>
 								and we’ll get back to you as soon as we can.
 							</p>
 						</div>

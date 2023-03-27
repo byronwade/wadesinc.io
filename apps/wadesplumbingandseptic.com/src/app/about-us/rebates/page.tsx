@@ -15,7 +15,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/rebates/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/about-us/rebates/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "Rebates | Wade's Plumbing & Septic",
@@ -29,7 +29,7 @@ export const metadata = {
 	openGraph: {
 		title: "Rebates | Wade's Plumbing & Septic",
 		description: "Looking for plumbing rebates in your local area? Look no further than Wade's Plumbing & Septic. Find savings and incentives for your next plumbing project now.",
-		url: "https://wwww.wadesplumbingandseptic.com/about-us/rebates/",
+		url: "https://www.wadesplumbingandseptic.com/about-us/rebates/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{

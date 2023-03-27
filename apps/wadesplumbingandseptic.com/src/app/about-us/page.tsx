@@ -17,7 +17,7 @@ export const metadata = {
 		telephone: false,
 	},
 	category: "construction",
-	bookmarks: ["https://wwww.wadesplumbingandseptic.com/about-us/"],
+	bookmarks: ["https://www.wadesplumbingandseptic.com/about-us/"],
 	twitter: {
 		card: "summary_large_image",
 		title: "About Us | Wade's Plumbing & Septic",
@@ -31,7 +31,7 @@ export const metadata = {
 	openGraph: {
 		title: "About Us | Wade's Plumbing & Septic",
 		description: "Looking for a reliable plumbing company in the local area? Look no further than Wade's Plumbing & Septic. Our experienced team is dedicated to providing top-quality services for all your plumbing needs.",
-		url: "https://wwww.wadesplumbingandseptic.com/about-us/",
+		url: "https://www.wadesplumbingandseptic.com/about-us/",
 		siteName: "Wade's Plumbing & Septic",
 		images: [
 			{
