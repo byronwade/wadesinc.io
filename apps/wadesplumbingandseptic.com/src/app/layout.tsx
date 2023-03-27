@@ -132,10 +132,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	const { data } = await HeaderLinks();
 	return (
 		<html lang="en">
-			<body className="bg-gray-50 text-base">
-				<Header data={data} />
-				{children}
-				<Footer />
+			<head>
 				<Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-6TLN795BRR"></Script>
 				<Script id="google-analytics" strategy="afterInteractive">
 					{`
@@ -146,6 +143,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 						gtag('config', 'G-6TLN795BRR');
 					`}
 				</Script>
+			</head>
+			<body className="bg-gray-50 text-base">
+				<Header data={data} />
+				{children}
+				<Footer />
 				{/* <Script id="ze-snippet" strategy="lazyOnload" src="https://static.zdassets.com/ekr/snippet.js?key=06e45130-bfd2-4b2b-8137-28903b96f527"></Script> */}
 			</body>
 		</html>
