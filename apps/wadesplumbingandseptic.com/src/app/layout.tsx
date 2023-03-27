@@ -134,7 +134,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			<body className="bg-gray-50 text-base">
 				<Header data={data} />
 				{children}
-				<Footer data={data} />
+				<Footer />
 				<Script id="ze-snippet" strategy="lazyOnload" src="https://static.zdassets.com/ekr/snippet.js?key=06e45130-bfd2-4b2b-8137-28903b96f527"></Script>
 			</body>
 		</html>
