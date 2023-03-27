@@ -22,7 +22,7 @@ export default function SocialBar() {
 		if (isCopied) {
 			toast.success("Link copied to clipboard!");
 		}
-	}, [handleCopyLink]);
+	}, [handleCopyLink, isCopied]);
 
 	return (
 		<>
