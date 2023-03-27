@@ -1,7 +1,7 @@
 import Header from "@/components/sections/Header";
-import "./globals.css";
 import Footer from "@/components/sections/Footer";
-import Script from "next/script";
+import "./globals.css";
+// import Script from "next/script";
 
 async function HeaderLinks() {
 	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
@@ -135,7 +135,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				<Header data={data} />
 				{children}
 				<Footer />
-				<Script id="ze-snippet" strategy="lazyOnload" src="https://static.zdassets.com/ekr/snippet.js?key=06e45130-bfd2-4b2b-8137-28903b96f527"></Script>
+				{/* <Script id="ze-snippet" strategy="lazyOnload" src="https://static.zdassets.com/ekr/snippet.js?key=06e45130-bfd2-4b2b-8137-28903b96f527"></Script> */}
 			</body>
 		</html>
 	);
