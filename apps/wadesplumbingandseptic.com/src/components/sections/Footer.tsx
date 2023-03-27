@@ -62,10 +62,10 @@ export default function Footer() {
 					<div className="mt-16 text-center">
 						<p className="text-xs leading-5 text-gray-400">
 							&copy; 2023 Wade&apos;s, Inc. All rights reserved. Designed by{" "}
-							<Link className="text-brand hover:underline font-bold" href="https://www.wadesplumbingandseptic.com/">
+							<a className="text-brand hover:underline font-bold" href="https://www.byronwade.com/">
 								Byron Wade
-							</Link>{" "}
-							using <a href="www.tailwindcss.com">Tailwind</a> and <a href="www.nextjs.com">Next.js</a>
+							</a>{" "}
+							using <a href="https://www.tailwindcss.com">Tailwind</a> and <a href="https://www.nextjs.com">Next.js</a>
 						</p>
 					</div>
 				</div>
