@@ -1,10 +1,7 @@
-"use client";
 import ContactForm from "@/components/forms/ContactForm";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 export default function Example() {
-	const pathname = usePathname();
 	return (
 		<>
 			<section className="w-full bg-gray-50">
@@ -22,7 +19,7 @@ export default function Example() {
 						</div>
 						<div className="w-full mt-7 md:w-2/5 md:mt-0">
 							<div className="p-6">
-								<ContactForm pathname={pathname} />
+								<ContactForm />
 							</div>
 						</div>
 					</div>

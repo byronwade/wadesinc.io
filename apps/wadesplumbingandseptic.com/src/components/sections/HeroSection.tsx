@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
+import { isBrowser, isMobile } from "react-device-detect";
 import ContactForm from "../forms/ContactForm";
 import { usePathname } from "next/navigation";
 
@@ -52,7 +52,7 @@ export default function HeroSection() {
 						</div> */}
 				</div>
 				<div className="z-10 ustify-center p-4 max-w-screen-sm bg-white rounded  lg:mt-0 lg:col-span-5 xl:col-span-4 sm:p-6 lg:p-8 dark:bg-gray-800">
-					<ContactForm pathname={pathname} />
+					<ContactForm />
 				</div>
 			</div>
 		</section>
