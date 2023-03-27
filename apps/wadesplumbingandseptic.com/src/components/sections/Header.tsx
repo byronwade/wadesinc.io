@@ -113,7 +113,6 @@ export default function Header({ data }) {
 																			key={index}
 																			href={services.uri}
 																			onClick={async () => {
-																				await fetch(services.uri, { method: "POST" });
 																				close();
 																			}}
 																			className="font-normal hover:underline text-sm"
@@ -131,7 +130,6 @@ export default function Header({ data }) {
 																			key={index}
 																			href={services.uri}
 																			onClick={async () => {
-																				await fetch(services.uri, { method: "POST" });
 																				close();
 																			}}
 																			className="font-normal hover:underline text-sm"
@@ -149,7 +147,6 @@ export default function Header({ data }) {
 																			key={index}
 																			href={services.uri}
 																			onClick={async () => {
-																				await fetch(services.uri, { method: "POST" });
 																				close();
 																			}}
 																			className="font-normal hover:underline text-sm"
@@ -167,7 +164,6 @@ export default function Header({ data }) {
 																			key={index}
 																			href={services.uri}
 																			onClick={async () => {
-																				await fetch(services.uri, { method: "POST" });
 																				close();
 																			}}
 																			className="font-normal hover:underline text-sm"
@@ -185,7 +181,6 @@ export default function Header({ data }) {
 																			key={index}
 																			href={services.uri}
 																			onClick={async () => {
-																				await fetch(services.uri, { method: "POST" });
 																				close();
 																			}}
 																			className="font-normal hover:underline text-sm"
@@ -203,7 +198,6 @@ export default function Header({ data }) {
 																			key={index}
 																			href={services.uri}
 																			onClick={async () => {
-																				await fetch(services.uri, { method: "POST" });
 																				close();
 																			}}
 																			className="font-normal hover:underline text-sm"

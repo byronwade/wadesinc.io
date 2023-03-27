@@ -84,7 +84,7 @@ export default async function Discounts() {
 	return (
 		<section className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
 			<h2 className="text-lg font-semibold leading-8 tracking-tight text-brand-600">Discounts</h2>
-			<p className="mb-6 text-4xl tracking-tight font-extrabold text-black dark:text-white">Learn more about our company</p>
+			<p className="mb-6 text-4xl tracking-tight font-extrabold text-black dark:text-white">Promotions for our company</p>
 			<div className="flex flex-col overflow-hidden">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-x-8">
 					{promotions?.length > 0 ? (
