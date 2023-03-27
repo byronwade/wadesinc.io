@@ -12,10 +12,10 @@ const testimonials = [
 	},
 
 	{
-		body: "The guys and gals at Wade's were fast, professional did everything they said and promised.  They worked with me on different levels and did a great job of replacing our downstairs ejector pump.",
+		body: "These guys are top notch.  It's my third time using them, with definitely the largest problem yet, and I can't recommend them enough after they have fixed us up consistently for the third time.  They know their stuff, do great work, and are a pleasure to work with.  I got to see them in action with a large and costly septic main line repair full with trenchless pull and all that stuff... they were pro's with a great attitude and made me feel comfortable with a terrible situation that shut down my house.  Corey is a top notch guy that was hands on at every step and walked me through the whole process and even had great patience with me as I go through all the stages of denial :) Big shout out to Bruce tho, the kindest dude who put in tons of work.  These are all a bunch of great guys that are efficient and reliable and come at a reasonable cost.",
 		author: {
-			name: "Bob Skubis",
-			imageUrl: "https://lh3.googleusercontent.com/a/AGNmyxb7vTCd0CaGSgZ1_qd0B-Ab6ABj_JZYQa3nY8Wb=w120-h120-p-rp-mo-br100",
+			name: "aaron berger",
+			imageUrl: "https://lh3.googleusercontent.com/a-/ACB-R5QovgzyWClbByxo6UOV1jA8P1ejTcoVJhQ2kw0uAw=w120-h120-p-rp-mo-br100",
 		},
 	},
 
@@ -34,15 +34,13 @@ const testimonials = [
 			imageUrl: "https://lh3.googleusercontent.com/a/AGNmyxak8QWsmPK196QHW8V3SDCDn41c2Guh0xZnVmyW=w120-h120-p-rp-mo-br100",
 		},
 	},
-
 	{
-		body: "These guys are top notch.  It's my third time using them, with definitely the largest problem yet, and I can't recommend them enough after they have fixed us up consistently for the third time.  They know their stuff, do great work, and are a pleasure to work with.  I got to see them in action with a large and costly septic main line repair full with trenchless pull and all that stuff... they were pro's with a great attitude and made me feel comfortable with a terrible situation that shut down my house.  Corey is a top notch guy that was hands on at every step and walked me through the whole process and even had great patience with me as I go through all the stages of denial :) Big shout out to Bruce tho, the kindest dude who put in tons of work.  These are all a bunch of great guys that are efficient and reliable and come at a reasonable cost.",
+		body: "The guys and gals at Wade's were fast, professional did everything they said and promised.  They worked with me on different levels and did a great job of replacing our downstairs ejector pump.",
 		author: {
-			name: "aaron berger",
-			imageUrl: "https://lh3.googleusercontent.com/a-/ACB-R5QovgzyWClbByxo6UOV1jA8P1ejTcoVJhQ2kw0uAw=w120-h120-p-rp-mo-br100",
+			name: "Bob Skubis",
+			imageUrl: "https://lh3.googleusercontent.com/a/AGNmyxb7vTCd0CaGSgZ1_qd0B-Ab6ABj_JZYQa3nY8Wb=w120-h120-p-rp-mo-br100",
 		},
 	},
-
 	{
 		body: "My Waterheater was leaking,and i had some corrosive pipes. We called wades plumbing over Cory came and took a look and told me the truth on what they could do for us. Miguel and Benjamin fixed our problem and other forseable problem in the future with in a reasonable time. They are very punctual and courteous we highly recommend them and we will be using them in our future projects.",
 		author: {
