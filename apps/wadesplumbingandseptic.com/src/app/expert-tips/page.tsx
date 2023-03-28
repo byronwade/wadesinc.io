@@ -4,6 +4,7 @@ import Pagnation from "@/components/ui/Pagnation";
 import Search from "@/components/ui/Search";
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 import { Suspense } from "react";
+import Loading from "./loading";
 
 async function getTips() {
 	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
@@ -124,7 +125,7 @@ export default async function ExpertTips() {
 						{/* <Search placeholder="Search for a tip..." /> */}
 
 						<div className="grid gird-col-1 md:grid-cols-2 lg:grid-col-3 xl:grid-cols-4 auto-rows-auto gap-6 mt-10 items-stretch w-full">
-							<Suspense fallback={<div>Loading...</div>}>
+							<Suspense fallback={<p>Loading content...</p>}>
 								{tips.map((tip, index) => {
 									if (index % 7 === 0) {
 										return (

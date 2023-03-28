@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLongRightIcon, MapPinIcon } from "@heroicons/react/20/solid";
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
+
 
 export const metadata = {
 	title: "Job Opportunities | Wade's Plumbing & Septic",
@@ -104,6 +105,7 @@ export default async function Jobs() {
 	return (
 		<section className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
 			<div className="space-y-6 relative flex flex-col overflow-hidden">
+			<Suspense fallback={<p>Loading feed...</p>}>
 				{nodes?.map((category) =>
 					category?.children?.nodes?.map((child) => (
 						child?.jobs?.nodes?.map((job, index) => (
@@ -134,6 +136,7 @@ export default async function Jobs() {
 						))
 					))
 				)}
+				</Suspense>
 			</div>
 		</section>
 	);

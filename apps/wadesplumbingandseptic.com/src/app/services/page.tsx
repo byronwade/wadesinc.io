@@ -3,6 +3,7 @@ import Image from "next/image";
 import Pagnation from "@/components/ui/Pagnation";
 import Search from "@/components/ui/Search";
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
+import { Suspense } from "react";
 
 export const metadata = {
 	title: "Services | Wade's Plumbing & Septic",
@@ -124,6 +125,8 @@ export default async function Services() {
 
 						<div className="flex mt-10 items-center justify-center">
 							<div className="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
+
+			<Suspense fallback={<p className="text-base text-black">Loading feed...</p>}>
 								{services.map((service, index) => {
 									if (index % 4 === 0) {
 										return (
@@ -166,6 +169,7 @@ export default async function Services() {
 										);
 									}
 								})}
+								</Suspense>
 							</div>
 						</div>
 
