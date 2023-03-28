@@ -14,7 +14,7 @@ async function getTips() {
 		body: JSON.stringify({
 			query: `
 			query NewQuery {
-				posts {
+				posts(first: 100) {
 					nodes {
 						id
 						title(format: RENDERED)

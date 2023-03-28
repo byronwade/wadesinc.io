@@ -65,7 +65,7 @@ async function getService() {
 		body: JSON.stringify({
 			query: `
 			query NewQuery {
-				services(first: 11) {
+				services(first: 100) {
 					edges {
 						node {
 							id
