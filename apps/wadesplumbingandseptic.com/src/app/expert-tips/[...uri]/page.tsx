@@ -113,7 +113,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 		keywords: seo?.metaKeywords,
 		authors: [{ name: data?.post?.author?.node?.name }, { name: data?.post?.author?.node?.name, url: `https://www.wadesplumbingandseptic.com/expert-tips/${params.uri.join("/")}` }],
 		creator: "Byron Wade",
-		publisher: data.post.author.node.name,
+		publisher: data?.post?.author?.node?.name,
 		alternates: {},
 		formatDetection: {
 			email: false,
