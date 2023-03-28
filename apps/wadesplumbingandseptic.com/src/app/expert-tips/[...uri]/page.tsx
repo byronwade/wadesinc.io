@@ -5,7 +5,7 @@ import SocialBar from "@/components/sections/SocialBar";
 import { Metadata } from "next";
 import Image from "next/image";
 import { Suspense } from "react";
-import LoadingSkel from "./loading";
+import Loading from "./loading";
 
 async function getTip(uri) {
 	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
@@ -169,7 +169,7 @@ export default async function BlogPage({ params }) {
 	const formattedTime = dateObj.toLocaleTimeString([], { hour: "numeric", minute: "numeric", hour12: true }); // Format the time as "hh:mm AM/PM"
 
 	return (
-		<>
+		<Suspense fallback={<Loading />}>
 			<section className="bg-white dark:bg-gray-900">
 				<div className="relative">
 					<header className="w-full h-[460px] xl:h-[537px] relative">
@@ -221,6 +221,6 @@ export default async function BlogPage({ params }) {
 			</section>
 			<RelatedArticlesSection posts={RelatedPosts} />
 			<NewsletterSection />
-		</>
+		</Suspense>
 	);
 }
