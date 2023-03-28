@@ -5,7 +5,7 @@ import SocialBar from "@/components/sections/SocialBar";
 import { Metadata } from "next";
 import Image from "next/image";
 import { Suspense } from "react";
-import { LoadingSkel } from "./loading";
+import LoadingSkel from "./loading";
 
 async function getTip(uri) {
 	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
