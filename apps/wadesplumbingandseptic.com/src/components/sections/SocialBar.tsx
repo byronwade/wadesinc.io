@@ -1,11 +1,12 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
-import { FacebookShareButton, TwitterShareButton, TwitterIcon, RedditShareButton, RedditIcon, FacebookIcon, LinkedinShareButton, LinkedinIcon } from "react-share";
+import { useState, useCallback } from "react";
+import { FacebookShareButton, TwitterShareButton, RedditShareButton, LinkedinShareButton } from "react-share";
 import { usePathname } from "next/navigation";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { LinkIcon } from "@heroicons/react/20/solid";
+import { HiLink } from "react-icons/hi2";
+import { RiFacebookCircleFill, RiTwitterFill, RiLinkedinBoxFill, RiRedditFill } from "react-icons/ri";
 
 export default function SocialBar() {
 	const [isCopied, setIsCopied] = useState(false);
@@ -18,31 +19,25 @@ export default function SocialBar() {
 		toast.success("Link copied to clipboard!");
 	}, [url]);
 
-	useEffect(() => {
-		if (isCopied) {
-			toast.success("Link copied to clipboard!");
-		}
-	}, [handleCopyLink, isCopied]);
-
 	return (
 		<>
 			<ToastContainer className="!top-32" />
 			<aside aria-label="Share social media">
 				<div className="space-x-1">
 					<FacebookShareButton url={url} className="!inline-flex !items-center !p-2 !text-sm !font-medium !text-center !text-gray-500 !bg-white !rounded hover:!bg-gray-100 focus:!ring-4 focus:!outline-none" type="button">
-						<FacebookIcon size={25} round={true} />
+						<RiFacebookCircleFill className="w-6 h-6 text-gray-500 dark:text-gray-400" />
 					</FacebookShareButton>
 					<TwitterShareButton url={url} className="!inline-flex !items-center !p-2 !text-sm !font-medium !text-center !text-gray-500 !bg-white !rounded hover:!bg-gray-100 focus:!ring-4 focus:!outline-none" type="button">
-						<TwitterIcon size={25} round={true} />
+						<RiTwitterFill className="w-6 h-6 text-gray-500 dark:text-gray-400" />
 					</TwitterShareButton>
 					<RedditShareButton url={url} className="!inline-flex !items-center !p-2 !text-sm !font-medium !text-center !text-gray-500 !bg-white !rounded hover:!bg-gray-100 focus:!ring-4 focus:!outline-none" type="button">
-						<RedditIcon size={25} round={true} />
+						<RiRedditFill className="w-6 h-6 text-gray-500 dark:text-gray-400" />
 					</RedditShareButton>
 					<LinkedinShareButton url={url} className="!inline-flex !items-center !p-2 !text-sm !font-medium !text-center !text-gray-500 !bg-white !rounded hover:!bg-gray-100 focus:!ring-4 focus:!outline-none" type="button">
-						<LinkedinIcon size={25} round={true} />
+						<RiLinkedinBoxFill className="w-6 h-6 text-gray-500 dark:text-gray-400" />
 					</LinkedinShareButton>
 					<button onClick={handleCopyLink} className="!inline-flex !items-center !p-2 !text-sm !font-medium !text-center !text-gray-500 !bg-white !rounded hover:!bg-gray-100 focus:!ring-4 focus:!outline-none" type="button">
-						<LinkIcon className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+						<HiLink className="w-6 h-6 text-gray-500 dark:text-gray-400" />
 					</button>
 				</div>
 			</aside>

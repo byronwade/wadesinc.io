@@ -2,18 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-.youtube-container {
-    overflow: hidden;
-    width: 100%;
-    /* Keep it the right aspect-ratio */
-    aspect-ratio: 16/9;
-    /* No clicking/hover effects */
-    pointer-events: none;
+  .loader {
+    border-top-color: #3498db;
+    -webkit-animation: spinner 1.5s linear infinite;
+    animation: spinner 1.5s linear infinite;
   }
-  .youtube-container iframe {
-    /* Extend it beyond the viewport... */
-    width: 300%;
-    height: 100%;
-    /* ...and bring it back again */
-    margin-left: -100%;
+  
+  @-webkit-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
   }
+  
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

@@ -1,9 +1,9 @@
 import NewsletterSection from "@/components/sections/NewsletterSection";
 import RelatedArticlesSection from "@/components/sections/RelatedArticlesSection";
 import Sidebar from "@/components/sections/Sidebar";
-import Image from "next/image";
 import SocialBar from "@/components/sections/SocialBar";
 import { Metadata } from "next";
+import Image from "next/image";
 import { Suspense } from "react";
 import { getTip } from "@/graphql/fetch";
 
