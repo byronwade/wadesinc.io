@@ -99,7 +99,7 @@ export default function Header({ data }) {
 										Services
 										<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
 									</Popover.Button>
-									<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
+									<Transition as={Fragment} enter="transition ease-out duration-75" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-75" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
 										<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[112px] shadow">
 											{({ close }) => (
 												<div className="mx-auto max-w-7xl py-10 px-6 lg:px-8">
@@ -219,7 +219,6 @@ export default function Header({ data }) {
 																	<Link
 																		href="/services"
 																		onClick={async () => {
-																			await fetch("/services", { method: "POST" });
 																			close();
 																		}}
 																		className="hover:text-brand my-1 mr-4 inline-block rounded bg-white bg-opacity-[15%] py-4 px-6 text-base font-medium text-black transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9"
@@ -228,7 +227,6 @@ export default function Header({ data }) {
 																	</Link>
 																	<Link
 																		onClick={async () => {
-																			await fetch("/contact-us", { method: "POST" });
 																			close();
 																		}}
 																		href="/contact-us"
@@ -252,7 +250,7 @@ export default function Header({ data }) {
 										Expert Tips
 										<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
 									</Popover.Button>
-									<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
+									<Transition as={Fragment} enter="transition ease-out duration-75" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-75" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
 										<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[112px] shadow">
 											{({ close }) => (
 												<div className="mx-auto max-w-7xl py-10 px-6 lg:px-8">
@@ -265,7 +263,6 @@ export default function Header({ data }) {
 																		key={index}
 																		href={`/expert-tips/${post?.uri}`}
 																		onClick={async () => {
-																			await fetch(`/expert-tips/${post?.uri}`, { method: "POST" });
 																			close();
 																		}}
 																		className="group space-y-2 mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg"
@@ -289,7 +286,6 @@ export default function Header({ data }) {
 																			key={index}
 																			href={`/expert-tips/${post?.uri}`}
 																			onClick={async () => {
-																				await fetch(`/expert-tips/${post?.uri}`, { method: "POST" });
 																				close();
 																			}}
 																		>
@@ -318,7 +314,6 @@ export default function Header({ data }) {
 																			key={index}
 																			href={`/expert-tips/${post?.uri}`}
 																			onClick={async () => {
-																				await fetch(`/expert-tips/${post?.uri}`, { method: "POST" });
 																				close();
 																			}}
 																		>
@@ -351,7 +346,6 @@ export default function Header({ data }) {
 																	<Link
 																		href="/expert-tips"
 																		onClick={async () => {
-																			await fetch("/expert-tips", { method: "POST" });
 																			close();
 																		}}
 																		className="hover:text-brand my-1 mr-4 inline-block rounded bg-white bg-opacity-[15%] py-4 px-6 text-base font-medium text-black transition hover:bg-opacity-100 md:px-9 lg:px-6 xl:px-9"
@@ -360,7 +354,6 @@ export default function Header({ data }) {
 																	</Link>
 																	<Link
 																		onClick={async () => {
-																			await fetch("/contact-us", { method: "POST" });
 																			close();
 																		}}
 																		href="/contact-us"
@@ -384,7 +377,7 @@ export default function Header({ data }) {
 										About Us & More
 										<ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
 									</Popover.Button>
-									<Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-150" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
+									<Transition as={Fragment} enter="transition ease-out duration-75" enterFrom="opacity-0 -translate-y-1" enterTo="opacity-100 translate-y-0" leave="transition ease-in duration-75" leaveFrom="opacity-100 translate-y-0" leaveTo="opacity-0 -translate-y-1">
 										<Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-black pt-[112px] shadow">
 											{({ close }) => (
 												<div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-0 sm:py-10 lg:grid-cols-6 lg:gap-4 lg:px-8 xl:gap-8">
@@ -392,7 +385,6 @@ export default function Header({ data }) {
 														<Link
 															href={item.href}
 															onClick={async () => {
-																await fetch(item.href, { method: "POST" });
 																close();
 															}}
 															key={index}
