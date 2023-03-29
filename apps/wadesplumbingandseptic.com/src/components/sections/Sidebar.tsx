@@ -18,7 +18,7 @@ export default function Sidebar({ NewestPosts }) {
 				</div>
 				<div className="mb-12">
 					<h4 className="mb-4 text-sm font-bold text-gray-900 dark:text-white uppercase">Latest Tips</h4>
-					{NewestPosts.nodes.slice(0, 3).map((post, index) => (
+					{NewestPosts?.nodes.slice(0, 3).map((post, index) => (
 						<Link href={`/expert-tips/${post.uri}`} key={index} className="mb-6 flex items-start">
 							<span className="shrink-0">
 								<Image width={96} height={96} src={post?.featuredImage?.node?.sourceUrl ? post.featuredImage.node.sourceUrl : "/placeholder.webp"} alt={post?.featuredImage?.node?.altText ? post.featuredImage.node.altText : "/placeholder.webp"} className="mr-4 max-w-full w-24 h-24 rounded" />

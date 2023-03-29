@@ -5,101 +5,7 @@ import Image from "next/image";
 import SocialBar from "@/components/sections/SocialBar";
 import { Metadata } from "next";
 import { Suspense } from "react";
-
-async function getTip(uri) {
-	const { data } = await fetch("https://wadesplumbingandseptic.byronw35.sg-host.com/graphql", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			query: `
-			query NewQuery {
-				post(id: ${uri}, idType: URI) {
-					content(format: RENDERED)
-					date
-					categories {
-						nodes {
-							name
-							posts {
-								nodes {
-									id
-									title
-									readingTime
-									uri
-									excerpt(format: RENDERED)
-									featuredImage {
-										node {
-											altText
-											sourceUrl(size: LARGE)
-										}
-									}
-								}
-							}
-						}
-					}
-					featuredImage {
-						node {
-							altText
-							sourceUrl(size: LARGE)
-						}
-					}
-					title(format: RENDERED)
-					author {
-						node {
-							name
-						}
-					}
-					seo {
-					  canonical
-					  cornerstone
-					  focuskw
-					  fullHead
-					  metaKeywords
-					  metaDesc
-					  metaRobotsNofollow
-					  metaRobotsNoindex
-					  opengraphAuthor
-					  opengraphDescription
-					  opengraphModifiedTime
-					  opengraphPublishedTime
-					  opengraphPublisher
-					  opengraphSiteName
-					  opengraphTitle
-					  opengraphType
-					  opengraphUrl
-					  title
-					  schema {
-						articleType
-						pageType
-						raw
-					  }
-					  twitterDescription
-					  twitterTitle
-					}
-				}
-				posts(where: { orderby: { field: DATE, order: DESC } }) {
-					nodes {
-						id
-						title
-						readingTime
-						uri
-						excerpt(format: RENDERED)
-						featuredImage {
-							node {
-								altText
-								sourceUrl(size: LARGE)
-							}
-						}
-					}
-				}
-			}
-	  `,
-		}),
-		next: { revalidate: 10 },
-	}).then((res) => res.json());
-	return { data };
-}
+import { getTip } from "@/graphql/fetch";
 
 export async function generateMetadata({ params }): Promise<Metadata> {
 	const { data } = await getTip(`"/${params.uri.join("/")}"`);
@@ -168,10 +74,10 @@ export default async function BlogPage({ params }) {
 	const formattedTime = dateObj.toLocaleTimeString([], { hour: "numeric", minute: "numeric", hour12: true }); // Format the time as "hh:mm AM/PM"
 
 	return (
-		<Suspense>
+		<Suspense fallback={<p>Loading article...</p>}>
 			<section className="bg-white dark:bg-gray-900">
 				<div className="relative">
-					<Suspense fallback={<p>Loading feed...</p>}>
+					<Suspense fallback={<p>Loading content...</p>}>
 						<header className="w-full h-[460px] xl:h-[537px] relative">
 							<Image sizes={tips?.featuredImage?.node?.sizes} priority className="w-full object-cover object-center" fill src={tips?.featuredImage?.node?.sourceUrl ? tips.featuredImage.node.sourceUrl : "/placeholder.webp"} alt={tips?.featuredImage?.node?.altText ? tips.featuredImage.node.altText : "placeholder image"} />
 							<div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />

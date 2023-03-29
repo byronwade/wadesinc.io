@@ -3,22 +3,22 @@ import Link from "next/link";
 import { truncateString } from "../../helpers/truncate";
 
 export default function RelatedArticlesSection({ posts }) {
-	const categories = posts.nodes;
+	const categories = posts?.nodes;
 	const allPosts: any[] = [];
 
-	categories.forEach((category) => {
-		const categoryPosts = category.posts.nodes;
+	categories?.forEach((category) => {
+		const categoryPosts = category?.posts?.nodes;
 
-		categoryPosts.forEach((post) => {
-			const existingPost = allPosts.find((p) => p.title === post.title);
+		categoryPosts?.forEach((post) => {
+			const existingPost = allPosts?.find((p) => p.title === post.title);
 
 			if (!existingPost) {
-				allPosts.push(post);
+				allPosts?.push(post);
 			}
 		});
 	});
 
-	const truncatedPosts = allPosts.slice(0, 4);
+	const truncatedPosts = allPosts?.slice(0, 4);
 
 	if (!truncatedPosts || truncatedPosts.length === 0) {
 		return null;
