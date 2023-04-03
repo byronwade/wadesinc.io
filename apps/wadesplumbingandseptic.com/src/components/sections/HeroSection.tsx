@@ -1,11 +1,10 @@
-"use client";
 import Image from "next/image";
 import { isBrowser, isMobile } from "react-device-detect";
 import ContactForm from "../forms/ContactForm";
-import { usePathname } from "next/navigation";
 
 export default function HeroSection() {
-	const pathname = usePathname();
+	console.log("Browser", isBrowser);
+	console.log("Mobile", isMobile);
 	return (
 		<section className="bg-black-400 relative overflow-hidden">
 			{isBrowser && (
@@ -14,7 +13,7 @@ export default function HeroSection() {
 				</video>
 			)}
 			{isMobile && <Image priority src="/redwoods.jpg" fill className="object-cover object-center w-auto brightness-50 min-w-full min-h-full max-w-none" alt="Trees" />}
-			<Image className="hidden md:block absolute bottom-0 right-10" src="/mario.png" height={100} width={100} alt="Mario Plumber" />
+			<Image className="hidden md:block absolute bottom-0 right-10 w-auto h-auto" src="/mario.png" height={100} width={100} alt="Mario Plumber" />
 			<div className="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-12 xl:gap-0 lg:py-44 lg:grid-cols-12">
 				<div className="z-10 place-self-center mr-auto mb-10 lg:col-span-7 xl:col-span-8 xl:mb-0 p-4 m:p-6 lg:p-8">
 					<p className="text-sm md:text-lg font-semibold leading-8 tracking-tight inline-flex items-center rounded bg-brand-100 px-2.5 py-0.5 text-brand-800">Local Built Company</p>

@@ -175,11 +175,11 @@ export default async function ServicesPage({ params }) {
 					<div className="flex justify-between px-4 mx-auto max-w-screen-xl">
 						<article className="space-y-4 mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
 							<div className="w-full relative">
-								<Image sizes={service?.featuredImage?.node?.sizes} priority className="w-full mb-6 brightness-75 rounded" width={1000} height={1000} src={service?.featuredImage?.node?.sourceUrl ? service.featuredImage.node.sourceUrl : "/placeholder.webp"} alt={service?.featuredImage?.node?.altText ? service.featuredImage.node.altText : "/placeholder.webp"} />
-								<div className="absolute space-y-1 p-6 bottom-0 left-0 mx-auto w-full">
-									<span className="block text-gray-100">
+								<Image sizes={service?.featuredImage?.node?.sizes} priority className="w-full mb-6 rounded" width={1000} height={1000} src={service?.featuredImage?.node?.sourceUrl ? service.featuredImage.node.sourceUrl : "/placeholder.webp"} alt={service?.featuredImage?.node?.altText ? service.featuredImage.node.altText : "/placeholder.webp"} />
+								<div className="space-y-1 py-6 mx-auto w-full">
+									<span className="block text-gray-600">
 										Published in{" "}
-										<span className="font-semibold text-white">
+										<span className="font-semibold text-black">
 											{service?.categories?.nodes.map((categories, index) => (
 												<span key={index}>
 													{categories?.name}
@@ -188,7 +188,7 @@ export default async function ServicesPage({ params }) {
 											))}
 										</span>
 									</span>
-									<h1 dangerouslySetInnerHTML={{ __html: service?.title }} className="max-w-4xl text-2xl font-extrabold leading-none text-white sm:text-3xl lg:text-4xl" />
+									<h1 dangerouslySetInnerHTML={{ __html: service?.title }} className="max-w-4xl text-2xl font-extrabold leading-none text-black sm:text-3xl lg:text-4xl" />
 								</div>
 							</div>
 							<div className="flex flex-col lg:flex-row justify-between lg:items-center">

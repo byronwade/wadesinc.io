@@ -33,7 +33,7 @@ export default function RelatedArticlesSection({ posts }) {
 						<Link key={index} href={`/expert-tips/${post.uri}`}>
 							<article className="flex flex-col xl:flex-row">
 								<div className="h-40 w-40 mr-5 mb-2 xl:mb-0 relative">
-									<Image fill src={post?.featuredImage?.node?.sourceUrl ? post.featuredImage.node.sourceUrl : "/placeholder.webp"} alt={post?.featuredImage?.node?.altText ? post.featuredImage.node.altText : "/placeholder.webp"} className="w-full object-cover object-center rounded" />
+									<Image sizes={post?.featuredImage?.node?.sizes} fill src={post?.featuredImage?.node?.sourceUrl ? post.featuredImage.node.sourceUrl : "/placeholder.webp"} alt={post?.featuredImage?.node?.altText ? post.featuredImage.node.altText : "/placeholder.webp"} className="w-full object-cover object-center rounded" />
 								</div>
 								<div className="flex flex-col justify-center">
 									<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
