@@ -78,7 +78,7 @@ export default function Example() {
 					<li>
 						Contact our support team and we can send an application directly to your email shoot us a call at{" "}
 						<a href="tel:8314306011" className="text-brand hover:underline">
-							(831) 430-6011
+							(831) 225-4344
 						</a>{" "}
 						or{" "}
 						<a href="mailto:support@wadesinc.io" className="text-brand hover:underline">
@@ -105,7 +105,7 @@ export default function Example() {
 				<p>
 					Financing today at{" "}
 					<a href="tel:8314306011" className="text-brand hover:underline">
-						(831) 430-6011
+						(831) 225-4344
 					</a>{" "}
 					or{" "}
 					<a href="mailto:support@wadesinc.io" className="text-brand hover:underline">

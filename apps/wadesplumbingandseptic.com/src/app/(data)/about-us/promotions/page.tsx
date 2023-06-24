@@ -105,7 +105,7 @@ export default async function Discounts() {
 									<div>
 										Contact us today at{" "}
 										<a href="tel:8314306011" className="text-brand hover:underline">
-											(831) 430-6011
+											(831) 225-4344
 										</a>{" "}
 										or{" "}
 										<a href="mailto:support@wadesinc.io" className="text-brand hover:underline">

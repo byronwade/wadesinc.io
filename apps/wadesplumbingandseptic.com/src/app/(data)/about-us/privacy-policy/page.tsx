@@ -100,7 +100,7 @@ export default function PricavyPolicy() {
 			</ol>
 			<p>If you have any questions about this Privacy Policy, please contact us at:</p>
 			<p>
-				Wade&apos; Plumbing &amp; Septic Phone: <a href="tel:8314306011">(831) 430-6011</a> Email: <a href="mailto:support@wadesinc.io">support@wadesinc.io</a>
+				Wade&apos; Plumbing &amp; Septic Phone: <a href="tel:8314306011">(831) 225-4344</a> Email: <a href="mailto:support@wadesinc.io">support@wadesinc.io</a>
 			</p>
 		</>
 	);
