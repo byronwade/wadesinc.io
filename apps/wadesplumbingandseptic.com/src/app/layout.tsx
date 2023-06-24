@@ -3,6 +3,7 @@ import Footer from "@/components/sections/Footer";
 import "./globals.css";
 import Script from "next/script";
 import { HeaderLinks } from "@/graphql/fetch";
+import { Analytics } from "@vercel/analytics/react";
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 	const { data } = await HeaderLinks();
@@ -23,6 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 			<body className="bg-gray-50 text-base">
 				<Header data={data} />
 				{children}
+				<Analytics />
 				<Footer />
 				{/* <Script id="ze-snippet" strategy="lazyOnload" src="https://static.zdassets.com/ekr/snippet.js?key=06e45130-bfd2-4b2b-8137-28903b96f527"></Script> */}
 			</body>
