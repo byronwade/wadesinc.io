@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import Pagnation from "@/components/ui/Pagnation";
-import Search from "@/components/ui/Search";
+//import Pagnation from "@/components/ui/Pagnation";
+//import Search from "@/components/ui/Search";
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 import { Suspense } from "react";
 import { getTips } from "@/graphql/fetch";

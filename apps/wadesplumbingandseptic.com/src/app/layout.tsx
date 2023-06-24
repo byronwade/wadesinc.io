@@ -1,7 +1,7 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import "./globals.css";
-import Script from "next/script";
+//import Script from "next/script";
 import { HeaderLinks } from "@/graphql/fetch";
 import { Analytics } from "@vercel/analytics/react";
 
