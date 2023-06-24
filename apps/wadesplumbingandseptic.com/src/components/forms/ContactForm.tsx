@@ -23,7 +23,7 @@ export default function ContactForm() {
 			<div className="grid grid-cols-1 gap-y-4 gap-x-4 sm:grid-cols-2">
 				<div>
 					<label htmlFor="full-name" className="block text-sm font-semibold leading-6 text-gray-900">
-						First name
+						Full name
 					</label>
 					<div className="mt-2.5">
 						<input placeholder="Mario Mario" required type="text" name="full-name" id="full-name" autoComplete="given-name" className="block w-full rounded border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-600 text-base sm:leading-6" />
